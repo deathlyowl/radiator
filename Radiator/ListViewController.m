@@ -34,7 +34,8 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [Player setStreamURL:@"http://mainstream.radioagora.pl/tuba10-1.mp3"];
+    //[Player setStreamURL:@"http://mainstream.radioagora.pl/tuba10-1.mp3"];
+    [Player setStreamURL:@"http://poznan5.radio.pionier.net.pl:8000/eskarock.mp3"];
     [Player play];
 }
 
