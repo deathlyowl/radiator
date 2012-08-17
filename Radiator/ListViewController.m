@@ -32,9 +32,50 @@
     [Player play];
 }
 
+#pragma mark -
+#pragma mark Table view
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = nil;
+    
+    cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"] autorelease];
+        /*
+        for (int i=0; i <= [wordsInSentence count]; ++i) {
+            UIImageView *imageView1 = [[[UIImageView alloc] initWithFrame:CGRectMake(30+90*(i%4), 15, 80, 100)] autorelease] ;
+            imageView1.tag = i+1;
+            
+            [imageViewArray insertObject:imageView1 atIndex:i];
+            [cell.contentView addSubview:imageView1];
+        }
+         */
+        
+    }
+    /*
+    int photosInRow;
+    
+    if ( (indexPath.row < [tableView numberOfRowsInSection:indexPath.section] - 1) || ([wordsInSentence count] % 4 == 0) ) {
+        photosInRow = 4;
+    } else {
+        photosInRow = [wordsInSentence count] % 4;
+    }
+    
+    for ( int i = 1; i <=photosInRow ; i++ ){
+        imageView = (UIImageView *)[cell.contentView viewWithTag:j];
+        [self showImage:imageView];
+    }
+    */
+    return cell;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return NO;
+    return UIInterfaceOrientationPortrait == interfaceOrientation;
 }
 
 @end

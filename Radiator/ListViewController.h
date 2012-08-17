@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Player.h"
 
-@interface ListViewController : UIViewController
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
