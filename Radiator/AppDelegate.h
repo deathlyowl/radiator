@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVPlayer.h>
 
-@class ViewController;
+@class ListViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (nonatomic, retain) AVPlayer *player;
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) ListViewController *viewController;
 
 @end
