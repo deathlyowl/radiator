@@ -13,6 +13,9 @@
 @end
 
 @implementation ListViewController
+@synthesize toolbar;
+@synthesize tableView;
+@synthesize searchBar;
 
 - (void)viewDidLoad
 {
@@ -22,6 +25,9 @@
 
 - (void)viewDidUnload
 {
+    [self setToolbar:nil];
+    [self setTableView:nil];
+    [self setSearchBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -42,40 +48,28 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
     
-    cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"] autorelease];
-        /*
-        for (int i=0; i <= [wordsInSentence count]; ++i) {
-            UIImageView *imageView1 = [[[UIImageView alloc] initWithFrame:CGRectMake(30+90*(i%4), 15, 80, 100)] autorelease] ;
-            imageView1.tag = i+1;
-            
-            [imageViewArray insertObject:imageView1 atIndex:i];
-            [cell.contentView addSubview:imageView1];
-        }
-         */
-        
     }
     
     [cell.imageView setImage:[UIImage imageNamed:@"tokfm"]];
     [cell.textLabel setText:@"Tokfm"];
     [cell.detailTextLabel setText:@"opis, czy coś"];
-    
-    /*
-    int photosInRow;
-    
-    if ( (indexPath.row < [tableView numberOfRowsInSection:indexPath.section] - 1) || ([wordsInSentence count] % 4 == 0) ) {
-        photosInRow = 4;
-    } else {
-        photosInRow = [wordsInSentence count] % 4;
-    }
-    
-    for ( int i = 1; i <=photosInRow ; i++ ){
-        imageView = (UIImageView *)[cell.contentView viewWithTag:j];
-        [self showImage:imageView];
-    }
-    */
+
     return cell;
+}
+
+
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView{
+    // Instagram-header-toolbar-magic
+    if (self.tableView.contentOffset.y < 0){
+        [toolbar setFrame:CGRectMake(0, self.tableView.contentOffset.y, 320, 44)];
+    }
+    else{
+        [toolbar setFrame:CGRectMake(0, 0, 320, 44)];
+    }
+    [searchBar resignFirstResponder];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -83,4 +77,10 @@
     return UIInterfaceOrientationPortrait == interfaceOrientation;
 }
 
+- (void)dealloc {
+    [toolbar release];
+    [tableView release];
+    [searchBar release];
+    [super dealloc];
+}
 @end

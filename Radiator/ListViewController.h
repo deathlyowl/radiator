@@ -11,4 +11,8 @@
 
 @interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (retain, nonatomic) IBOutlet UIView *toolbar;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
+
 @end
