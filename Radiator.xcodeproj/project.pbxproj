@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA18AC8E15DEA772002B1689 /* tokfm.png in Resources */ = {isa = PBXBuildFile; fileRef = FA18AC8D15DEA772002B1689 /* tokfm.png */; };
 		FA72C13C15DE9C9E002247D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C13B15DE9C9E002247D3 /* UIKit.framework */; };
 		FA72C13E15DE9C9E002247D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C13D15DE9C9E002247D3 /* Foundation.framework */; };
 		FA72C14015DE9C9E002247D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C13F15DE9C9E002247D3 /* CoreGraphics.framework */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA18AC8D15DEA772002B1689 /* tokfm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tokfm.png; sourceTree = "<group>"; };
 		FA72C13715DE9C9D002247D3 /* Radiator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radiator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA72C13B15DE9C9E002247D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA72C13D15DE9C9E002247D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +123,7 @@
 			children = (
 				FA72C16015DEA1AF002247D3 /* bottomFrame.png */,
 				FA72C16115DEA1AF002247D3 /* topFrame.png */,
+				FA18AC8D15DEA772002B1689 /* tokfm.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				FA72C15215DE9C9E002247D3 /* ListViewController.xib in Resources */,
 				FA72C16215DEA1AF002247D3 /* bottomFrame.png in Resources */,
 				FA72C16315DEA1AF002247D3 /* topFrame.png in Resources */,
+				FA18AC8E15DEA772002B1689 /* tokfm.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

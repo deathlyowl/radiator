@@ -36,7 +36,7 @@
 #pragma mark Table view
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -44,7 +44,7 @@
     
     cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"] autorelease];
         /*
         for (int i=0; i <= [wordsInSentence count]; ++i) {
             UIImageView *imageView1 = [[[UIImageView alloc] initWithFrame:CGRectMake(30+90*(i%4), 15, 80, 100)] autorelease] ;
@@ -56,6 +56,11 @@
          */
         
     }
+    
+    [cell.imageView setImage:[UIImage imageNamed:@"tokfm"]];
+    [cell.textLabel setText:@"Tokfm"];
+    [cell.detailTextLabel setText:@"opis, czy coś"];
+    
     /*
     int photosInRow;
     
