@@ -12,7 +12,7 @@
 
 @class ListViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, AVAudioSessionDelegate>
 
 @property (nonatomic, retain) AVPlayer *player;
 @property (strong, nonatomic) UIWindow *window;
