@@ -15,6 +15,9 @@
 		FA72C14C15DE9C9E002247D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C14B15DE9C9E002247D3 /* AppDelegate.m */; };
 		FA72C14F15DE9C9E002247D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C14E15DE9C9E002247D3 /* ViewController.m */; };
 		FA72C15215DE9C9E002247D3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA72C15015DE9C9E002247D3 /* ViewController.xib */; };
+		FA72C15A15DE9D3A002247D3 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C15915DE9D3A002247D3 /* Player.m */; };
+		FA72C15C15DE9D55002247D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C15B15DE9D55002247D3 /* AVFoundation.framework */; };
+		FA72C15E15DE9F5F002247D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C15D15DE9F5F002247D3 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,10 @@
 		FA72C14D15DE9C9E002247D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FA72C14E15DE9C9E002247D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FA72C15115DE9C9E002247D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		FA72C15815DE9D3A002247D3 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		FA72C15915DE9D3A002247D3 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		FA72C15B15DE9D55002247D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FA72C15D15DE9F5F002247D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA72C15E15DE9F5F002247D3 /* Security.framework in Frameworks */,
+				FA72C15C15DE9D55002247D3 /* AVFoundation.framework in Frameworks */,
 				FA72C13C15DE9C9E002247D3 /* UIKit.framework in Frameworks */,
 				FA72C13E15DE9C9E002247D3 /* Foundation.framework in Frameworks */,
 				FA72C14015DE9C9E002247D3 /* CoreGraphics.framework in Frameworks */,
@@ -67,6 +76,8 @@
 		FA72C13A15DE9C9D002247D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA72C15D15DE9F5F002247D3 /* Security.framework */,
+				FA72C15B15DE9D55002247D3 /* AVFoundation.framework */,
 				FA72C13B15DE9C9E002247D3 /* UIKit.framework */,
 				FA72C13D15DE9C9E002247D3 /* Foundation.framework */,
 				FA72C13F15DE9C9E002247D3 /* CoreGraphics.framework */,
@@ -79,6 +90,8 @@
 			children = (
 				FA72C14A15DE9C9E002247D3 /* AppDelegate.h */,
 				FA72C14B15DE9C9E002247D3 /* AppDelegate.m */,
+				FA72C15815DE9D3A002247D3 /* Player.h */,
+				FA72C15915DE9D3A002247D3 /* Player.m */,
 				FA72C14D15DE9C9E002247D3 /* ViewController.h */,
 				FA72C14E15DE9C9E002247D3 /* ViewController.m */,
 				FA72C15015DE9C9E002247D3 /* ViewController.xib */,
@@ -164,6 +177,7 @@
 				FA72C14815DE9C9E002247D3 /* main.m in Sources */,
 				FA72C14C15DE9C9E002247D3 /* AppDelegate.m in Sources */,
 				FA72C14F15DE9C9E002247D3 /* ViewController.m in Sources */,
+				FA72C15A15DE9D3A002247D3 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +256,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Radiator/Radiator-Prefix.pch";
 				INFOPLIST_FILE = "Radiator/Radiator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -253,6 +268,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Radiator/Radiator-Prefix.pch";
 				INFOPLIST_FILE = "Radiator/Radiator-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
