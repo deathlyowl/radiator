@@ -13,11 +13,13 @@
 		FA72C14615DE9C9E002247D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA72C14415DE9C9E002247D3 /* InfoPlist.strings */; };
 		FA72C14815DE9C9E002247D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C14715DE9C9E002247D3 /* main.m */; };
 		FA72C14C15DE9C9E002247D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C14B15DE9C9E002247D3 /* AppDelegate.m */; };
-		FA72C14F15DE9C9E002247D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C14E15DE9C9E002247D3 /* ViewController.m */; };
-		FA72C15215DE9C9E002247D3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA72C15015DE9C9E002247D3 /* ViewController.xib */; };
+		FA72C14F15DE9C9E002247D3 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C14E15DE9C9E002247D3 /* ListViewController.m */; };
+		FA72C15215DE9C9E002247D3 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA72C15015DE9C9E002247D3 /* ListViewController.xib */; };
 		FA72C15A15DE9D3A002247D3 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C15915DE9D3A002247D3 /* Player.m */; };
 		FA72C15C15DE9D55002247D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C15B15DE9D55002247D3 /* AVFoundation.framework */; };
 		FA72C15E15DE9F5F002247D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C15D15DE9F5F002247D3 /* Security.framework */; };
+		FA72C16215DEA1AF002247D3 /* bottomFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = FA72C16015DEA1AF002247D3 /* bottomFrame.png */; };
+		FA72C16315DEA1AF002247D3 /* topFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = FA72C16115DEA1AF002247D3 /* topFrame.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +33,15 @@
 		FA72C14915DE9C9E002247D3 /* Radiator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Radiator-Prefix.pch"; sourceTree = "<group>"; };
 		FA72C14A15DE9C9E002247D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA72C14B15DE9C9E002247D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FA72C14D15DE9C9E002247D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FA72C14E15DE9C9E002247D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FA72C15115DE9C9E002247D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		FA72C14D15DE9C9E002247D3 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		FA72C14E15DE9C9E002247D3 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		FA72C15115DE9C9E002247D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ListViewController.xib; sourceTree = "<group>"; };
 		FA72C15815DE9D3A002247D3 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		FA72C15915DE9D3A002247D3 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		FA72C15B15DE9D55002247D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FA72C15D15DE9F5F002247D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FA72C16015DEA1AF002247D3 /* bottomFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottomFrame.png; path = Resources/bottomFrame.png; sourceTree = "<group>"; };
+		FA72C16115DEA1AF002247D3 /* topFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topFrame.png; path = Resources/topFrame.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +96,10 @@
 				FA72C14B15DE9C9E002247D3 /* AppDelegate.m */,
 				FA72C15815DE9D3A002247D3 /* Player.h */,
 				FA72C15915DE9D3A002247D3 /* Player.m */,
-				FA72C14D15DE9C9E002247D3 /* ViewController.h */,
-				FA72C14E15DE9C9E002247D3 /* ViewController.m */,
-				FA72C15015DE9C9E002247D3 /* ViewController.xib */,
+				FA72C14D15DE9C9E002247D3 /* ListViewController.h */,
+				FA72C14E15DE9C9E002247D3 /* ListViewController.m */,
+				FA72C15015DE9C9E002247D3 /* ListViewController.xib */,
+				FA72C15F15DEA146002247D3 /* Resources */,
 				FA72C14215DE9C9E002247D3 /* Supporting Files */,
 			);
 			path = Radiator;
@@ -109,6 +114,15 @@
 				FA72C14915DE9C9E002247D3 /* Radiator-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA72C15F15DEA146002247D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA72C16015DEA1AF002247D3 /* bottomFrame.png */,
+				FA72C16115DEA1AF002247D3 /* topFrame.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA72C14615DE9C9E002247D3 /* InfoPlist.strings in Resources */,
-				FA72C15215DE9C9E002247D3 /* ViewController.xib in Resources */,
+				FA72C15215DE9C9E002247D3 /* ListViewController.xib in Resources */,
+				FA72C16215DEA1AF002247D3 /* bottomFrame.png in Resources */,
+				FA72C16315DEA1AF002247D3 /* topFrame.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +192,7 @@
 			files = (
 				FA72C14815DE9C9E002247D3 /* main.m in Sources */,
 				FA72C14C15DE9C9E002247D3 /* AppDelegate.m in Sources */,
-				FA72C14F15DE9C9E002247D3 /* ViewController.m in Sources */,
+				FA72C14F15DE9C9E002247D3 /* ListViewController.m in Sources */,
 				FA72C15A15DE9D3A002247D3 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,12 +208,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		FA72C15015DE9C9E002247D3 /* ViewController.xib */ = {
+		FA72C15015DE9C9E002247D3 /* ListViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FA72C15115DE9C9E002247D3 /* en */,
 			);
-			name = ViewController.xib;
+			name = ListViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -293,6 +309,7 @@
 				FA72C15715DE9C9E002247D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
