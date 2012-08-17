@@ -63,11 +63,11 @@
 
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView{
     // Instagram-header-toolbar-magic
-    if (self.tableView.contentOffset.y < 0){
-        [toolbar setFrame:CGRectMake(0, self.tableView.contentOffset.y, 320, 44)];
+    if (self.tableView.contentOffset.y < -44){
+        [toolbar setFrame:CGRectMake(0, 0, 320, 44)];
     }
     else{
-        [toolbar setFrame:CGRectMake(0, 0, 320, 44)];
+        [toolbar setFrame:CGRectMake(0, -self.tableView.contentOffset.y-44, 320, 44)];
     }
     [searchBar resignFirstResponder];
 }

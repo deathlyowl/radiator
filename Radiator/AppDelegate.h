@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVPlayer.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @class ListViewController;
 
