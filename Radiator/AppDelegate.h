@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVPlayer.h>
 
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (nonatomic, retain) AVPlayer *player;
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) ViewController *viewController;
 
 @end
