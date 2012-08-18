@@ -16,6 +16,7 @@
 		FA6B32AE15DF8D73007A0405 /* szczecinThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6B32AD15DF8D73007A0405 /* szczecinThumb.png */; };
 		FA6B32B115DF8E3E007A0405 /* talking.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6B32AF15DF8E3E007A0405 /* talking.png */; };
 		FA6B32B215DF8E3E007A0405 /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6B32B015DF8E3E007A0405 /* music.png */; };
+		FA6B32B815DF9111007A0405 /* regional.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6B32B715DF9111007A0405 /* regional.png */; };
 		FA72C13C15DE9C9E002247D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C13B15DE9C9E002247D3 /* UIKit.framework */; };
 		FA72C13E15DE9C9E002247D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C13D15DE9C9E002247D3 /* Foundation.framework */; };
 		FA72C14015DE9C9E002247D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C13F15DE9C9E002247D3 /* CoreGraphics.framework */; };
@@ -48,6 +49,7 @@
 		FA6B32AD15DF8D73007A0405 /* szczecinThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = szczecinThumb.png; sourceTree = "<group>"; };
 		FA6B32AF15DF8E3E007A0405 /* talking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = talking.png; sourceTree = "<group>"; };
 		FA6B32B015DF8E3E007A0405 /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
+		FA6B32B715DF9111007A0405 /* regional.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = regional.png; sourceTree = "<group>"; };
 		FA72C13715DE9C9D002247D3 /* Radiator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radiator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA72C13B15DE9C9E002247D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA72C13D15DE9C9E002247D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -181,6 +183,7 @@
 				FA18AC8D15DEA772002B1689 /* tokfm.png */,
 				FA6B32AF15DF8E3E007A0405 /* talking.png */,
 				FA6B32B015DF8E3E007A0405 /* music.png */,
+				FA6B32B715DF9111007A0405 /* regional.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				FA6B32AE15DF8D73007A0405 /* szczecinThumb.png in Resources */,
 				FA6B32B115DF8E3E007A0405 /* talking.png in Resources */,
 				FA6B32B215DF8E3E007A0405 /* music.png in Resources */,
+				FA6B32B815DF9111007A0405 /* regional.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

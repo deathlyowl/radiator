@@ -3,16 +3,20 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>description</key>
+		<string>Stacja regionalna - Szczecin</string>
 		<key>name</key>
 		<string>Polskie Radio Szczecin</string>
 		<key>URL</key>
 		<string>http://stream.nadaje.com:8050/</string>
 		<key>category</key>
-		<string>music</string>
+		<string>regional</string>
 		<key>artworkName</key>
 		<string>szczecin</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string>Pop/Rock</string>
 		<key>category</key>
 		<string>music</string>
 		<key>name</key>
@@ -23,6 +27,8 @@
 		<string>eskaRock</string>
 	</dict>
 	<dict>
+		<key>description</key>
+		<string>Newsy i publicystyka</string>
 		<key>name</key>
 		<string>TOK FM</string>
 		<key>URL</key>

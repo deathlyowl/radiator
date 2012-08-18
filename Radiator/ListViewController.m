@@ -58,7 +58,7 @@
     
     [cell.imageView setImage:[UIImage imageNamed:[station objectForKey:@"category"]]];
     [cell.textLabel setText:[station objectForKey:@"name"]];
-    [cell.detailTextLabel setText:@"opis, czy coś"];
+    [cell.detailTextLabel setText:[station objectForKey:@"description"]];
 
     return cell;
 }
