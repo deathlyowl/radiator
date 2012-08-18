@@ -118,6 +118,10 @@
     [cell.imageView setImage:[UIImage imageNamed:[station objectForKey:@"category"]]];
     [cell.textLabel setText:[station objectForKey:@"name"]];
     [cell.detailTextLabel setText:[station objectForKey:@"description"]];
+    
+    UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 66)];
+    [selectedBackgroundView setBackgroundColor:[UIColor colorWithWhite:.28 alpha:1.]];
+    [cell setSelectedBackgroundView:selectedBackgroundView];
 
 
     
