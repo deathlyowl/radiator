@@ -136,7 +136,9 @@
     [cell.imageView setHighlightedImage:[UIImage imageNamed:[[[station objectForKey:@"category"] stringByAppendingString:loveString] stringByAppendingString:@"High"]]];
     
     UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 66)];
+    UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"selectedCell"]];
     [selectedBackgroundView setBackgroundColor:[UIColor colorWithWhite:.28 alpha:1.]];
+    [selectedBackgroundView addSubview:image];
     [cell setSelectedBackgroundView:selectedBackgroundView];
         
     if (station == currentStation) [cell addSubview:playingIndicator];
