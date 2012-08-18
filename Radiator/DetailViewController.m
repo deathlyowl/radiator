@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Favourites.h"
 
 @interface DetailViewController ()
 
@@ -14,6 +15,7 @@
 
 @implementation DetailViewController
 @synthesize artwork;
+@synthesize heartButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,11 +32,13 @@
     // Do any additional setup after loading the view from its nib.
     
     [artwork setImage:[UIImage imageNamed:[currentStation objectForKey:@"artworkName"]]];
+    [heartButton setSelected:[Favourites isFavourite:[currentStation objectForKey:@"name"]]];
 }
 
 - (void)viewDidUnload
 {
     [self setArtwork:nil];
+    [self setHeartButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -48,8 +52,20 @@
 - (IBAction)dismissMe:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
 }
+
+- (IBAction)changeLove:(id)sender {
+    if ([Favourites isFavourite:[currentStation objectForKey:@"name"]] )
+        [Favourites removeFavourite:[currentStation objectForKey:@"name"]];
+    else
+        [Favourites addToFavourites:[currentStation objectForKey:@"name"]];
+    
+    [heartButton setSelected:[Favourites isFavourite:[currentStation objectForKey:@"name"]]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"loveHurtsNotification" object:nil];
+}
+
 - (void)dealloc {
     [artwork release];
+    [heartButton release];
     [super dealloc];
 }
 @end

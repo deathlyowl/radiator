@@ -15,4 +15,5 @@
     NSArray *stations;
     NSDictionary *currentStation;
     AppDelegate *delegate;
+    NSSet *favouritesSet;
 #endif

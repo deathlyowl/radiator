@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Favourites.h"
 
 #import "ListViewController.h"
 
@@ -20,11 +21,14 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     delegate = self;
     
     stations = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"]];
     
     [stations retain];
+    
+    [Favourites loadFavourites];
     
     currentStation = nil;
 

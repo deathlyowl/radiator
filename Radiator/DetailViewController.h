@@ -11,7 +11,9 @@
 @interface DetailViewController : UIViewController
 
 @property (retain, nonatomic) IBOutlet UIImageView *artwork;
+@property (retain, nonatomic) IBOutlet UIButton *heartButton;
 
 - (IBAction)dismissMe:(id)sender;
+- (IBAction)changeLove:(id)sender;
 
 @end

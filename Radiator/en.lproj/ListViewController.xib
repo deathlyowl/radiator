@@ -44,7 +44,6 @@
 						<array class="NSMutableArray" key="NSSubviews"/>
 						<string key="NSFrameSize">{320, 453}</string>
 						<reference key="NSSuperview" ref="774585933"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="539601472"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="1059637924">
@@ -58,6 +57,7 @@
 						<double key="IBUIContentInset.left">0.0</double>
 						<double key="IBUIContentInset.right">0.0</double>
 						<bool key="IBUIAlwaysBounceVertical">YES</bool>
+						<int key="IBUIIndicatorStyle">1</int>
 						<int key="IBUISeparatorStyle">1</int>
 						<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
 						<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
@@ -74,7 +74,6 @@
 								<int key="NSvFlags">290</int>
 								<string key="NSFrameSize">{232, 44}</string>
 								<reference key="NSSuperview" ref="539601472"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="516927972"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">3</int>
@@ -88,7 +87,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{232, 0}, {44, 44}}</string>
 								<reference key="NSSuperview" ref="539601472"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="654729880"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -103,10 +101,6 @@
 								<object class="NSColor" key="IBUINormalTitleShadowColor" id="448513762">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC41AA</bytes>
-								</object>
-								<object class="NSCustomResource" key="IBUIHighlightedImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">heartHighlighted.png</string>
 								</object>
 								<object class="NSCustomResource" key="IBUISelectedImage">
 									<string key="NSClassName">NSImage</string>
@@ -131,7 +125,6 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{276, 0}, {44, 44}}</string>
 								<reference key="NSSuperview" ref="539601472"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="577897202"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -145,10 +138,6 @@
 									<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 								</object>
 								<reference key="IBUINormalTitleShadowColor" ref="448513762"/>
-								<object class="NSCustomResource" key="IBUIHighlightedImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">bullhornHighlighted.png</string>
-								</object>
 								<object class="NSCustomResource" key="IBUINormalImage">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">bullhorn.png</string>
@@ -161,7 +150,6 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrameSize">{320, 44}</string>
 								<reference key="NSSuperview" ref="539601472"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="516335303"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -174,7 +162,6 @@
 						</array>
 						<string key="NSFrameSize">{320, 44}</string>
 						<reference key="NSSuperview" ref="774585933"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="70870438"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -188,7 +175,6 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{0, 416}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -201,7 +187,6 @@
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="227275317"/>
 				<reference key="IBUIBackgroundColor" ref="1059637924"/>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -244,6 +229,22 @@
 						<reference key="destination" ref="70870438"/>
 					</object>
 					<int key="connectionID">17</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">nowPlayingButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="654729880"/>
+					</object>
+					<int key="connectionID">22</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">heartButton</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="516335303"/>
+					</object>
+					<int key="connectionID">23</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -360,7 +361,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">21</int>
+			<int key="maxID">23</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -368,11 +369,21 @@
 					<string key="className">ListViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="heartButton">UIButton</string>
+						<string key="nowPlayingButton">UIButton</string>
 						<string key="searchBar">UISearchBar</string>
 						<string key="tableView">UITableView</string>
 						<string key="toolbar">UIView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="heartButton">
+							<string key="name">heartButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="nowPlayingButton">
+							<string key="name">nowPlayingButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="searchBar">
 							<string key="name">searchBar</string>
 							<string key="candidateClassName">UISearchBar</string>
@@ -404,9 +415,7 @@
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="bottomFrame.png">{320, 44}</string>
 			<string key="bullhorn.png">{24, 17}</string>
-			<string key="bullhornHighlighted.png">{24, 17}</string>
 			<string key="heart.png">{24, 21}</string>
-			<string key="heartHighlighted.png">{24, 21}</string>
 			<string key="heartRed.png">{24, 21}</string>
 			<string key="topFrame.png">{320, 44}</string>
 		</dictionary>
