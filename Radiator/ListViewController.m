@@ -22,6 +22,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // This little for is for hacking the KeyboardAppearance and
+    // SearchBarBackground.
+    for(UIView *subview in searchBar.subviews){
+        if([subview isKindOfClass: [UITextField class]]) [(UITextField *)subview setKeyboardAppearance: UIKeyboardAppearanceAlert];
+        if([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) [subview setAlpha:0.0F];
+    }
 }
 
 - (void)viewDidUnload
@@ -49,7 +56,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"] autorelease];
     }
     
-    [cell.imageView setImage:[UIImage imageNamed:[station objectForKey:@"artworkName"]]];
+    [cell.imageView setImage:[UIImage imageNamed:[station objectForKey:@"category"]]];
     [cell.textLabel setText:[station objectForKey:@"name"]];
     [cell.detailTextLabel setText:@"opis, czy coś"];
 

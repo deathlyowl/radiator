@@ -36,7 +36,6 @@
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
     
-    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.viewController = [[[ListViewController alloc] initWithNibName:@"ListViewController" bundle:nil] autorelease];
@@ -46,24 +45,18 @@
 }
 
 - (void) remoteControlReceivedWithEvent:(UIEvent *) receivedEvent {
-    
     if (receivedEvent.type == UIEventTypeRemoteControl) {
-        
         switch (receivedEvent.subtype) {
-                
             case UIEventSubtypeRemoteControlTogglePlayPause:
                 if (Player.isPlaying)   [Player pause];
                 else                    [Player play];
                 break;
-                
             case UIEventSubtypeRemoteControlPreviousTrack:
                 //[self previousTrack: nil];
                 break;
-                
             case UIEventSubtypeRemoteControlNextTrack:
                 //[self nextTrack: nil];
                 break;
-                
             default:
                 break;
         }

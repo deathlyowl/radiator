@@ -7,10 +7,14 @@
 		<string>Polskie Radio Szczecin</string>
 		<key>URL</key>
 		<string>http://stream.nadaje.com:8050/</string>
+		<key>category</key>
+		<string>music</string>
 		<key>artworkName</key>
 		<string>szczecin</string>
 	</dict>
 	<dict>
+		<key>category</key>
+		<string>music</string>
 		<key>name</key>
 		<string>Eska ROCK</string>
 		<key>URL</key>
@@ -25,6 +29,8 @@
 		<string>http://mainstream.radioagora.pl/tuba10-1.mp3</string>
 		<key>artworkName</key>
 		<string>tokfm</string>
+		<key>category</key>
+		<string>talking</string>
 	</dict>
 </array>
 </plist>
