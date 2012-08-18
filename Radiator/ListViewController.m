@@ -62,7 +62,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [nowPlayingButton setEnabled:[Player isPlaying]];
+    [nowPlayingButton setEnabled:currentStation != nil];
     [self sortTable];
     [self.tableView reloadData];
 }
@@ -166,8 +166,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    DetailViewController *detailView = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-    
     NSDictionary *station;
     
     if (lovelyMode) station = [lovelyStations objectAtIndex:indexPath.row];
@@ -176,7 +174,6 @@
     [localStations retain];
     [lovelyStations retain];
     
-    [detailView setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     
     if (station != currentStation) {
         [Player setStation:station];
@@ -184,10 +181,15 @@
     }
     else if (![Player isPlaying]) [Player play];
     
-
-    
-    [self presentModalViewController:detailView animated:YES];
+    [self goToDetailView:nil];
 }
+
+- (IBAction)goToDetailView:(id)sender{
+    DetailViewController *detailView = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    [detailView setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self presentModalViewController:detailView animated:YES];    
+}
+
 
 - (void) refreshLove{
     // Changes to animate

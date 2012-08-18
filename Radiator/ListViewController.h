@@ -25,6 +25,8 @@
 @property (retain, nonatomic) IBOutlet UIButton *nowPlayingButton;
 @property (retain, nonatomic) IBOutlet UIButton *heartButton;
 
+- (IBAction)goToDetailView:(id)sender;
+
 - (void) refreshLove;
 - (void) sortTable;
 
