@@ -17,6 +17,9 @@
     
     // Pull to heart
     BOOL lovelyMode, loveMe;
+    
+    // Playing indicator
+    UIImageView *playingIndicator;
 }
 
 @property (retain, nonatomic) IBOutlet UIView *toolbar;

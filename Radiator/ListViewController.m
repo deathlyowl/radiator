@@ -41,6 +41,9 @@
         
     [self refreshLove];
     
+    playingIndicator = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nowPlaying"]];
+    [playingIndicator setFrame:CGRectMake(287., 0., 33., 66.)];
+    
     // This little for is for hacking the KeyboardAppearance and
     // SearchBarBackground.
     for(UIView *subview in searchBar.subviews){
@@ -113,17 +116,27 @@
     cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"] autorelease];
+        UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 66)];
+        UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(0, 65, 320, 1)];
+        [separator setBackgroundColor:[UIColor colorWithWhite:.9 alpha:.7]];
+        [backgroundView addSubview:separator];
+        [cell setBackgroundView:backgroundView];
     }
     
-    [cell.imageView setImage:[UIImage imageNamed:[station objectForKey:@"category"]]];
+    NSString *loveString = @"";
+    if ([Favourites isFavourite:[station objectForKey:@"name"]]) loveString = @"Love";
+    
+    [cell.imageView setImage:[UIImage imageNamed:[[station objectForKey:@"category"] stringByAppendingString:loveString]]];
     [cell.textLabel setText:[station objectForKey:@"name"]];
     [cell.detailTextLabel setText:[station objectForKey:@"description"]];
+    
+    [cell.imageView setHighlightedImage:[UIImage imageNamed:[[[station objectForKey:@"category"] stringByAppendingString:loveString] stringByAppendingString:@"High"]]];
     
     UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 66)];
     [selectedBackgroundView setBackgroundColor:[UIColor colorWithWhite:.28 alpha:1.]];
     [cell setSelectedBackgroundView:selectedBackgroundView];
-
-
+        
+    if (station == currentStation) [cell addSubview:playingIndicator];
     
     return cell;
 }
@@ -172,8 +185,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *station;
     
+    BOOL goThere = NO;
+    
     if (lovelyMode) station = [lovelyStations objectAtIndex:indexPath.row];
     else            station = [localStations objectAtIndex:indexPath.row];
+    
+    goThere = station == currentStation;
     
     [localStations retain];
     [lovelyStations retain];
@@ -185,7 +202,10 @@
     }
     else if (![Player isPlaying]) [Player play];
     
-    [self goToDetailView:nil];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [nowPlayingButton setEnabled:currentStation != nil];
+    
+    if (goThere) [self goToDetailView:nil];
 }
 
 - (IBAction)goToDetailView:(id)sender{
