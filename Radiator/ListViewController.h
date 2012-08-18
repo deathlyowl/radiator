@@ -32,5 +32,6 @@
 
 - (void) refreshLove;
 - (void) sortTable;
+- (void) showCurrentlyPlayingCell;
 
 @end

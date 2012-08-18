@@ -83,6 +83,8 @@
 
 -(BOOL)canBecomeFirstResponder {
     // Enabling shake gesture, part II.
+    
+    
     return YES;
 }
 
@@ -96,7 +98,7 @@
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     // When device is shaked, view changes to map.
-    //if (event.type == UIEventSubtypeMotionShake) [self goToMap];
+    if (event.type == UIEventSubtypeMotionShake) [self showCurrentlyPlayingCell];
 }
 
 #pragma mark -
@@ -176,6 +178,28 @@
     if (lovelyMode) [tableView deleteRowsAtIndexPaths:differences withRowAnimation:UITableViewRowAnimationFade];
     else            [tableView insertRowsAtIndexPaths:differences withRowAnimation:UITableViewRowAnimationFade];
     [tableView endUpdates];
+    
+    //[self showCurrentlyPlayingCell];
+    
+}
+
+- (void) showCurrentlyPlayingCell{
+    // Scroll to playing station
+    if (currentStation) {
+        int counter = -1;
+        if (lovelyMode) {
+            for (int i=0; i<lovelyStations.count; i++) if ([[lovelyStations objectAtIndex:i] isEqual:currentStation]) {
+                counter = i;
+                break;
+            }
+        } else{
+            for (int i=0; i<localStations.count; i++) if ([[localStations objectAtIndex:i] isEqual:currentStation]) {
+                counter = i;
+                break;
+            }
+        }
+        if (counter != -1) [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:counter inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

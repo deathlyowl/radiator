@@ -59,6 +59,10 @@
 						<double key="IBUIContentInset.left">0.0</double>
 						<double key="IBUIContentInset.right">0.0</double>
 						<bool key="IBUIAlwaysBounceVertical">YES</bool>
+						<double key="IBUIScrollIndicatorInsets.top">44</double>
+						<double key="IBUIScrollIndicatorInsets.bottom">4</double>
+						<double key="IBUIScrollIndicatorInsets.left">0.0</double>
+						<double key="IBUIScrollIndicatorInsets.right">0.0</double>
 						<int key="IBUIIndicatorStyle">1</int>
 						<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
 						<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
@@ -76,7 +80,7 @@
 								<string key="NSFrameSize">{232, 44}</string>
 								<reference key="NSSuperview" ref="539601472"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="516927972"/>
+								<reference key="NSNextKeyView" ref="516335303"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">3</int>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -129,7 +133,7 @@
 								<string key="NSFrame">{{276, 0}, {44, 44}}</string>
 								<reference key="NSSuperview" ref="539601472"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="577897202"/>
+								<reference key="NSNextKeyView" ref="516927972"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -149,21 +153,6 @@
 								<reference key="IBUIFontDescription" ref="568389488"/>
 								<reference key="IBUIFont" ref="147974128"/>
 							</object>
-							<object class="IBUIImageView" id="516927972">
-								<reference key="NSNextResponder" ref="539601472"/>
-								<int key="NSvFlags">274</int>
-								<string key="NSFrameSize">{320, 44}</string>
-								<reference key="NSSuperview" ref="539601472"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="516335303"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">topFrame.png</string>
-								</object>
-							</object>
 						</array>
 						<string key="NSFrameSize">{320, 44}</string>
 						<reference key="NSSuperview" ref="774585933"/>
@@ -176,12 +165,28 @@
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
+					<object class="IBUIImageView" id="516927972">
+						<reference key="NSNextResponder" ref="774585933"/>
+						<int key="NSvFlags">274</int>
+						<string key="NSFrameSize">{320, 44}</string>
+						<reference key="NSSuperview" ref="774585933"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="577897202"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">topFrame.png</string>
+						</object>
+					</object>
 					<object class="IBUIImageView" id="577897202">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{0, 416}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -314,6 +319,7 @@
 							<reference ref="577897202"/>
 							<reference ref="227275317"/>
 							<reference ref="539601472"/>
+							<reference ref="516927972"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -336,7 +342,6 @@
 							<reference ref="70870438"/>
 							<reference ref="516335303"/>
 							<reference ref="654729880"/>
-							<reference ref="516927972"/>
 						</array>
 						<reference key="parent" ref="774585933"/>
 						<string key="objectName">Toolbar</string>
@@ -361,7 +366,7 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
 						<reference key="object" ref="516927972"/>
-						<reference key="parent" ref="539601472"/>
+						<reference key="parent" ref="774585933"/>
 						<string key="objectName">Top frame</string>
 					</object>
 				</array>

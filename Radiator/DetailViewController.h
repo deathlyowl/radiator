@@ -12,8 +12,14 @@
 
 @property (retain, nonatomic) IBOutlet UIImageView *artwork;
 @property (retain, nonatomic) IBOutlet UIButton *heartButton;
+@property (retain, nonatomic) IBOutlet UILabel *nameLabel;
+@property (retain, nonatomic) IBOutlet UIImageView *pictogramView;
+@property (retain, nonatomic) IBOutlet UIButton *playButton;
 
 - (IBAction)dismissMe:(id)sender;
 - (IBAction)changeLove:(id)sender;
+- (IBAction)playPause:(id)sender;
+
+- (void) configureElements;
 
 @end
