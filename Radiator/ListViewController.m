@@ -53,6 +53,58 @@
     }
 }
 
+- (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
+    // Trimming leading and trailing whitespaces and another shit about looong
+    // spaces
+    NSString *realSearchText = [[searchText stringByReplacingOccurrencesOfString:@" +" withString:@" "
+                                                                         options:NSRegularExpressionSearch
+                                                                           range:NSMakeRange(0, searchText.length)] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
+    // Copy of array for search
+    NSMutableArray *searchArray = [NSMutableArray arrayWithArray:stations];
+    
+    // Index of elements to hide by search
+    NSMutableIndexSet *indexSet = [[NSMutableIndexSet alloc] init];
+    
+    // Exploding (trimmed and cleaned) search formula to words
+    NSArray *words = [realSearchText componentsSeparatedByString:@" "];
+    
+    // Helping flag and helper
+    BOOL passed;
+    int factor;
+    
+    // Search algorithm!
+    if([realSearchText length]) {                                               // if search forula occurs
+        for (NSDictionary *item in searchArray) {                               // for all elements in array
+            factor = words.count;                                               // count words in formula
+            for (NSString *word in words) {                                     // and for every word in formula
+                passed = NO;                                                    // initialize flag as negative
+                if ([[item objectForKey:@"name"] rangeOfString:word options:NSCaseInsensitiveSearch].length || [[item objectForKey:@"description"] rangeOfString:word options:NSCaseInsensitiveSearch].length)
+                    passed = YES;                                               // and if a word is in a range of elements NAME set flag as positive
+                if (passed) factor--;                                           // if, after word, a flag is positive, decrease word counter by one
+            }
+            if (factor) [indexSet addIndex:[searchArray indexOfObject:item]];   // and if, after search formula, couter is NOT decreased to 0, save elements index
+        }
+    }
+    
+    // After searching, removing all elements from saved set
+    [searchArray removeObjectsAtIndexes:indexSet];
+    
+    // Change pointer to list, with converting searchArray to unmutable array
+    localStations = searchArray;
+    
+    // Sorting table by distance (sort is lost cause of static characteristic)
+    // of locations array
+    [self sortTable];
+    
+    // Reloading table
+    [self.tableView reloadData];
+}
+
+- (void) searchBarSearchButtonClicked:(UISearchBar *)theSearchBar {
+    // Hide keyboard after clicking searchButton
+    [searchBar resignFirstResponder];
+}
+
 - (void)viewDidUnload
 {
     [self setToolbar:nil];

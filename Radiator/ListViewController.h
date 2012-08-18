@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Player.h"
 
-@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>{
     // localStations is a stations copy, showed as list in main tableView, filtered by search
     // and sorted by name
     NSArray *localStations, *lovelyStations;
