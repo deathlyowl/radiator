@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVPlayer.h>
+#import <MediaPlayer/MediaPlayer.h>
 #import "AppDelegate.h"
 
 @interface Player : NSObject
 
 + (void) play;
 + (void) pause;
-+ (void) setStreamURL:(NSString *)url;
++ (void) setStation:(NSDictionary *) station;
++ (BOOL) isPlaying;
 
 @end
 

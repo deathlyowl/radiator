@@ -22,6 +22,12 @@
 		FA72C16215DEA1AF002247D3 /* bottomFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = FA72C16015DEA1AF002247D3 /* bottomFrame.png */; };
 		FA72C16315DEA1AF002247D3 /* topFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = FA72C16115DEA1AF002247D3 /* topFrame.png */; };
 		FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */; };
+		FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */; };
+		FAEC70B915DED98900C8EA98 /* eskaRock.png in Resources */ = {isa = PBXBuildFile; fileRef = FAEC70B815DED98900C8EA98 /* eskaRock.png */; };
+		FAEC70BD15DEE43800C8EA98 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */; };
+		FAEC70BE15DEE43800C8EA98 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEC70BC15DEE43800C8EA98 /* DetailViewController.xib */; };
+		FAEC70C015DEEB6600C8EA98 /* stations.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAEC70BF15DEEB6600C8EA98 /* stations.plist */; };
+		FAEC70C615DEF46F00C8EA98 /* szczecin.png in Resources */ = {isa = PBXBuildFile; fileRef = FAEC70C515DEF46F00C8EA98 /* szczecin.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +52,13 @@
 		FA72C16015DEA1AF002247D3 /* bottomFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottomFrame.png; path = Resources/bottomFrame.png; sourceTree = "<group>"; };
 		FA72C16115DEA1AF002247D3 /* topFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topFrame.png; path = Resources/topFrame.png; sourceTree = "<group>"; };
 		FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		FAEC70B815DED98900C8EA98 /* eskaRock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eskaRock.png; sourceTree = "<group>"; };
+		FAEC70BA15DEE43800C8EA98 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		FAEC70BC15DEE43800C8EA98 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		FAEC70BF15DEEB6600C8EA98 /* stations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stations.plist; sourceTree = "<group>"; };
+		FAEC70C515DEF46F00C8EA98 /* szczecin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = szczecin.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */,
 				FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */,
 				FA72C15E15DE9F5F002247D3 /* Security.framework in Frameworks */,
 				FA72C15C15DE9D55002247D3 /* AVFoundation.framework in Frameworks */,
@@ -85,6 +99,7 @@
 		FA72C13A15DE9C9D002247D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */,
 				FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */,
 				FA72C15D15DE9F5F002247D3 /* Security.framework */,
 				FA72C15B15DE9D55002247D3 /* AVFoundation.framework */,
@@ -104,7 +119,11 @@
 				FA72C15915DE9D3A002247D3 /* Player.m */,
 				FA72C14D15DE9C9E002247D3 /* ListViewController.h */,
 				FA72C14E15DE9C9E002247D3 /* ListViewController.m */,
+				FAEC70BA15DEE43800C8EA98 /* DetailViewController.h */,
+				FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */,
+				FAEC70BC15DEE43800C8EA98 /* DetailViewController.xib */,
 				FA72C15015DE9C9E002247D3 /* ListViewController.xib */,
+				FAEC70BF15DEEB6600C8EA98 /* stations.plist */,
 				FA72C15F15DEA146002247D3 /* Resources */,
 				FA72C14215DE9C9E002247D3 /* Supporting Files */,
 			);
@@ -125,8 +144,10 @@
 		FA72C15F15DEA146002247D3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAEC70B815DED98900C8EA98 /* eskaRock.png */,
 				FA72C16015DEA1AF002247D3 /* bottomFrame.png */,
 				FA72C16115DEA1AF002247D3 /* topFrame.png */,
+				FAEC70C515DEF46F00C8EA98 /* szczecin.png */,
 				FA18AC8D15DEA772002B1689 /* tokfm.png */,
 			);
 			name = Resources;
@@ -188,6 +209,10 @@
 				FA72C16215DEA1AF002247D3 /* bottomFrame.png in Resources */,
 				FA72C16315DEA1AF002247D3 /* topFrame.png in Resources */,
 				FA18AC8E15DEA772002B1689 /* tokfm.png in Resources */,
+				FAEC70B915DED98900C8EA98 /* eskaRock.png in Resources */,
+				FAEC70BE15DEE43800C8EA98 /* DetailViewController.xib in Resources */,
+				FAEC70C015DEEB6600C8EA98 /* stations.plist in Resources */,
+				FAEC70C615DEF46F00C8EA98 /* szczecin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +227,7 @@
 				FA72C14C15DE9C9E002247D3 /* AppDelegate.m in Sources */,
 				FA72C14F15DE9C9E002247D3 /* ListViewController.m in Sources */,
 				FA72C15A15DE9D3A002247D3 /* Player.m in Sources */,
+				FAEC70BD15DEE43800C8EA98 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

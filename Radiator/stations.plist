@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Polskie Radio Szczecin</string>
+		<key>URL</key>
+		<string>http://stream.nadaje.com:8050/</string>
+		<key>artworkName</key>
+		<string>szczecin</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Eska ROCK</string>
+		<key>URL</key>
+		<string>http://poznan5.radio.pionier.net.pl:8000/eskarock.mp3</string>
+		<key>artworkName</key>
+		<string>eskaRock</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>TOK FM</string>
+		<key>URL</key>
+		<string>http://mainstream.radioagora.pl/tuba10-1.mp3</string>
+		<key>artworkName</key>
+		<string>tokfm</string>
+	</dict>
+</array>
+</plist>

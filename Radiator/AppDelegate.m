@@ -19,12 +19,22 @@
     [super dealloc];
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    _player = nil;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    stations = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"]];
+    
+    [stations retain];
+    
+    currentStation = nil;
+
+    _player = [[AVPlayer alloc] init];
     
     [[AVAudioSession sharedInstance] setDelegate: self];
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
+    
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
@@ -32,6 +42,31 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void) remoteControlReceivedWithEvent:(UIEvent *) receivedEvent {
+    
+    if (receivedEvent.type == UIEventTypeRemoteControl) {
+        
+        switch (receivedEvent.subtype) {
+                
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+                if (Player.isPlaying)   [Player pause];
+                else                    [Player play];
+                break;
+                
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                //[self previousTrack: nil];
+                break;
+                
+            case UIEventSubtypeRemoteControlNextTrack:
+                //[self nextTrack: nil];
+                break;
+                
+            default:
+                break;
+        }
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

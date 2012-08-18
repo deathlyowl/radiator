@@ -7,6 +7,7 @@
 //
 
 #import "ListViewController.h"
+#import "DetailViewController.h"
 
 @interface ListViewController ()
 
@@ -32,30 +33,24 @@
     // Release any retained subviews of the main view.
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    //[Player setStreamURL:@"http://mainstream.radioagora.pl/tuba10-1.mp3"];
-    [Player setStreamURL:@"http://poznan5.radio.pionier.net.pl:8000/eskarock.mp3"];
-    [Player play];
-}
-
 #pragma mark -
 #pragma mark Table view
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 4;
+    return stations.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
+    NSDictionary *station = [stations objectAtIndex:indexPath.row];
     
     cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"] autorelease];
     }
     
-    [cell.imageView setImage:[UIImage imageNamed:@"tokfm"]];
-    [cell.textLabel setText:@"Tokfm"];
+    [cell.imageView setImage:[UIImage imageNamed:[station objectForKey:@"artworkName"]]];
+    [cell.textLabel setText:[station objectForKey:@"name"]];
     [cell.detailTextLabel setText:@"opis, czy coś"];
 
     return cell;
@@ -76,6 +71,22 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return UIInterfaceOrientationPortrait == interfaceOrientation;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DetailViewController *detailView = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    
+    NSDictionary *station = [stations objectAtIndex:indexPath.row];
+    
+    [detailView setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    
+    if (station != currentStation) {
+        [Player setStation:station];
+        [Player play];
+    }
+    else if (![Player isPlaying]) [Player play];
+    
+    [self presentModalViewController:detailView animated:YES];
 }
 
 - (void)dealloc {

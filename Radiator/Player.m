@@ -20,10 +20,26 @@
     [delegate.player pause];
 }
 
-+ (void) setStreamURL:(NSString *)url{
++ (void) setStation:(NSDictionary *) station{
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self pause];
-    delegate.player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:url]];
+    
+    currentStation = station;
+    
+    delegate.player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:[station objectForKey:@"URL"]]];
+    
+    MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:[station objectForKey:@"artworkName"]]];
+    
+    NSArray *keys = [NSArray arrayWithObjects:MPMediaItemPropertyAlbumTitle, MPMediaItemPropertyArtist, MPMediaItemPropertyArtwork, MPMediaItemPropertyTitle, nil];
+    NSArray *values = [NSArray arrayWithObjects:@"", @"", albumArt, [station objectForKey:@"name"], nil];
+    NSDictionary *mediaInfo = [NSDictionary dictionaryWithObjects:values forKeys:keys];
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:mediaInfo];
+
+}
+
++ (BOOL) isPlaying{
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    return delegate.player.rate != 0.;
 }
 
 @end
