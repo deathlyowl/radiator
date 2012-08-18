@@ -11,17 +11,14 @@
 @implementation Player
 
 + (void) play {
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.player play];
 }
 
 + (void) pause {
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [delegate.player pause];
 }
 
 + (void) setStation:(NSDictionary *) station{
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self pause];
     
     currentStation = station;
@@ -38,7 +35,6 @@
 }
 
 + (BOOL) isPlaying{
-    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     return delegate.player.rate != 0.;
 }
 

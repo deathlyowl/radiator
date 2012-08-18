@@ -20,6 +20,7 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    delegate = self;
     
     stations = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"]];
     

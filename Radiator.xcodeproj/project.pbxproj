@@ -79,6 +79,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA6B329D15DF830F007A0405 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA72C14D15DE9C9E002247D3 /* ListViewController.h */,
+				FA72C14E15DE9C9E002247D3 /* ListViewController.m */,
+				FAEC70BA15DEE43800C8EA98 /* DetailViewController.h */,
+				FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */,
+				FAEC70BC15DEE43800C8EA98 /* DetailViewController.xib */,
+				FA72C15015DE9C9E002247D3 /* ListViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		FA72C12C15DE9C9D002247D3 = {
 			isa = PBXGroup;
 			children = (
@@ -117,12 +130,7 @@
 				FA72C14B15DE9C9E002247D3 /* AppDelegate.m */,
 				FA72C15815DE9D3A002247D3 /* Player.h */,
 				FA72C15915DE9D3A002247D3 /* Player.m */,
-				FA72C14D15DE9C9E002247D3 /* ListViewController.h */,
-				FA72C14E15DE9C9E002247D3 /* ListViewController.m */,
-				FAEC70BA15DEE43800C8EA98 /* DetailViewController.h */,
-				FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */,
-				FAEC70BC15DEE43800C8EA98 /* DetailViewController.xib */,
-				FA72C15015DE9C9E002247D3 /* ListViewController.xib */,
+				FA6B329D15DF830F007A0405 /* Views */,
 				FAEC70BF15DEEB6600C8EA98 /* stations.plist */,
 				FA72C15F15DEA146002247D3 /* Resources */,
 				FA72C14215DE9C9E002247D3 /* Supporting Files */,

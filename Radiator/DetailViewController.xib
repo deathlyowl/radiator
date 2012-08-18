@@ -61,27 +61,28 @@
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<object class="NSColor" key="IBUIBackgroundColor" id="411734277">
+						<object class="NSColor" key="IBUIBackgroundColor" id="657895694">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MCAwAA</bytes>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
-					<object class="IBUIView" id="898408324">
+					<object class="IBUIView" id="579288948">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, -5}, {320, 413}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="491397459"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<reference key="IBUIBackgroundColor" ref="411734277"/>
+						<reference key="IBUIBackgroundColor" ref="657895694"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="491397459"/>
+				<reference key="NSNextKeyView" ref="579288948"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MAA</bytes>
@@ -123,7 +124,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletCollectionConnection" key="connection">
 						<string key="label">gestureRecognizers</string>
-						<reference key="source" ref="898408324"/>
+						<reference key="source" ref="579288948"/>
 						<reference key="destination" ref="418479076"/>
 						<string key="cachedDesigntimeCollectionClassName">NSArray</string>
 						<bool key="addsContentToExistingCollection">NO</bool>
@@ -144,7 +145,7 @@
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="491397459"/>
-							<reference ref="898408324"/>
+							<reference ref="579288948"/>
 							<reference ref="423117943"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -178,8 +179,9 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
-						<reference key="object" ref="898408324"/>
+						<reference key="object" ref="579288948"/>
 						<reference key="parent" ref="191373211"/>
+						<string key="objectName">Gesture area</string>
 					</object>
 				</array>
 			</object>
