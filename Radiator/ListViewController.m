@@ -42,6 +42,7 @@
     [self refreshLove];
     
     playingIndicator = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nowPlaying"]];
+    [playingIndicator setHighlightedImage:[UIImage imageNamed:@"nowPlayingHighlighted"]];
     [playingIndicator setFrame:CGRectMake(287., 0., 33., 66.)];
     
     // This little for is for hacking the KeyboardAppearance and

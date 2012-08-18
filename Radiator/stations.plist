@@ -4,6 +4,66 @@
 <array>
 	<dict>
 		<key>description</key>
+		<string>Katolicki głos w Twoim domu</string>
+		<key>name</key>
+		<string>Maryja</string>
+		<key>URL</key>
+		<string></string>
+		<key>category</key>
+		<string>talking</string>
+		<key>artworkName</key>
+		<string>Maryja</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>Pop/Rock</string>
+		<key>name</key>
+		<string>Polskie Radio Trójka</string>
+		<key>URL</key>
+		<string></string>
+		<key>category</key>
+		<string>music</string>
+		<key>artworkName</key>
+		<string>PR3</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>Newsy i publicystyka</string>
+		<key>name</key>
+		<string>Polskie Radio Program 1</string>
+		<key>URL</key>
+		<string></string>
+		<key>category</key>
+		<string>talking</string>
+		<key>artworkName</key>
+		<string>PR1</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>Pop, Warszawa</string>
+		<key>name</key>
+		<string>Zet</string>
+		<key>URL</key>
+		<string></string>
+		<key>category</key>
+		<string>music</string>
+		<key>artworkName</key>
+		<string>Zet</string>
+	</dict>
+	<dict>
+		<key>description</key>
+		<string>Pop, Kraków</string>
+		<key>name</key>
+		<string>RMF FM</string>
+		<key>URL</key>
+		<string></string>
+		<key>category</key>
+		<string>music</string>
+		<key>artworkName</key>
+		<string>RMF</string>
+	</dict>
+	<dict>
+		<key>description</key>
 		<string>Stacja regionalna, Szczecin</string>
 		<key>name</key>
 		<string>Polskie Radio Szczecin</string>
