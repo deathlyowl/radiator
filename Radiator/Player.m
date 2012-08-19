@@ -24,8 +24,14 @@
     currentStation = station;
     delegate.player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:[station objectForKey:@"URL"]]];
     
-    MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:[station objectForKey:@"artworkName"]]];
-    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"", MPMediaItemPropertyAlbumTitle, @"", MPMediaItemPropertyArtist, artwork, MPMediaItemPropertyArtwork, [station objectForKey:@"name"], MPMediaItemPropertyTitle, nil]];
+    UIImage *image = [UIImage imageNamed:[station objectForKey:@"artworkName"]];
+    if (image) {
+        MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithImage:image];
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"", MPMediaItemPropertyAlbumTitle, @"", MPMediaItemPropertyArtist, artwork, MPMediaItemPropertyArtwork, [station objectForKey:@"name"], MPMediaItemPropertyTitle, nil]];
+    }
+    else{
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"", MPMediaItemPropertyAlbumTitle, @"", MPMediaItemPropertyArtist, [station objectForKey:@"name"], MPMediaItemPropertyTitle, nil]];
+    }
 }
 
 + (BOOL) isPlaying{

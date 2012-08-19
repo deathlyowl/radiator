@@ -19,4 +19,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ListViewController *viewController;
 
+- (void) importStationsFromServer;
+
 @end

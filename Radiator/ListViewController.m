@@ -136,12 +136,21 @@
 -(BOOL)canBecomeFirstResponder {
     // Enabling shake gesture, part II.
     
-    
     return YES;
 }
 
 - (void) sortTable{    
-    localStations = [localStations sortedArrayUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES],nil]];
+    //localStations = [localStations sortedArrayUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES],nil]];
+    
+    localStations = [localStations sortedArrayUsingComparator:^(id a, id b) {
+        NSString *first = [a objectForKey:@"name"];
+        NSString *second = [b objectForKey:@"name"];
+        if ([[[first componentsSeparatedByString:@" "] objectAtIndex:0] isEqual:@"Radio"])
+            first = [first substringFromIndex:6];
+        if ([[[second componentsSeparatedByString:@" "] objectAtIndex:0] isEqual:@"Radio"])
+            second = [second substringFromIndex:6];
+        return [first compare:second];}
+                      ];
     
     [localStations retain];
     
@@ -192,8 +201,11 @@
     [selectedBackgroundView setBackgroundColor:[UIColor colorWithWhite:.28 alpha:1.]];
     [selectedBackgroundView addSubview:image];
     [cell setSelectedBackgroundView:selectedBackgroundView];
-        
+    
+    for (UIView *subview in cell.subviews)
+        if (subview == playingIndicator) [playingIndicator removeFromSuperview];
     if (station == currentStation) [cell addSubview:playingIndicator];
+    
     
     return cell;
 }
@@ -252,7 +264,7 @@
                 break;
             }
         }
-        if (counter != -1) [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:counter inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        if (counter != -1) [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:counter inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
     }
 }
 

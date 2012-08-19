@@ -23,6 +23,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     delegate = self;
     
+    //[self importStationsFromServer];
+    
     stations = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"]];
     
     [stations retain];
@@ -63,6 +65,39 @@
             default:
                 break;
         }
+    }
+}
+
+
+- (void) importStationsFromServer{
+    NSLog(@"Import started");
+    NSString *csvString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://ksienie.com/radiator/stacje.csv"] encoding:NSUTF8StringEncoding error:nil];
+    if (csvString) {
+        NSArray *lines = [csvString componentsSeparatedByString:@"\n"];
+        NSMutableArray *stations = [[NSMutableArray alloc] init];
+        NSMutableArray *database = [[NSMutableArray alloc] init];
+        
+        for (NSString *line in lines)
+            if (![[line substringToIndex:1] isEqualToString:@"#"])
+                [stations addObject:line];
+        
+        
+        for (NSString *station in stations) {
+            NSArray *componnents = [station componentsSeparatedByString:@";"];
+            if (componnents.count == 5) {
+                [database addObject:
+                  [NSDictionary dictionaryWithObjectsAndKeys:
+                    [componnents objectAtIndex:0], @"name",
+                    [componnents objectAtIndex:1], @"URL",
+                    [componnents objectAtIndex:2], @"description",
+                    [componnents objectAtIndex:3], @"artworkName",
+                    [componnents objectAtIndex:4], @"category", nil ]];
+            }
+        }
+        
+        NSLog(@"Database downloaded, %i stations", database.count);
+        
+        [database writeToFile:@"/Users/xehivs/Desktop/stations.plist" atomically:YES];
     }
 }
 
