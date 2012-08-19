@@ -50,6 +50,14 @@
 		FA72C15E15DE9F5F002247D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C15D15DE9F5F002247D3 /* Security.framework */; };
 		FA72C16215DEA1AF002247D3 /* bottomFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = FA72C16015DEA1AF002247D3 /* bottomFrame.png */; };
 		FA72C16315DEA1AF002247D3 /* topFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = FA72C16115DEA1AF002247D3 /* topFrame.png */; };
+		FAA0FAB615E0F54000AF4E28 /* academic.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FAB215E0F54000AF4E28 /* academic.png */; };
+		FAA0FAB715E0F54000AF4E28 /* academicHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FAB315E0F54000AF4E28 /* academicHigh.png */; };
+		FAA0FAB815E0F54000AF4E28 /* academicLove.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FAB415E0F54000AF4E28 /* academicLove.png */; };
+		FAA0FAB915E0F54000AF4E28 /* academicLoveHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FAB515E0F54000AF4E28 /* academicLoveHigh.png */; };
+		FAA0FABF15E0F54F00AF4E28 /* religion.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FABB15E0F54F00AF4E28 /* religion.png */; };
+		FAA0FAC015E0F54F00AF4E28 /* religionHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FABC15E0F54F00AF4E28 /* religionHigh.png */; };
+		FAA0FAC115E0F54F00AF4E28 /* religionLove.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FABD15E0F54F00AF4E28 /* religionLove.png */; };
+		FAA0FAC215E0F54F00AF4E28 /* religionLoveHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FABE15E0F54F00AF4E28 /* religionLoveHigh.png */; };
 		FAA64A3915DFE3F90004544E /* linen.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA64A3815DFE3F90004544E /* linen.png */; };
 		FAA64A3C15DFE49C0004544E /* topShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA64A3B15DFE49C0004544E /* topShadow.png */; };
 		FAC7940D15E01A5B009041F8 /* selectedCell.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC7940C15E01A5B009041F8 /* selectedCell.png */; };
@@ -113,6 +121,14 @@
 		FA72C15D15DE9F5F002247D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FA72C16015DEA1AF002247D3 /* bottomFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottomFrame.png; path = Resources/bottomFrame.png; sourceTree = "<group>"; };
 		FA72C16115DEA1AF002247D3 /* topFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topFrame.png; path = Resources/topFrame.png; sourceTree = "<group>"; };
+		FAA0FAB215E0F54000AF4E28 /* academic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academic.png; sourceTree = "<group>"; };
+		FAA0FAB315E0F54000AF4E28 /* academicHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academicHigh.png; sourceTree = "<group>"; };
+		FAA0FAB415E0F54000AF4E28 /* academicLove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academicLove.png; sourceTree = "<group>"; };
+		FAA0FAB515E0F54000AF4E28 /* academicLoveHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academicLoveHigh.png; sourceTree = "<group>"; };
+		FAA0FABB15E0F54F00AF4E28 /* religion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = religion.png; sourceTree = "<group>"; };
+		FAA0FABC15E0F54F00AF4E28 /* religionHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = religionHigh.png; sourceTree = "<group>"; };
+		FAA0FABD15E0F54F00AF4E28 /* religionLove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = religionLove.png; sourceTree = "<group>"; };
+		FAA0FABE15E0F54F00AF4E28 /* religionLoveHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = religionLoveHigh.png; sourceTree = "<group>"; };
 		FAA64A3815DFE3F90004544E /* linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linen.png; sourceTree = "<group>"; };
 		FAA64A3B15DFE49C0004544E /* topShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topShadow.png; sourceTree = "<group>"; };
 		FAC7940C15E01A5B009041F8 /* selectedCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedCell.png; sourceTree = "<group>"; };
@@ -147,6 +163,14 @@
 		FA4937FE15DFC0D800EC3FA9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				FAA0FABB15E0F54F00AF4E28 /* religion.png */,
+				FAA0FABC15E0F54F00AF4E28 /* religionHigh.png */,
+				FAA0FABD15E0F54F00AF4E28 /* religionLove.png */,
+				FAA0FABE15E0F54F00AF4E28 /* religionLoveHigh.png */,
+				FAA0FAB215E0F54000AF4E28 /* academic.png */,
+				FAA0FAB315E0F54000AF4E28 /* academicHigh.png */,
+				FAA0FAB415E0F54000AF4E28 /* academicLove.png */,
+				FAA0FAB515E0F54000AF4E28 /* academicLoveHigh.png */,
 				FA49380B15DFCFB700EC3FA9 /* nowPlayingHighlighted.png */,
 				FA49380315DFC64500EC3FA9 /* regionalHigh.png */,
 				FA49380415DFC64500EC3FA9 /* regionalLoveHigh.png */,
@@ -366,6 +390,14 @@
 				FA6EDAC815E013D000CA7B7E /* pause.png in Resources */,
 				FA6EDAC915E013D000CA7B7E /* play.png in Resources */,
 				FAC7940D15E01A5B009041F8 /* selectedCell.png in Resources */,
+				FAA0FAB615E0F54000AF4E28 /* academic.png in Resources */,
+				FAA0FAB715E0F54000AF4E28 /* academicHigh.png in Resources */,
+				FAA0FAB815E0F54000AF4E28 /* academicLove.png in Resources */,
+				FAA0FAB915E0F54000AF4E28 /* academicLoveHigh.png in Resources */,
+				FAA0FABF15E0F54F00AF4E28 /* religion.png in Resources */,
+				FAA0FAC015E0F54F00AF4E28 /* religionHigh.png in Resources */,
+				FAA0FAC115E0F54F00AF4E28 /* religionLove.png in Resources */,
+				FAA0FAC215E0F54F00AF4E28 /* religionLoveHigh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
