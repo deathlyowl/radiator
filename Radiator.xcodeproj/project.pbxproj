@@ -50,6 +50,7 @@
 		FA72C15E15DE9F5F002247D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C15D15DE9F5F002247D3 /* Security.framework */; };
 		FA72C16215DEA1AF002247D3 /* bottomFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = FA72C16015DEA1AF002247D3 /* bottomFrame.png */; };
 		FA72C16315DEA1AF002247D3 /* topFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = FA72C16115DEA1AF002247D3 /* topFrame.png */; };
+		FA74D5B315E2442D00F81A19 /* noRadio.png in Resources */ = {isa = PBXBuildFile; fileRef = FA74D5B215E2442D00F81A19 /* noRadio.png */; };
 		FAA0FAB615E0F54000AF4E28 /* academic.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FAB215E0F54000AF4E28 /* academic.png */; };
 		FAA0FAB715E0F54000AF4E28 /* academicHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FAB315E0F54000AF4E28 /* academicHigh.png */; };
 		FAA0FAB815E0F54000AF4E28 /* academicLove.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FAB415E0F54000AF4E28 /* academicLove.png */; };
@@ -121,6 +122,7 @@
 		FA72C15D15DE9F5F002247D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FA72C16015DEA1AF002247D3 /* bottomFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottomFrame.png; path = Resources/bottomFrame.png; sourceTree = "<group>"; };
 		FA72C16115DEA1AF002247D3 /* topFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topFrame.png; path = Resources/topFrame.png; sourceTree = "<group>"; };
+		FA74D5B215E2442D00F81A19 /* noRadio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noRadio.png; sourceTree = "<group>"; };
 		FAA0FAB215E0F54000AF4E28 /* academic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academic.png; sourceTree = "<group>"; };
 		FAA0FAB315E0F54000AF4E28 /* academicHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academicHigh.png; sourceTree = "<group>"; };
 		FAA0FAB415E0F54000AF4E28 /* academicLove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academicLove.png; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		FA4937FE15DFC0D800EC3FA9 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				FA74D5B215E2442D00F81A19 /* noRadio.png */,
 				FAA0FABB15E0F54F00AF4E28 /* religion.png */,
 				FAA0FABC15E0F54F00AF4E28 /* religionHigh.png */,
 				FAA0FABD15E0F54F00AF4E28 /* religionLove.png */,
@@ -398,6 +401,7 @@
 				FAA0FAC015E0F54F00AF4E28 /* religionHigh.png in Resources */,
 				FAA0FAC115E0F54F00AF4E28 /* religionLove.png in Resources */,
 				FAA0FAC215E0F54F00AF4E28 /* religionLoveHigh.png in Resources */,
+				FA74D5B315E2442D00F81A19 /* noRadio.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

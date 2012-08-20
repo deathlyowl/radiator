@@ -25,6 +25,8 @@
 @synthesize heartButton;
 @synthesize bottomFrame;
 @synthesize blackView;
+@synthesize nothingFound;
+@synthesize nothingBeloved;
 
 - (void)viewDidLoad
 {
@@ -118,6 +120,8 @@
     [self setBottomFrame:nil];
     [self setBlackView:nil];
     [self setNowPlayingBackground:nil];
+    [self setNothingFound:nil];
+    [self setNothingBeloved:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -172,8 +176,16 @@
 #pragma mark Table view
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (lovelyMode) return lovelyStations.count;
-    else            return localStations.count;
+    int returner = 0;
+    
+    if (lovelyMode) returner = lovelyStations.count;
+    else            returner = localStations.count;
+    
+    [nothingBeloved setHidden:returner || [searchBar.text length]];
+    [nothingFound setHidden:returner];
+    
+    
+    return returner;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -229,8 +241,6 @@
             heartButton.selected = lovelyMode;
     
     // Black end
-    
-    
     if (self.tableView.contentSize.height >= 460) {
         if (self.tableView.contentOffset.y+460. > self.tableView.contentSize.height) {
             [bottomFrame setFrame:CGRectMake(0, 416-(self.tableView.contentOffset.y+460. - self.tableView.contentSize.height), 320, 44)];
@@ -244,6 +254,8 @@
         }
     }
     else{
+        [nothingFound setFrame:CGRectMake(0, 116-(self.tableView.contentOffset.y), 320, 141)];
+        [nothingBeloved setFrame:CGRectMake(0, 116-(self.tableView.contentOffset.y), 320, 141)];
         if (self.tableView.contentOffset.y > -44) {
             [nowPlayingButton setFrame:CGRectMake(276., 0-self.tableView.contentOffset.y-44, 44, 44)];
             [nowPlayingBackground setFrame:CGRectMake(276., 0-self.tableView.contentOffset.y-44, 44, 44)];
@@ -387,6 +399,8 @@
     [bottomFrame release];
     [blackView release];
     [nowPlayingBackground release];
+    [nothingFound release];
+    [nothingBeloved release];
     [super dealloc];
 }
 @end

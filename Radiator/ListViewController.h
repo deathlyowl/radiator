@@ -30,6 +30,8 @@
 @property (retain, nonatomic) IBOutlet UIButton *heartButton;
 @property (retain, nonatomic) IBOutlet UIImageView *bottomFrame;
 @property (retain, nonatomic) IBOutlet UIView *blackView;
+@property (retain, nonatomic) IBOutlet UIView *nothingFound;
+@property (retain, nonatomic) IBOutlet UIView *nothingBeloved;
 
 - (IBAction)goToDetailView:(id)sender;
 
