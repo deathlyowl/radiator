@@ -21,7 +21,10 @@
 @synthesize tableView;
 @synthesize searchBar;
 @synthesize nowPlayingButton;
+@synthesize nowPlayingBackground;
 @synthesize heartButton;
+@synthesize bottomFrame;
+@synthesize blackView;
 
 - (void)viewDidLoad
 {
@@ -112,6 +115,9 @@
     [self setSearchBar:nil];
     [self setNowPlayingButton:nil];
     [self setHeartButton:nil];
+    [self setBottomFrame:nil];
+    [self setBlackView:nil];
+    [self setNowPlayingBackground:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -221,6 +227,36 @@
     else
         if (!loveMe)
             heartButton.selected = lovelyMode;
+    
+    // Black end
+    
+    
+    if (self.tableView.contentSize.height >= 460) {
+        if (self.tableView.contentOffset.y+460. > self.tableView.contentSize.height) {
+            [bottomFrame setFrame:CGRectMake(0, 416-(self.tableView.contentOffset.y+460. - self.tableView.contentSize.height), 320, 44)];
+            [tableView setScrollIndicatorInsets:UIEdgeInsetsMake(44., 0, 4.+(self.tableView.contentOffset.y+460. - self.tableView.contentSize.height), 0)];
+            [blackView setFrame:CGRectMake(0, 460 - (self.tableView.contentOffset.y+460. - self.tableView.contentSize.height), 320, 460)];
+        }
+        else{
+            [bottomFrame setFrame:CGRectMake(0, 416, 320, 44)];
+            [tableView setScrollIndicatorInsets:UIEdgeInsetsMake(44., 0, 4., 0)];
+            [blackView setFrame:CGRectMake(0, 460, 320, 460)];
+        }
+    }
+    else{
+        if (self.tableView.contentOffset.y > -44) {
+            [nowPlayingButton setFrame:CGRectMake(276., 0-self.tableView.contentOffset.y-44, 44, 44)];
+            [nowPlayingBackground setFrame:CGRectMake(276., 0-self.tableView.contentOffset.y-44, 44, 44)];
+            [bottomFrame setFrame:CGRectMake(0, 416-self.tableView.contentOffset.y-44, 320, 44)];
+            [blackView setFrame:CGRectMake(0, 460-self.tableView.contentOffset.y-44, 320, 460)];
+        }
+        else{
+            [nowPlayingButton setFrame:CGRectMake(276., 0, 44, 44)];
+            [nowPlayingBackground setFrame:CGRectMake(276., 0, 44, 44)];
+            [bottomFrame setFrame:CGRectMake(0, 416, 320, 44)];
+            [blackView setFrame:CGRectMake(0, 460, 320, 460)];
+        }
+    }
     
     [searchBar resignFirstResponder];
 }
@@ -348,6 +384,9 @@
     [searchBar release];
     [nowPlayingButton release];
     [heartButton release];
+    [bottomFrame release];
+    [blackView release];
+    [nowPlayingBackground release];
     [super dealloc];
 }
 @end

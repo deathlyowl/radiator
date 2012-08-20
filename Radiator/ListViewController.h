@@ -26,7 +26,10 @@
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (retain, nonatomic) IBOutlet UIButton *nowPlayingButton;
+@property (retain, nonatomic) IBOutlet UIView *nowPlayingBackground;
 @property (retain, nonatomic) IBOutlet UIButton *heartButton;
+@property (retain, nonatomic) IBOutlet UIImageView *bottomFrame;
+@property (retain, nonatomic) IBOutlet UIView *blackView;
 
 - (IBAction)goToDetailView:(id)sender;
 
