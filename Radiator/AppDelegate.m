@@ -23,9 +23,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     delegate = self;
     
-    //[self importStationsFromServer];
+    [self importStationsFromServer];
     
     stations = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"]];
+    
+    NSLog(@"SC: %i", stations.count);
     
     [stations retain];
     
@@ -68,7 +70,6 @@
     }
 }
 
-
 - (void) importStationsFromServer{
     NSLog(@"Import started");
     NSString *csvString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://ksienie.com/radiator/stacje.csv"] encoding:NSUTF8StringEncoding error:nil];
@@ -80,7 +81,6 @@
         for (NSString *line in lines)
             if (![[line substringToIndex:1] isEqualToString:@"#"])
                 [stations addObject:line];
-        
         
         for (NSString *station in stations) {
             NSArray *componnents = [station componentsSeparatedByString:@";"];
@@ -94,10 +94,8 @@
                     [componnents objectAtIndex:4], @"category", nil ]];
             }
         }
-        
-        NSLog(@"Database downloaded, %i stations", database.count);
-        
-        [database writeToFile:@"/Users/xehivs/Desktop/stations.plist" atomically:YES];
+        if (database.count)
+            [database writeToFile:[[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"] atomically:YES];
     }
 }
 
