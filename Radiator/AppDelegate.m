@@ -25,7 +25,7 @@
     
     [self importStationsFromServer];
     
-    stations = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"]];
+    stations = [NSArray arrayWithContentsOfFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"]];
     
     NSLog(@"SC: %i", stations.count);
     
@@ -72,11 +72,19 @@
 
 - (void) importStationsFromServer{
     NSLog(@"Import started");
+    
+    NSString *databasePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"];
+    NSString *defaultDatabasePath = [[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"];
+    
+    // Copy default database
+    if (![[NSFileManager defaultManager] fileExistsAtPath:databasePath]) [[NSArray arrayWithContentsOfFile:defaultDatabasePath] writeToFile:databasePath atomically:YES];
+    
+    NSMutableArray *database = [[NSMutableArray alloc] init];
+    
     NSString *csvString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://ksienie.com/radiator/stacje.csv"] encoding:NSUTF8StringEncoding error:nil];
     if (csvString) {
         NSArray *lines = [csvString componentsSeparatedByString:@"\n"];
         NSMutableArray *stations = [[NSMutableArray alloc] init];
-        NSMutableArray *database = [[NSMutableArray alloc] init];
         
         for (NSString *line in lines)
             if (![[line substringToIndex:1] isEqualToString:@"#"])
@@ -94,8 +102,7 @@
                     [componnents objectAtIndex:4], @"category", nil ]];
             }
         }
-        if (database.count)
-            [database writeToFile:[[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"] atomically:YES];
+        if (database.count) [database writeToFile:databasePath atomically:YES];
     }
 }
 
