@@ -11,5 +11,6 @@
 @interface RootViewController : UITableViewController
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *pauseButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *playButton;
+@property (retain, nonatomic) IBOutlet UIBarButtonItem *heartButton;
 
 @end

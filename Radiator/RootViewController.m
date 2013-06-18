@@ -26,6 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Scroll off the searchbar
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                          atScrollPosition:UITableViewScrollPositionTop
+                                  animated:NO];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,12 +48,17 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return stations.count;
+    switch (section) {
+        case 0: return 2;
+        case 1: return 5;
+        case 2: return stations.count;
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -59,11 +68,19 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[station objectForKey:@"category"]
                                                             forIndexPath:indexPath];
     
-    
     [cell.textLabel setText:[station objectForKey:@"name"]];
     [cell.detailTextLabel setText:[station objectForKey:@"description"]];
     
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    switch (section) {
+        case 0: if(1 == 0) return nil; else return @"Ulubione";
+        case 1: if(1 == 0) return nil; else return @"W okolicy";
+        case 2: if(stations.count == 0) return nil; else return @"Wszystkie";
+    }
+    return nil;
 }
 
 
@@ -77,8 +94,12 @@
     
     
     self.navigationItem.rightBarButtonItem = self.pauseButton;
+    self.navigationItem.leftBarButtonItem = self.heartButton;
     
     [self.navigationItem setTitle:[station objectForKey:@"name"]];
+    
+    [self.tableView deselectRowAtIndexPath:indexPath
+                                  animated:YES];
 }
 
 /*
@@ -135,6 +156,7 @@
 - (void)dealloc {
     [_pauseButton release];
     [_playButton release];
+    [_heartButton release];
     [super dealloc];
 }
 @end

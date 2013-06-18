@@ -23,6 +23,7 @@
 		FA8E2F7D1770B31E004AB962 /* StationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E2F7C1770B31E004AB962 /* StationCell.m */; };
 		FA8E2F831770BAC7004AB962 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8E2F821770BAC7004AB962 /* Icons.xcassets */; };
 		FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */; };
+		FAE2456C1770D08400D021D8 /* glyphish.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAE2456B1770D08300D021D8 /* glyphish.ttf */; };
 		FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */; };
 		FAEC70BD15DEE43800C8EA98 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */; };
 		FAEC70C015DEEB6600C8EA98 /* stations.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAEC70BF15DEEB6600C8EA98 /* stations.plist */; };
@@ -54,6 +55,7 @@
 		FA8E2F7C1770B31E004AB962 /* StationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationCell.m; sourceTree = "<group>"; };
 		FA8E2F821770BAC7004AB962 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FAE2456B1770D08300D021D8 /* glyphish.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = glyphish.ttf; sourceTree = "<group>"; };
 		FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FAEC70BA15DEE43800C8EA98 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */,
 				FA72C14D15DE9C9E002247D3 /* ListViewController.h */,
 				FA72C14E15DE9C9E002247D3 /* ListViewController.m */,
+				FAE2456B1770D08300D021D8 /* glyphish.ttf */,
 				FA72C14215DE9C9E002247D3 /* Supporting Files */,
 			);
 			path = Radiator;
@@ -209,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE2456C1770D08400D021D8 /* glyphish.ttf in Resources */,
 				FA72C14615DE9C9E002247D3 /* InfoPlist.strings in Resources */,
 				FAEC70C015DEEB6600C8EA98 /* stations.plist in Resources */,
 				FA8E2F831770BAC7004AB962 /* Icons.xcassets in Resources */,
