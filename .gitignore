@@ -2,3 +2,4 @@
 *.pbxproj
 
 */xcuserdata/
+.DS_Store

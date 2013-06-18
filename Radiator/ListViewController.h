@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MessageUI/MessageUI.h>
 #import "Player.h"
 
-@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, MFMailComposeViewControllerDelegate>{
+@interface ListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>{
     // localStations is a stations copy, showed as list in main tableView, filtered by search
     // and sorted by name
     NSArray *localStations, *lovelyStations;
@@ -35,7 +34,6 @@
 @property (retain, nonatomic) IBOutlet UIView *nothingBeloved;
 
 - (IBAction)goToDetailView:(id)sender;
-- (IBAction)submitStation:(id)sender;
 
 - (void) refreshLove;
 - (void) sortTable;

@@ -52,7 +52,6 @@
 		FA72C16315DEA1AF002247D3 /* topFrame.png in Resources */ = {isa = PBXBuildFile; fileRef = FA72C16115DEA1AF002247D3 /* topFrame.png */; };
 		FA74D5B315E2442D00F81A19 /* noRadio.png in Resources */ = {isa = PBXBuildFile; fileRef = FA74D5B215E2442D00F81A19 /* noRadio.png */; };
 		FA74D5B615E247E400F81A19 /* owlOnBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = FA74D5B515E247E400F81A19 /* owlOnBlack.png */; };
-		FA74D5B815E2496E00F81A19 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA74D5B715E2496E00F81A19 /* MessageUI.framework */; };
 		FAA0FAB615E0F54000AF4E28 /* academic.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FAB215E0F54000AF4E28 /* academic.png */; };
 		FAA0FAB715E0F54000AF4E28 /* academicHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FAB315E0F54000AF4E28 /* academicHigh.png */; };
 		FAA0FAB815E0F54000AF4E28 /* academicLove.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA0FAB415E0F54000AF4E28 /* academicLove.png */; };
@@ -65,6 +64,8 @@
 		FAA64A3C15DFE49C0004544E /* topShadow.png in Resources */ = {isa = PBXBuildFile; fileRef = FAA64A3B15DFE49C0004544E /* topShadow.png */; };
 		FAC7940D15E01A5B009041F8 /* selectedCell.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC7940C15E01A5B009041F8 /* selectedCell.png */; };
 		FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */; };
+		FAE24568177097A200D021D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE24567177097A200D021D8 /* Default-568h@2x.png */; };
+		FAE2456A177097E600D021D8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE24569177097E600D021D8 /* Media.xcassets */; };
 		FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */; };
 		FAEC70B915DED98900C8EA98 /* eskaRock.png in Resources */ = {isa = PBXBuildFile; fileRef = FAEC70B815DED98900C8EA98 /* eskaRock.png */; };
 		FAEC70BD15DEE43800C8EA98 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */; };
@@ -126,7 +127,6 @@
 		FA72C16115DEA1AF002247D3 /* topFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topFrame.png; path = Resources/topFrame.png; sourceTree = "<group>"; };
 		FA74D5B215E2442D00F81A19 /* noRadio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noRadio.png; sourceTree = "<group>"; };
 		FA74D5B515E247E400F81A19 /* owlOnBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = owlOnBlack.png; sourceTree = "<group>"; };
-		FA74D5B715E2496E00F81A19 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FAA0FAB215E0F54000AF4E28 /* academic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academic.png; sourceTree = "<group>"; };
 		FAA0FAB315E0F54000AF4E28 /* academicHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academicHigh.png; sourceTree = "<group>"; };
 		FAA0FAB415E0F54000AF4E28 /* academicLove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academicLove.png; sourceTree = "<group>"; };
@@ -139,6 +139,8 @@
 		FAA64A3B15DFE49C0004544E /* topShadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topShadow.png; sourceTree = "<group>"; };
 		FAC7940C15E01A5B009041F8 /* selectedCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedCell.png; sourceTree = "<group>"; };
 		FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FAE24567177097A200D021D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FAE24569177097E600D021D8 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Radiator/Media.xcassets; sourceTree = "<group>"; };
 		FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FAEC70B815DED98900C8EA98 /* eskaRock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eskaRock.png; sourceTree = "<group>"; };
 		FAEC70BA15DEE43800C8EA98 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -153,7 +155,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA74D5B815E2496E00F81A19 /* MessageUI.framework in Frameworks */,
 				FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */,
 				FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */,
 				FA72C15E15DE9F5F002247D3 /* Security.framework in Frameworks */,
@@ -228,7 +229,8 @@
 		FA72C12C15DE9C9D002247D3 = {
 			isa = PBXGroup;
 			children = (
-				FA74D5B715E2496E00F81A19 /* MessageUI.framework */,
+				FAE24569177097E600D021D8 /* Media.xcassets */,
+				FAE24567177097A200D021D8 /* Default-568h@2x.png */,
 				FA6B32BC15DF9493007A0405 /* Default.png */,
 				FA6B32BA15DF9446007A0405 /* Icon.png */,
 				FA72C14115DE9C9E002247D3 /* Radiator */,
@@ -335,8 +337,13 @@
 		FA72C12E15DE9C9D002247D3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Deathly Owl";
+				TargetAttributes = {
+					FA72C13615DE9C9D002247D3 = {
+						DevelopmentTeam = 377SA7CLTK;
+					};
+				};
 			};
 			buildConfigurationList = FA72C13115DE9C9D002247D3 /* Build configuration list for PBXProject "Radiator" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -362,12 +369,14 @@
 			files = (
 				FA72C14615DE9C9E002247D3 /* InfoPlist.strings in Resources */,
 				FA72C15215DE9C9E002247D3 /* ListViewController.xib in Resources */,
+				FAE2456A177097E600D021D8 /* Media.xcassets in Resources */,
 				FA72C16215DEA1AF002247D3 /* bottomFrame.png in Resources */,
 				FA72C16315DEA1AF002247D3 /* topFrame.png in Resources */,
 				FA18AC8E15DEA772002B1689 /* tokfm.png in Resources */,
 				FAEC70B915DED98900C8EA98 /* eskaRock.png in Resources */,
 				FAEC70BE15DEE43800C8EA98 /* DetailViewController.xib in Resources */,
 				FAEC70C015DEEB6600C8EA98 /* stations.plist in Resources */,
+				FAE24568177097A200D021D8 /* Default-568h@2x.png in Resources */,
 				FAEC70C615DEF46F00C8EA98 /* szczecin.png in Resources */,
 				FA6B32A215DF86E2007A0405 /* heartHighlighted.png in Resources */,
 				FA6B32A315DF86E2007A0405 /* heartRed.png in Resources */,
@@ -455,8 +464,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Malgorzata Bogdanska (GVKUKVJ37F)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -471,9 +484,12 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "9012BB32-5FD4-4AF5-AF14-A3EAF38C8886";
 				SDKROOT = iphoneos;
 			};
@@ -483,8 +499,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Malgorzata Bogdanska (GVKUKVJ37F)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -492,7 +512,9 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -505,16 +527,14 @@
 		FA72C15615DE9C9E002247D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Malgorzata Bogdanska (GVKUKVJ37F)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Radiator/Radiator-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Radiator/Radiator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9012BB32-5FD4-4AF5-AF14-A3EAF38C8886";
 				WRAPPER_EXTENSION = app;
@@ -524,16 +544,14 @@
 		FA72C15715DE9C9E002247D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Malgorzata Bogdanska (GVKUKVJ37F)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Radiator/Radiator-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Radiator/Radiator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "9012BB32-5FD4-4AF5-AF14-A3EAF38C8886";
 				WRAPPER_EXTENSION = app;

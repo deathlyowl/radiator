@@ -349,44 +349,11 @@
 
 - (IBAction)goToDetailView:(id)sender{
     DetailViewController *detailView = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-    [detailView setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-    [self presentModalViewController:detailView animated:YES];    
+    [detailView setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];    
+    [self presentViewController:detailView
+                       animated:YES
+                     completion:nil];
 }
-
-- (IBAction)submitStation:(id)sender {
-    if ([MFMailComposeViewController canSendMail])
-    {
-        MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
-        mailer.mailComposeDelegate = self;
-        
-        NSArray *toRecipients = [NSArray arrayWithObjects:@"radiator+submit@ksienie.com", nil];
-        NSString *emailBody = [NSString stringWithFormat:@"\tWitam,\n\tChciałbym zaproponować dodanie stacji %@ do listy strumieni radiowych dostępnych w Radiatorze.\n", searchBar.text];
-        
-        [mailer setSubject:@"Propozycja stacji"];
-        [mailer setToRecipients:toRecipients];
-        [mailer setMessageBody:emailBody isHTML:NO];
-
-        [self presentModalViewController:mailer animated:YES];
-        
-        [mailer release];
-    }
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Błąd"
-                                                        message:@"Twoje urządzenie nie pozwala na wysyłanie maili."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        [alert release];
-    }
-}
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {    
-    // Remove the mail view
-    [self dismissModalViewControllerAnimated:YES];
-}
-
 
 - (void) refreshLove{
     // Changes to animate
