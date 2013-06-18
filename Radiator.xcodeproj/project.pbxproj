@@ -18,6 +18,7 @@
 		FA72C15A15DE9D3A002247D3 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C15915DE9D3A002247D3 /* Player.m */; };
 		FA72C15C15DE9D55002247D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C15B15DE9D55002247D3 /* AVFoundation.framework */; };
 		FA72C15E15DE9F5F002247D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C15D15DE9F5F002247D3 /* Security.framework */; };
+		FA8AB37E1771017000A32353 /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8AB37D1771017000A32353 /* Station.m */; };
 		FA8E2F771770ADED004AB962 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8E2F761770ADED004AB962 /* Storyboard.storyboard */; };
 		FA8E2F7A1770AF7A004AB962 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E2F791770AF7A004AB962 /* RootViewController.m */; };
 		FA8E2F7D1770B31E004AB962 /* StationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E2F7C1770B31E004AB962 /* StationCell.m */; };
@@ -46,6 +47,8 @@
 		FA72C15915DE9D3A002247D3 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		FA72C15B15DE9D55002247D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FA72C15D15DE9F5F002247D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FA8AB37C1771017000A32353 /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
+		FA8AB37D1771017000A32353 /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
 		FA8E2F761770ADED004AB962 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FA8E2F781770AF7A004AB962 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		FA8E2F791770AF7A004AB962 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				FA66A6E01770F2B000F54C00 /* Model.m */,
 				FA72C15815DE9D3A002247D3 /* Player.h */,
 				FA72C15915DE9D3A002247D3 /* Player.m */,
+				FA8AB37C1771017000A32353 /* Station.h */,
+				FA8AB37D1771017000A32353 /* Station.m */,
 				FA6B32C215DF9A2D007A0405 /* Favourites.h */,
 				FA6B32C315DF9A2D007A0405 /* Favourites.m */,
 				FA8E2F761770ADED004AB962 /* Storyboard.storyboard */,
@@ -224,6 +229,7 @@
 				FA66A6E11770F2B000F54C00 /* Model.m in Sources */,
 				FA72C14C15DE9C9E002247D3 /* AppDelegate.m in Sources */,
 				FA72C15A15DE9D3A002247D3 /* Player.m in Sources */,
+				FA8AB37E1771017000A32353 /* Station.m in Sources */,
 				FA6B32C415DF9A2D007A0405 /* Favourites.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

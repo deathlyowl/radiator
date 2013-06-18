@@ -7,6 +7,8 @@
 //
 
 #import "Model.h"
+#import "Favourites.h"
+#import "Station.h"
 
 @implementation Model
 
@@ -31,9 +33,14 @@
 }
 
 - (void) fillSections{
-    _favouriteStations = [NSArray arrayWithObject:[self.stations objectAtIndex:5]];
+    _favouriteStations = [[NSArray alloc] init];
+    for (NSDictionary *station in _stations) {
+        NSString *identifier = [NSString stringWithFormat:@"%@:%@", [station objectForKey:@"name"], [station objectForKey:@"description"]];
+        if ([Favourites isFavourite:identifier]) {
+            _favouriteStations = [_favouriteStations arrayByAddingObject:station];
+        }
+    }    
 }
-
 
 - (void) importStationsFromServer{
     NSLog(@"Import started");
@@ -56,18 +63,15 @@
                 [stations addObject:line];
         
         for (NSString *station in stations) {
-            NSArray *componnents = [station componentsSeparatedByString:@";"];
-            if (componnents.count == 5) {
-                [database addObject:
-                 [NSDictionary dictionaryWithObjectsAndKeys:
-                  [componnents objectAtIndex:0], @"name",
-                  [componnents objectAtIndex:1], @"URL",
-                  [componnents objectAtIndex:2], @"description",
-                  [componnents objectAtIndex:3], @"artworkName",
-                  [componnents objectAtIndex:4], @"category", nil ]];
-            }
+            Station *station = [Station stationWithLine:station];
+            NSLog(@"ST: %@", station);
+            [database addObject:station];
         }
-        if (database.count) [database writeToFile:databasePath atomically:YES];
+        if (database.count){
+            BOOL error = ![database writeToFile:databasePath atomically:YES];
+            NSLog(@"ERROR? [%i]", error);
+            //NSLog(@"Database: %@", database);
+        }
     }
 }
 

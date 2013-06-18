@@ -14,8 +14,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     delegate = self;
 
+    [[Model sharedModel] importStationsFromServer];
+    
     [Favourites loadFavourites];
-    //[[Model sharedModel] importStationsFromServer];
     [[Model sharedModel] fillSections];
     
     

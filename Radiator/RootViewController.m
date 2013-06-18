@@ -15,15 +15,6 @@
 {
     isSearching = NO;
     [super viewDidLoad];
-    // Scroll off the searchbar
-    if ([Model sharedModel].favouriteStations.count) {
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                              atScrollPosition:UITableViewScrollPositionTop
-                                      animated:NO];
-    }
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,6 +125,10 @@
     }
     
     [Favourites saveFavourites];
+    
+    [[Model sharedModel] fillSections];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                  withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
