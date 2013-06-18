@@ -65,7 +65,8 @@
 }
 
 - (IBAction)dismissMe:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
 }
 
 - (IBAction)changeLove:(id)sender {

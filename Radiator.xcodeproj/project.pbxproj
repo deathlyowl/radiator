@@ -65,7 +65,6 @@
 		FAC7940D15E01A5B009041F8 /* selectedCell.png in Resources */ = {isa = PBXBuildFile; fileRef = FAC7940C15E01A5B009041F8 /* selectedCell.png */; };
 		FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */; };
 		FAE24568177097A200D021D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAE24567177097A200D021D8 /* Default-568h@2x.png */; };
-		FAE2456A177097E600D021D8 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE24569177097E600D021D8 /* Media.xcassets */; };
 		FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */; };
 		FAEC70B915DED98900C8EA98 /* eskaRock.png in Resources */ = {isa = PBXBuildFile; fileRef = FAEC70B815DED98900C8EA98 /* eskaRock.png */; };
 		FAEC70BD15DEE43800C8EA98 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */; };
@@ -127,6 +126,7 @@
 		FA72C16115DEA1AF002247D3 /* topFrame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = topFrame.png; path = Resources/topFrame.png; sourceTree = "<group>"; };
 		FA74D5B215E2442D00F81A19 /* noRadio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noRadio.png; sourceTree = "<group>"; };
 		FA74D5B515E247E400F81A19 /* owlOnBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = owlOnBlack.png; sourceTree = "<group>"; };
+		FA8E2F751770ACEA004AB962 /* Radiator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Radiator.entitlements; sourceTree = "<group>"; };
 		FAA0FAB215E0F54000AF4E28 /* academic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academic.png; sourceTree = "<group>"; };
 		FAA0FAB315E0F54000AF4E28 /* academicHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academicHigh.png; sourceTree = "<group>"; };
 		FAA0FAB415E0F54000AF4E28 /* academicLove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = academicLove.png; sourceTree = "<group>"; };
@@ -140,7 +140,6 @@
 		FAC7940C15E01A5B009041F8 /* selectedCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedCell.png; sourceTree = "<group>"; };
 		FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FAE24567177097A200D021D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FAE24569177097E600D021D8 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Radiator/Media.xcassets; sourceTree = "<group>"; };
 		FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FAEC70B815DED98900C8EA98 /* eskaRock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eskaRock.png; sourceTree = "<group>"; };
 		FAEC70BA15DEE43800C8EA98 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -229,7 +228,6 @@
 		FA72C12C15DE9C9D002247D3 = {
 			isa = PBXGroup;
 			children = (
-				FAE24569177097E600D021D8 /* Media.xcassets */,
 				FAE24567177097A200D021D8 /* Default-568h@2x.png */,
 				FA6B32BC15DF9493007A0405 /* Default.png */,
 				FA6B32BA15DF9446007A0405 /* Icon.png */,
@@ -264,6 +262,7 @@
 		FA72C14115DE9C9E002247D3 /* Radiator */ = {
 			isa = PBXGroup;
 			children = (
+				FA8E2F751770ACEA004AB962 /* Radiator.entitlements */,
 				FA72C14A15DE9C9E002247D3 /* AppDelegate.h */,
 				FA72C14B15DE9C9E002247D3 /* AppDelegate.m */,
 				FA72C15815DE9D3A002247D3 /* Player.h */,
@@ -342,6 +341,14 @@
 				TargetAttributes = {
 					FA72C13615DE9C9D002247D3 = {
 						DevelopmentTeam = 377SA7CLTK;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -369,7 +376,6 @@
 			files = (
 				FA72C14615DE9C9E002247D3 /* InfoPlist.strings in Resources */,
 				FA72C15215DE9C9E002247D3 /* ListViewController.xib in Resources */,
-				FAE2456A177097E600D021D8 /* Media.xcassets in Resources */,
 				FA72C16215DEA1AF002247D3 /* bottomFrame.png in Resources */,
 				FA72C16315DEA1AF002247D3 /* topFrame.png in Resources */,
 				FA18AC8E15DEA772002B1689 /* tokfm.png in Resources */,
@@ -488,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "9012BB32-5FD4-4AF5-AF14-A3EAF38C8886";
 				SDKROOT = iphoneos;
@@ -516,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "9012BB32-5FD4-4AF5-AF14-A3EAF38C8886";
 				SDKROOT = iphoneos;
@@ -529,14 +535,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Radiator/Radiator.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Malgorzata Bogdanska (GVKUKVJ37F)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Radiator/Radiator-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Radiator/Radiator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9012BB32-5FD4-4AF5-AF14-A3EAF38C8886";
+				PROVISIONING_PROFILE = "7AE1DB2D-538A-4F3D-BE22-7F9AF9BC68E5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -546,14 +553,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = Radiator/Radiator.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Malgorzata Bogdanska (GVKUKVJ37F)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Radiator/Radiator-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Radiator/Radiator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9012BB32-5FD4-4AF5-AF14-A3EAF38C8886";
+				PROVISIONING_PROFILE = "7AE1DB2D-538A-4F3D-BE22-7F9AF9BC68E5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
