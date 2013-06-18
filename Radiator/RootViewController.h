@@ -18,5 +18,6 @@
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *heartButton;
 - (IBAction)pause:(id)sender;
 - (IBAction)play:(id)sender;
+- (IBAction)love:(id)sender;
 
 @end

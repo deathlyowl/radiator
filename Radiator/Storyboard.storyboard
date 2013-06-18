@@ -219,7 +219,6 @@
                         <outlet property="searchResultsDelegate" destination="yv3-xU-MCN" id="vO3-CF-0VL"/>
                     </connections>
                 </searchDisplayController>
-                <customObject id="owJ-fg-a91" customClass="Model"/>
                 <barButtonItem systemItem="play" id="0ms-Cg-Epc">
                     <connections>
                         <action selector="play:" destination="yv3-xU-MCN" id="llq-Oa-qfo"/>
@@ -231,7 +230,11 @@
                         <action selector="pause:" destination="yv3-xU-MCN" id="aaH-4E-UDy"/>
                     </connections>
                 </barButtonItem>
-                <barButtonItem image="Heart icon" id="ElK-So-zT1" userLabel="Bar Button Item - Heart"/>
+                <barButtonItem image="Heart icon" id="ElK-So-zT1" userLabel="Bar Button Item - Heart">
+                    <connections>
+                        <action selector="love:" destination="yv3-xU-MCN" id="grL-hG-6x5"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="625" y="221"/>
         </scene>

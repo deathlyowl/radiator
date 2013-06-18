@@ -22,11 +22,16 @@
 
 - (id)init{
     if (self = [super init]) {
-        self.stations = [NSArray arrayWithContentsOfFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"]];
+        _stations = [NSArray arrayWithContentsOfFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"]];
+        _favouriteStations = [[NSArray alloc] init];
         NSLog(@"SC: %i", self.stations.count);
 
     }
     return self;
+}
+
+- (void) fillSections{
+    _favouriteStations = [NSArray arrayWithObject:[self.stations objectAtIndex:5]];
 }
 
 

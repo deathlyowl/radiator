@@ -11,8 +11,10 @@
 @interface Model : NSObject
 
 @property (nonatomic, retain) NSArray *stations;
+@property (nonatomic, retain) NSArray *favouriteStations;
 
 + (Model *) sharedModel;
 - (void) importStationsFromServer;
+- (void) fillSections;
 
 @end

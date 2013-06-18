@@ -13,13 +13,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     delegate = self;
-    
-    [[Model sharedModel] importStationsFromServer];
-    
+
     [Favourites loadFavourites];
+    //[[Model sharedModel] importStationsFromServer];
+    [[Model sharedModel] fillSections];
+    
     
     currentStation = nil;
-
     _player = [[AVPlayer alloc] init];
     
     [[AVAudioSession sharedInstance] setDelegate: self];

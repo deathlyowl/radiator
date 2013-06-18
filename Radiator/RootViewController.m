@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "Favourites.h"
 
 @implementation RootViewController
 
@@ -15,9 +16,11 @@
     isSearching = NO;
     [super viewDidLoad];
     // Scroll off the searchbar
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                          atScrollPosition:UITableViewScrollPositionTop
-                                  animated:NO];
+    if ([Model sharedModel].favouriteStations.count) {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                              atScrollPosition:UITableViewScrollPositionTop
+                                      animated:NO];
+    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -28,6 +31,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
     isSearching = (BOOL) searchString.length;
@@ -44,12 +48,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (isSearching) switch (section) {
-        case 0: return 0;
+        case 0: return [Model sharedModel].favouriteStations.count;
         case 1: return 0;
         case 2: return [Model sharedModel].stations.count;
     }
     else switch (section) {
-        case 0: return 2;
+        case 0: return [Model sharedModel].favouriteStations.count;
         case 1: return 0;
         case 2: return [Model sharedModel].stations.count;
     }
@@ -58,9 +62,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *station = [[Model sharedModel].stations objectAtIndex:indexPath.row];
-
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[station objectForKey:@"category"]
+    NSDictionary *station = [self stationForIndexPath:indexPath];
+    
+    NSString *identifier = [station objectForKey:@"category"];
+    
+    if (indexPath.section == 0) identifier = @"lovely";
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier
                                                             forIndexPath:indexPath];
     
     [cell.textLabel setText:[station objectForKey:@"name"]];
@@ -71,16 +79,25 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     switch (section) {
-        case 0: if(1 == 0) return nil; else return @"Ulubione";
+        case 0: if(![Model sharedModel].favouriteStations.count) return nil; else return @"Ulubione";
         case 1: if(0 == 0) return nil; else return @"W okolicy";
         case 2: if([Model sharedModel].stations.count == 0) return nil; else return @"Wszystkie";
     }
     return nil;
 }
 
+- (NSDictionary *) stationForIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.section) {
+        case 0: return [[Model sharedModel].favouriteStations objectAtIndex:indexPath.row];
+        case 1: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
+        case 2: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
+
+    }
+    return nil;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *station = [[Model sharedModel].stations objectAtIndex:indexPath.row];
+    NSDictionary *station = [self stationForIndexPath:indexPath];
     if (station != currentStation) {
         [Player setStation:station];
         [Player play];
@@ -104,6 +121,19 @@
 - (IBAction)play:(id)sender {
     self.navigationItem.rightBarButtonItem = self.pauseButton;
     [Player play];
+}
+
+- (IBAction)love:(id)sender {
+    NSString *identifier = [NSString stringWithFormat:@"%@:%@", [currentStation objectForKey:@"name"], [currentStation objectForKey:@"description"]];
+    
+    if (![Favourites isFavourite:identifier]) {
+        [Favourites addToFavourites:identifier];
+    }
+    else{
+        [Favourites removeFavourite:identifier];
+    }
+    
+    [Favourites saveFavourites];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
