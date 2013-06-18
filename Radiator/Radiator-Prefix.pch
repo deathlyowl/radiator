@@ -12,7 +12,6 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import "AppDelegate.h"
-    NSArray *stations;
     NSDictionary *currentStation;
     AppDelegate *delegate;
     NSSet *favouritesSet;

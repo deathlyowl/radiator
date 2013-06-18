@@ -207,11 +207,10 @@
                         <outlet property="heartButton" destination="ElK-So-zT1" id="ADY-8t-x5x"/>
                         <outlet property="pauseButton" destination="feX-e5-EwZ" id="uic-4B-8hF"/>
                         <outlet property="playButton" destination="0ms-Cg-Epc" id="RYe-xz-7vX"/>
-                        <outlet property="searchDisplayController" destination="cIi-8x-ehx" id="sTX-7R-xGU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdh-8O-oog" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="rBy-qy-pdT">
+                <searchDisplayController searchResultsTitle="" id="rBy-qy-pdT">
                     <connections>
                         <outlet property="delegate" destination="yv3-xU-MCN" id="6Cc-bg-iNh"/>
                         <outlet property="searchBar" destination="fWo-mE-yLH" id="pts-km-RlO"/>
@@ -220,6 +219,7 @@
                         <outlet property="searchResultsDelegate" destination="yv3-xU-MCN" id="vO3-CF-0VL"/>
                     </connections>
                 </searchDisplayController>
+                <customObject id="owJ-fg-a91" customClass="Model"/>
                 <barButtonItem systemItem="play" id="0ms-Cg-Epc">
                     <connections>
                         <action selector="play:" destination="yv3-xU-MCN" id="llq-Oa-qfo"/>
@@ -232,15 +232,6 @@
                     </connections>
                 </barButtonItem>
                 <barButtonItem image="Heart icon" id="ElK-So-zT1" userLabel="Bar Button Item - Heart"/>
-                <searchDisplayController id="cIi-8x-ehx">
-                    <connections>
-                        <outlet property="delegate" destination="yv3-xU-MCN" id="ylj-R7-4Ez"/>
-                        <outlet property="searchBar" destination="fWo-mE-yLH" id="Oad-hG-cYI"/>
-                        <outlet property="searchContentsController" destination="yv3-xU-MCN" id="CVb-Ga-jb1"/>
-                        <outlet property="searchResultsDataSource" destination="yv3-xU-MCN" id="Tk9-0I-EKH"/>
-                        <outlet property="searchResultsDelegate" destination="yv3-xU-MCN" id="VJ9-pK-7LT"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="625" y="221"/>
         </scene>

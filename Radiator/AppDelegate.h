@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "Player.h"
+#import "Model.h"
 
 @class ListViewController;
 
@@ -19,6 +20,5 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ListViewController *viewController;
 
-- (void) importStationsFromServer;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
 @interface RootViewController : UITableViewController <UISearchDisplayDelegate> {
     BOOL isSearching;

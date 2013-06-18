@@ -46,19 +46,19 @@
     if (isSearching) switch (section) {
         case 0: return 0;
         case 1: return 0;
-        case 2: return stations.count;
+        case 2: return [Model sharedModel].stations.count;
     }
     else switch (section) {
         case 0: return 2;
         case 1: return 0;
-        case 2: return stations.count;
+        case 2: return [Model sharedModel].stations.count;
     }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *station = [stations objectAtIndex:indexPath.row];
+    NSDictionary *station = [[Model sharedModel].stations objectAtIndex:indexPath.row];
 
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[station objectForKey:@"category"]
                                                             forIndexPath:indexPath];
@@ -73,22 +73,20 @@
     switch (section) {
         case 0: if(1 == 0) return nil; else return @"Ulubione";
         case 1: if(0 == 0) return nil; else return @"W okolicy";
-        case 2: if(stations.count == 0) return nil; else return @"Wszystkie";
+        case 2: if([Model sharedModel].stations.count == 0) return nil; else return @"Wszystkie";
     }
     return nil;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *station = [stations objectAtIndex:indexPath.row];
+    NSDictionary *station = [[Model sharedModel].stations objectAtIndex:indexPath.row];
     if (station != currentStation) {
         [Player setStation:station];
         [Player play];
+        self.navigationItem.rightBarButtonItem = self.pauseButton;
     }
-    else if (![Player isPlaying]) [Player play];
     
-    
-    self.navigationItem.rightBarButtonItem = self.pauseButton;
     self.navigationItem.leftBarButtonItem = self.heartButton;
     
     [self.navigationItem setTitle:[station objectForKey:@"name"]];
@@ -113,45 +111,6 @@
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -160,13 +119,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
  */
 
-- (void)dealloc {
-    [_pauseButton release];
-    [_playButton release];
-    [_heartButton release];
-    [super dealloc];
-}
 @end

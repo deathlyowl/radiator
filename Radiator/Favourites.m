@@ -11,7 +11,7 @@
 @implementation Favourites
 
 + (void) loadFavourites{
-    if (!favouritesSet) favouritesSet = [[[NSSet alloc] init] autorelease];
+    if (!favouritesSet) favouritesSet = [[NSSet alloc] init];
     NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
     
 	if (standardUserDefaults)
@@ -27,7 +27,6 @@
 		[standardUserDefaults setObject:serializedSet forKey:@"favourites"];
 		[standardUserDefaults synchronize];
 	}
-    if (favouritesSet.retainCount < 2) [favouritesSet retain];
 }
 
 + (void) removeFavourite:(NSString *) title{

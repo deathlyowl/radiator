@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA66A6E11770F2B000F54C00 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = FA66A6E01770F2B000F54C00 /* Model.m */; };
 		FA6B32C415DF9A2D007A0405 /* Favourites.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B32C315DF9A2D007A0405 /* Favourites.m */; };
 		FA72C13C15DE9C9E002247D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C13B15DE9C9E002247D3 /* UIKit.framework */; };
 		FA72C13E15DE9C9E002247D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C13D15DE9C9E002247D3 /* Foundation.framework */; };
@@ -14,7 +15,6 @@
 		FA72C14615DE9C9E002247D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA72C14415DE9C9E002247D3 /* InfoPlist.strings */; };
 		FA72C14815DE9C9E002247D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C14715DE9C9E002247D3 /* main.m */; };
 		FA72C14C15DE9C9E002247D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C14B15DE9C9E002247D3 /* AppDelegate.m */; };
-		FA72C14F15DE9C9E002247D3 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C14E15DE9C9E002247D3 /* ListViewController.m */; };
 		FA72C15A15DE9D3A002247D3 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = FA72C15915DE9D3A002247D3 /* Player.m */; };
 		FA72C15C15DE9D55002247D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C15B15DE9D55002247D3 /* AVFoundation.framework */; };
 		FA72C15E15DE9F5F002247D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA72C15D15DE9F5F002247D3 /* Security.framework */; };
@@ -23,13 +23,13 @@
 		FA8E2F7D1770B31E004AB962 /* StationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E2F7C1770B31E004AB962 /* StationCell.m */; };
 		FA8E2F831770BAC7004AB962 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8E2F821770BAC7004AB962 /* Icons.xcassets */; };
 		FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */; };
-		FAE2456C1770D08400D021D8 /* glyphish.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAE2456B1770D08300D021D8 /* glyphish.ttf */; };
 		FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */; };
-		FAEC70BD15DEE43800C8EA98 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */; };
 		FAEC70C015DEEB6600C8EA98 /* stations.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAEC70BF15DEEB6600C8EA98 /* stations.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA66A6DF1770F2B000F54C00 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		FA66A6E01770F2B000F54C00 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		FA6B32C215DF9A2D007A0405 /* Favourites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Favourites.h; sourceTree = "<group>"; };
 		FA6B32C315DF9A2D007A0405 /* Favourites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Favourites.m; sourceTree = "<group>"; };
 		FA72C13715DE9C9D002247D3 /* Radiator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radiator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,8 +42,6 @@
 		FA72C14915DE9C9E002247D3 /* Radiator-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Radiator-Prefix.pch"; sourceTree = "<group>"; };
 		FA72C14A15DE9C9E002247D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA72C14B15DE9C9E002247D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FA72C14D15DE9C9E002247D3 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
-		FA72C14E15DE9C9E002247D3 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		FA72C15815DE9D3A002247D3 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		FA72C15915DE9D3A002247D3 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		FA72C15B15DE9D55002247D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -55,10 +53,7 @@
 		FA8E2F7C1770B31E004AB962 /* StationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationCell.m; sourceTree = "<group>"; };
 		FA8E2F821770BAC7004AB962 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		FAE2456B1770D08300D021D8 /* glyphish.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = glyphish.ttf; sourceTree = "<group>"; };
 		FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		FAEC70BA15DEE43800C8EA98 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		FAEC70BF15DEEB6600C8EA98 /* stations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stations.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +111,8 @@
 			children = (
 				FA72C14A15DE9C9E002247D3 /* AppDelegate.h */,
 				FA72C14B15DE9C9E002247D3 /* AppDelegate.m */,
+				FA66A6DF1770F2B000F54C00 /* Model.h */,
+				FA66A6E01770F2B000F54C00 /* Model.m */,
 				FA72C15815DE9D3A002247D3 /* Player.h */,
 				FA72C15915DE9D3A002247D3 /* Player.m */,
 				FA6B32C215DF9A2D007A0405 /* Favourites.h */,
@@ -125,11 +122,6 @@
 				FA8E2F7C1770B31E004AB962 /* StationCell.m */,
 				FA8E2F781770AF7A004AB962 /* RootViewController.h */,
 				FA8E2F791770AF7A004AB962 /* RootViewController.m */,
-				FAEC70BA15DEE43800C8EA98 /* DetailViewController.h */,
-				FAEC70BB15DEE43800C8EA98 /* DetailViewController.m */,
-				FA72C14D15DE9C9E002247D3 /* ListViewController.h */,
-				FA72C14E15DE9C9E002247D3 /* ListViewController.m */,
-				FAE2456B1770D08300D021D8 /* glyphish.ttf */,
 				FA72C14215DE9C9E002247D3 /* Supporting Files */,
 			);
 			path = Radiator;
@@ -212,7 +204,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE2456C1770D08400D021D8 /* glyphish.ttf in Resources */,
 				FA72C14615DE9C9E002247D3 /* InfoPlist.strings in Resources */,
 				FAEC70C015DEEB6600C8EA98 /* stations.plist in Resources */,
 				FA8E2F831770BAC7004AB962 /* Icons.xcassets in Resources */,
@@ -230,10 +221,9 @@
 				FA72C14815DE9C9E002247D3 /* main.m in Sources */,
 				FA8E2F7A1770AF7A004AB962 /* RootViewController.m in Sources */,
 				FA8E2F7D1770B31E004AB962 /* StationCell.m in Sources */,
+				FA66A6E11770F2B000F54C00 /* Model.m in Sources */,
 				FA72C14C15DE9C9E002247D3 /* AppDelegate.m in Sources */,
-				FA72C14F15DE9C9E002247D3 /* ListViewController.m in Sources */,
 				FA72C15A15DE9D3A002247D3 /* Player.m in Sources */,
-				FAEC70BD15DEE43800C8EA98 /* DetailViewController.m in Sources */,
 				FA6B32C415DF9A2D007A0405 /* Favourites.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Malgorzata Bogdanska (GVKUKVJ37F)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -339,6 +330,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Malgorzata Bogdanska (GVKUKVJ37F)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
