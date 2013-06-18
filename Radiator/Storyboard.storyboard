@@ -220,9 +220,16 @@
                         <outlet property="searchResultsDelegate" destination="yv3-xU-MCN" id="vO3-CF-0VL"/>
                     </connections>
                 </searchDisplayController>
-                <barButtonItem systemItem="play" id="0ms-Cg-Epc"/>
+                <barButtonItem systemItem="play" id="0ms-Cg-Epc">
+                    <connections>
+                        <action selector="play:" destination="yv3-xU-MCN" id="llq-Oa-qfo"/>
+                    </connections>
+                </barButtonItem>
                 <barButtonItem systemItem="pause" id="feX-e5-EwZ">
                     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="pause:" destination="yv3-xU-MCN" id="aaH-4E-UDy"/>
+                    </connections>
                 </barButtonItem>
                 <barButtonItem image="Heart icon" id="ElK-So-zT1" userLabel="Bar Button Item - Heart"/>
                 <searchDisplayController id="cIi-8x-ehx">
@@ -266,23 +273,6 @@
         <image name="University" width="33" height="33"/>
         <image name="lovely" width="33" height="33"/>
     </resources>
-    <classes>
-        <class className="RootViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="heartButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="StationCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StationCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

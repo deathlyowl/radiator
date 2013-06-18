@@ -97,6 +97,17 @@
                                   animated:YES];
 }
 
+
+- (IBAction)pause:(id)sender {
+    self.navigationItem.rightBarButtonItem = self.playButton;
+    [Player pause];
+}
+
+- (IBAction)play:(id)sender {
+    self.navigationItem.rightBarButtonItem = self.pauseButton;
+    [Player play];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 66;
 }

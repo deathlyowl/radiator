@@ -15,5 +15,7 @@
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *pauseButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *playButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *heartButton;
+- (IBAction)pause:(id)sender;
+- (IBAction)play:(id)sender;
 
 @end
