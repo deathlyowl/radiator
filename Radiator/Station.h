@@ -16,6 +16,6 @@
 @property (nonatomic, retain) NSString *category;
 @property (nonatomic, retain) NSString *artworkName;
 
-+ (Station *) stationWithLine:(NSString *) line;
++ (Station *)stationWithLine:(NSString *)line;
 
 @end

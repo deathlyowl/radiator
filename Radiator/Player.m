@@ -18,12 +18,12 @@
     [delegate.player pause];
 }
 
-+ (void) setStation:(NSDictionary *) station{
++ (void) setStation:(Station *) station{
     if (self.isPlaying) [self pause];
     
     currentStation = station;
-    delegate.player = [[AVPlayer alloc] initWithURL:[NSURL URLWithString:[station objectForKey:@"URL"]]];
-    
+    delegate.player = [[AVPlayer alloc] initWithURL:station.URL];
+    /*
     UIImage *image = [UIImage imageNamed:[station objectForKey:@"artworkName"]];
     if (image) {
         MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithImage:image];
@@ -32,6 +32,7 @@
     else{
         [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"", MPMediaItemPropertyAlbumTitle, @"", MPMediaItemPropertyArtist, [station objectForKey:@"name"], MPMediaItemPropertyTitle, nil]];
     }
+     */
 }
 
 + (BOOL) isPlaying{

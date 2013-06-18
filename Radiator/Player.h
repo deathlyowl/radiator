@@ -10,12 +10,13 @@
 #import <AVFoundation/AVPlayer.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "AppDelegate.h"
+#import "Station.h"
 
 @interface Player : NSObject
 
 + (void) play;
 + (void) pause;
-+ (void) setStation:(NSDictionary *) station;
++ (void) setStation:(Station *) station;
 + (BOOL) isPlaying;
 
 @end

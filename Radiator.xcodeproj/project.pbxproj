@@ -25,7 +25,6 @@
 		FA8E2F831770BAC7004AB962 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8E2F821770BAC7004AB962 /* Icons.xcassets */; };
 		FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */; };
 		FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */; };
-		FAEC70C015DEEB6600C8EA98 /* stations.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAEC70BF15DEEB6600C8EA98 /* stations.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +56,6 @@
 		FA8E2F821770BAC7004AB962 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		FAEC70BF15DEEB6600C8EA98 /* stations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stations.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				FA8E2F821770BAC7004AB962 /* Icons.xcassets */,
-				FAEC70BF15DEEB6600C8EA98 /* stations.plist */,
 				FA72C14315DE9C9E002247D3 /* Radiator-Info.plist */,
 				FA72C14415DE9C9E002247D3 /* InfoPlist.strings */,
 				FA72C14715DE9C9E002247D3 /* main.m */,
@@ -210,7 +207,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA72C14615DE9C9E002247D3 /* InfoPlist.strings in Resources */,
-				FAEC70C015DEEB6600C8EA98 /* stations.plist in Resources */,
 				FA8E2F831770BAC7004AB962 /* Icons.xcassets in Resources */,
 				FA8E2F771770ADED004AB962 /* Storyboard.storyboard in Resources */,
 			);

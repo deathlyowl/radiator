@@ -13,17 +13,35 @@
 + (Station *)stationWithLine:(NSString *)line{
     Station *station = [[Station alloc] init];
     NSArray *componnents = [line componentsSeparatedByString:@";"];
-    if (componnents.count == 6) {
-        station.name = [componnents objectAtIndex:0];
-        station.URL = [NSURL URLWithString:[componnents objectAtIndex:1]];
-        station.description = [componnents objectAtIndex:2];
-        station.artworkName = [componnents objectAtIndex:3];
-        station.category = [componnents objectAtIndex:4];
-    }
-    else{
-        NSLog(@"ERROR");
-    }
+    station.name = [componnents objectAtIndex:0];
+    station.URL = [NSURL URLWithString:[componnents objectAtIndex:1]];
+    station.description = [componnents objectAtIndex:2];
+    station.artworkName = [componnents objectAtIndex:3];
+    station.category = [componnents objectAtIndex:4];
     return station;
+}
+
+// Decode
+- (id)initWithCoder:(NSCoder *)decoder{
+    if(self = [super init]) // this needs to be [super initWithCoder:aDecoder] if the superclass implements NSCoding
+    {
+        _name = [decoder decodeObjectForKey:@"name"];
+        _URL = [decoder decodeObjectForKey:@"URL"];
+        _description = [decoder decodeObjectForKey:@"description"];
+        _artworkName = [decoder decodeObjectForKey:@"artworkName"];
+        _category = [decoder decodeObjectForKey:@"category"];
+    }
+    return self;
+}
+
+// Encode
+- (void)encodeWithCoder:(NSCoder *)encoder{
+    [encoder encodeObject:_name forKey:@"name"];
+    [encoder encodeObject:_URL forKey:@"URL"];
+    [encoder encodeObject:_description forKey:@"description"];
+    [encoder encodeObject:_artworkName forKey:@"artworkName"];
+    [encoder encodeObject:_category forKey:@"category"];
+
 }
 
 

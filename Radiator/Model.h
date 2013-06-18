@@ -11,10 +11,13 @@
 @interface Model : NSObject
 
 @property (nonatomic, retain) NSArray *stations;
+@property (nonatomic, retain) NSArray *filteredStations;
 @property (nonatomic, retain) NSArray *favouriteStations;
+@property (nonatomic, retain) NSArray *filteredFavouriteStations;
 
 + (Model *) sharedModel;
 - (void) importStationsFromServer;
 - (void) fillSections;
+- (void) filterWithString:(NSString *)string;
 
 @end

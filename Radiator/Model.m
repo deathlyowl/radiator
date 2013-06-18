@@ -24,7 +24,7 @@
 
 - (id)init{
     if (self = [super init]) {
-        _stations = [NSArray arrayWithContentsOfFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"]];
+        _stations = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"]];
         _favouriteStations = [[NSArray alloc] init];
         NSLog(@"SC: %i", self.stations.count);
 
@@ -34,12 +34,19 @@
 
 - (void) fillSections{
     _favouriteStations = [[NSArray alloc] init];
-    for (NSDictionary *station in _stations) {
-        NSString *identifier = [NSString stringWithFormat:@"%@:%@", [station objectForKey:@"name"], [station objectForKey:@"description"]];
+    for (Station *station in _stations) {
+        NSString *identifier = [NSString stringWithFormat:@"%@:%@", station.name, station.description];
         if ([Favourites isFavourite:identifier]) {
             _favouriteStations = [_favouriteStations arrayByAddingObject:station];
         }
     }    
+}
+
+- (void) filterWithString:(NSString *)string{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", string];
+    
+    _filteredStations = [_stations filteredArrayUsingPredicate:predicate];
+    _filteredFavouriteStations = [_favouriteStations filteredArrayUsingPredicate:predicate];    
 }
 
 - (void) importStationsFromServer{
@@ -62,15 +69,13 @@
             if (![[line substringToIndex:1] isEqualToString:@"#"])
                 [stations addObject:line];
         
-        for (NSString *station in stations) {
-            Station *station = [Station stationWithLine:station];
-            NSLog(@"ST: %@", station);
+        for (NSString *line in stations) {            
+            Station *station = [Station stationWithLine:line];
             [database addObject:station];
         }
+        
         if (database.count){
-            BOOL error = ![database writeToFile:databasePath atomically:YES];
-            NSLog(@"ERROR? [%i]", error);
-            //NSLog(@"Database: %@", database);
+            [NSKeyedArchiver archiveRootObject:database toFile:databasePath];
         }
     }
 }

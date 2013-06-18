@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "Favourites.h"
+#import "Station.h"
 
 @implementation RootViewController
 
@@ -25,10 +26,19 @@
 
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
-    isSearching = (BOOL) searchString.length;
     NSLog(@"SS[%i]: %@", isSearching, searchString);
+    [[Model sharedModel] filterWithString:searchString];
     return YES;
 }
+
+- (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller{
+    isSearching = NO;
+}
+
+- (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller{
+    isSearching = YES;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -39,9 +49,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (isSearching) switch (section) {
-        case 0: return [Model sharedModel].favouriteStations.count;
+        case 0: return [Model sharedModel].filteredFavouriteStations.count;
         case 1: return 0;
-        case 2: return [Model sharedModel].stations.count;
+        case 2: return [Model sharedModel].filteredStations.count;
     }
     else switch (section) {
         case 0: return [Model sharedModel].favouriteStations.count;
@@ -51,21 +61,23 @@
     return 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSDictionary *station = [self stationForIndexPath:indexPath];
-    
-    NSString *identifier = [station objectForKey:@"category"];
-    
-    if (indexPath.section == 0) identifier = @"lovely";
-    
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier
-                                                            forIndexPath:indexPath];
-    
-    [cell.textLabel setText:[station objectForKey:@"name"]];
-    [cell.detailTextLabel setText:[station objectForKey:@"description"]];
-    
-    return cell;
+
+- (Station *) stationForIndexPath:(NSIndexPath *)indexPath{
+    if (isSearching) {
+        switch (indexPath.section) {
+            case 0: return [[Model sharedModel].filteredFavouriteStations objectAtIndex:indexPath.row];
+            case 1: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
+            case 2: return [[Model sharedModel].filteredStations objectAtIndex:indexPath.row];
+        }
+    }
+    else{
+        switch (indexPath.section) {
+            case 0: return [[Model sharedModel].favouriteStations objectAtIndex:indexPath.row];
+            case 1: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
+            case 2: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
+        }
+    }
+    return nil;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -77,18 +89,27 @@
     return nil;
 }
 
-- (NSDictionary *) stationForIndexPath:(NSIndexPath *)indexPath{
-    switch (indexPath.section) {
-        case 0: return [[Model sharedModel].favouriteStations objectAtIndex:indexPath.row];
-        case 1: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
-        case 2: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
-
-    }
-    return nil;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Station *station = [self stationForIndexPath:indexPath];
+    
+    NSString *identifier = station.category;
+    
+    if (indexPath.section == 0) identifier = @"lovely";
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier
+                                                            forIndexPath:indexPath];
+    
+    [cell.textLabel setText:station.name];
+    [cell.detailTextLabel setText:station.description];
+    
+    return cell;
 }
 
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *station = [self stationForIndexPath:indexPath];
+    Station *station = [self stationForIndexPath:indexPath];
     if (station != currentStation) {
         [Player setStation:station];
         [Player play];
@@ -97,7 +118,7 @@
     
     self.navigationItem.leftBarButtonItem = self.heartButton;
     
-    [self.navigationItem setTitle:[station objectForKey:@"name"]];
+    [self.navigationItem setTitle:station.name];
     
     [self.tableView deselectRowAtIndexPath:indexPath
                                   animated:YES];
@@ -115,7 +136,7 @@
 }
 
 - (IBAction)love:(id)sender {
-    NSString *identifier = [NSString stringWithFormat:@"%@:%@", [currentStation objectForKey:@"name"], [currentStation objectForKey:@"description"]];
+    NSString *identifier = [NSString stringWithFormat:@"%@:%@", currentStation.name, currentStation.description];
     
     if (![Favourites isFavourite:identifier]) {
         [Favourites addToFavourites:identifier];
