@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController <UISearchDisplayDelegate>
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *pauseButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *playButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *heartButton;

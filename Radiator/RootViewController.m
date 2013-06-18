@@ -55,7 +55,7 @@
 {
     switch (section) {
         case 0: return 2;
-        case 1: return 5;
+        case 1: return 0;
         case 2: return stations.count;
     }
     return 0;
@@ -65,7 +65,7 @@
 {
     NSDictionary *station = [stations objectAtIndex:indexPath.row];
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[station objectForKey:@"category"]
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[station objectForKey:@"category"]
                                                             forIndexPath:indexPath];
     
     [cell.textLabel setText:[station objectForKey:@"name"]];
@@ -77,7 +77,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     switch (section) {
         case 0: if(1 == 0) return nil; else return @"Ulubione";
-        case 1: if(1 == 0) return nil; else return @"W okolicy";
+        case 1: if(0 == 0) return nil; else return @"W okolicy";
         case 2: if(stations.count == 0) return nil; else return @"Wszystkie";
     }
     return nil;
@@ -100,6 +100,10 @@
     
     [self.tableView deselectRowAtIndexPath:indexPath
                                   animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 66;
 }
 
 /*
