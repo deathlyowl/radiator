@@ -8,23 +8,11 @@
 
 #import "RootViewController.h"
 
-@interface RootViewController ()
-
-@end
-
 @implementation RootViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
+    isSearching = NO;
     [super viewDidLoad];
     // Scroll off the searchbar
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
@@ -33,9 +21,6 @@
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,6 +29,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
+    isSearching = (BOOL) searchString.length;
+    NSLog(@"SS[%i]: %@", isSearching, searchString);
+    return YES;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -53,7 +43,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section) {
+    if (isSearching) switch (section) {
+        case 0: return 0;
+        case 1: return 0;
+        case 2: return stations.count;
+    }
+    else switch (section) {
         case 0: return 2;
         case 1: return 0;
         case 2: return stations.count;

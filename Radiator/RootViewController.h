@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController <UISearchDisplayDelegate>
+@interface RootViewController : UITableViewController <UISearchDisplayDelegate> {
+    BOOL isSearching;
+}
+
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *pauseButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *playButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *heartButton;
