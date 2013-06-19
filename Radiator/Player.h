@@ -20,4 +20,3 @@
 + (BOOL) isPlaying;
 
 @end
-

@@ -11,37 +11,15 @@
 
 @implementation Player
 
-+ (AVPlayer *) player{
-    return [(AppDelegate *)[[UIApplication sharedApplication] delegate] player];
-}
++ (AVPlayer *) player { return [(AppDelegate *)[[UIApplication sharedApplication] delegate] player]; }
++ (void) play { [[Player player] play]; }
++ (void) pause { [[Player player] pause]; }
 
-+ (void) play {
-    [[Player player] play];
-}
-
-+ (void) pause {
-    [[Player player] pause];
-}
++ (BOOL) isPlaying{ return [Player player].rate != 0.; }
 
 + (void) setStation:(Station *) station{
     if (self.isPlaying) [self pause];
-    
     [[Model sharedModel] setCurrentStation:station];
-    
-    /*
-    UIImage *image = [UIImage imageNamed:[station objectForKey:@"artworkName"]];
-    if (image) {
-        MPMediaItemArtwork *artwork = [[MPMediaItemArtwork alloc] initWithImage:image];
-        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"", MPMediaItemPropertyAlbumTitle, @"", MPMediaItemPropertyArtist, artwork, MPMediaItemPropertyArtwork, [station objectForKey:@"name"], MPMediaItemPropertyTitle, nil]];
-    }
-    else{
-        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:[NSDictionary dictionaryWithObjectsAndKeys:@"", MPMediaItemPropertyAlbumTitle, @"", MPMediaItemPropertyArtist, [station objectForKey:@"name"], MPMediaItemPropertyTitle, nil]];
-    }
-     */
-}
-
-+ (BOOL) isPlaying{
-    return [Player player].rate != 0.;
 }
 
 @end

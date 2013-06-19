@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NSArray *filteredStations;
 @property (nonatomic, retain) NSArray *favouriteStations;
 @property (nonatomic, retain) NSArray *filteredFavouriteStations;
+
 @property (nonatomic, retain) Station *currentStation;
 
 + (Model *) sharedModel;

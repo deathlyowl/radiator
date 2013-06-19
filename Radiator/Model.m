@@ -47,29 +47,25 @@
 }
 
 - (void) filterWithString:(NSString *)string{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", string];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains[c] %@ OR description contains[c] %@", string, string];
     _filteredStations = [_stations filteredArrayUsingPredicate:predicate];
     _filteredFavouriteStations = [_favouriteStations filteredArrayUsingPredicate:predicate];    
 }
 
 - (void) importStationsFromServer {
-    NSMutableArray *database = [[NSMutableArray alloc] init];
-    
-    NSString *csvString = [NSString stringWithContentsOfURL:[NSURL URLWithString:DB_URL] encoding:NSUTF8StringEncoding error:nil];
-    if (csvString) {
-        NSArray *lines = [csvString componentsSeparatedByString:@"\n"];
-        NSMutableArray *stations = [[NSMutableArray alloc] init];
+    NSError *error;
+    NSString *csvString = [NSString stringWithContentsOfURL:[NSURL URLWithString:DB_URL]
+                                                   encoding:NSUTF8StringEncoding
+                                                      error:&error];
+    if (!error)
+    {
+        NSArray *lines = [[csvString componentsSeparatedByString:@"\n"]
+                          filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"not SELF BEGINSWITH '#'"]],
+                *stations = [[NSArray alloc] init];
         
-        for (NSString *line in lines)
-            if (![[line substringToIndex:1] isEqualToString:@"#"])
-                [stations addObject:line];
+        for (NSString *line in lines) stations = [stations arrayByAddingObject:[Station stationWithLine:line]];
         
-        for (NSString *line in stations) {            
-            Station *station = [Station stationWithLine:line];
-            [database addObject:station];
-        }
-        
-        if (database.count) [NSKeyedArchiver archiveRootObject:database
+        if (stations.count) [NSKeyedArchiver archiveRootObject:stations
                                                         toFile:DB_FILE];
     }
 }

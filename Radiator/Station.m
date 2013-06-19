@@ -21,9 +21,7 @@
     return station;
 }
 
-- (NSString *)identifier{
-    return [NSString stringWithFormat:@"%@:%@", _name, _description];
-}
+- (NSString *)identifier{ return [NSString stringWithFormat:@"%@:%@", _name, _description]; }
 
 // Decode
 - (id)initWithCoder:(NSCoder *)decoder{
