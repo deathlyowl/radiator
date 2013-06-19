@@ -21,6 +21,18 @@
     return station;
 }
 
+- (NSString *) comparableName{
+    if ([[_name substringToIndex:6] isEqualToString:@"Radio "]) return [_name substringFromIndex:6];
+    else return _name;
+}
+
+- (BOOL) compare:(Station *)theOtherOne{
+    if ([self.comparableName caseInsensitiveCompare:theOtherOne.comparableName] == NSOrderedDescending)
+        return YES;
+    else
+        return NO;
+}
+
 - (NSString *)identifier{ return [NSString stringWithFormat:@"%@:%@", _name, _description]; }
 
 // Decode

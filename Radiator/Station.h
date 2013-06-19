@@ -18,5 +18,7 @@
 
 + (Station *)stationWithLine:(NSString *)line;
 - (NSString *) identifier;
+- (BOOL) compare:(Station *)theOtherOne;
+- (NSString *) comparableName;
 
 @end

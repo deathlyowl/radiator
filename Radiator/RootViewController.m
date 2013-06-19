@@ -84,7 +84,7 @@
     switch (section) {
         case 0: return @"Ulubione";
         case 1: if(0 == 0) return nil; else return @"W okolicy";
-        case 2: return @"Wszystkie";
+        case 2: return @"Wszystkie (Alfabetycznie)";
     }
     return nil;
 }
@@ -152,7 +152,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 66;
+    return 55;
 }
 
 /*

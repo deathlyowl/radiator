@@ -39,6 +39,11 @@
     // Load stations
     _stations = [NSKeyedUnarchiver unarchiveObjectWithFile:DB_FILE];
     
+    // Sort stations    
+    _stations = [_stations sortedArrayUsingComparator:^NSComparisonResult(Station *a, Station *b) {
+        return [a compare:b];
+    }];
+    
     // Build favourites
     _favouriteStations = [[NSArray alloc] init];
     for (Station *station in _stations)
