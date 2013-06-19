@@ -80,10 +80,11 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (![Model sharedModel].favouriteStations.count) return nil;
     switch (section) {
-        case 0: if(![Model sharedModel].favouriteStations.count) return nil; else return @"Ulubione";
+        case 0: return @"Ulubione";
         case 1: if(0 == 0) return nil; else return @"W okolicy";
-        case 2: if([Model sharedModel].stations.count == 0) return nil; else return @"Wszystkie";
+        case 2: return @"Wszystkie";
     }
     return nil;
 }
@@ -119,8 +120,8 @@
     
     [self.navigationItem setTitle:station.name];
     
-    [self.tableView deselectRowAtIndexPath:indexPath
-                                  animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath
+                             animated:YES];
 }
 
 

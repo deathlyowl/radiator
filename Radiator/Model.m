@@ -24,6 +24,11 @@
 
 - (id)init{
     if (self = [super init]) {
+        // Load default database if there's no file in docs
+        if (![[NSFileManager defaultManager] fileExistsAtPath:DB_FILE])
+            [NSKeyedArchiver archiveRootObject:[NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"stations"
+                                                                                                                          ofType:@"plist"]]
+                                        toFile:DB_FILE];
         [self loadData];
         _currentStation = nil;
     }
@@ -31,19 +36,14 @@
 }
 
 - (void) loadData{
-    if (![[NSFileManager defaultManager] fileExistsAtPath:DB_FILE])
-        [NSKeyedArchiver archiveRootObject:[NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"stations"
-                                                                                                                      ofType:@"plist"]]
-                                    toFile:DB_FILE];
-    
+    // Load stations
     _stations = [NSKeyedUnarchiver unarchiveObjectWithFile:DB_FILE];
     
+    // Build favourites
     _favouriteStations = [[NSArray alloc] init];
-    for (Station *station in _stations) {
-        if ([Favourites isFavourite:station.identifier]) {
+    for (Station *station in _stations)
+        if ([Favourites isFavourite:station.identifier])
             _favouriteStations = [_favouriteStations arrayByAddingObject:station];
-        }
-    }
 }
 
 - (void) filterWithString:(NSString *)string{
