@@ -17,5 +17,6 @@
 @property (nonatomic, retain) NSString *artworkName;
 
 + (Station *)stationWithLine:(NSString *)line;
+- (NSString *) identifier;
 
 @end

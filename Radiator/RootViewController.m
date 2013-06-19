@@ -134,14 +134,12 @@
     [Player play];
 }
 
-- (IBAction)love:(id)sender {
-    NSString *identifier = [NSString stringWithFormat:@"%@:%@", [Model sharedModel].currentStation.name, [Model sharedModel].currentStation.description];
-    
-    if (![Favourites isFavourite:identifier]) {
-        [Favourites addToFavourites:identifier];
+- (IBAction)love:(id)sender {    
+    if (![Favourites isFavourite:[Model sharedModel].currentStation.identifier]) {
+        [Favourites addToFavourites:[Model sharedModel].currentStation.identifier];
     }
     else{
-        [Favourites removeFavourite:identifier];
+        [Favourites removeFavourite:[Model sharedModel].currentStation.identifier];
     }
     
     [Favourites saveFavourites];

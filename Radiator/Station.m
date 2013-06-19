@@ -21,6 +21,10 @@
     return station;
 }
 
+- (NSString *)identifier{
+    return [NSString stringWithFormat:@"%@:%@", _name, _description];
+}
+
 // Decode
 - (id)initWithCoder:(NSCoder *)decoder{
     if(self = [super init]) // this needs to be [super initWithCoder:aDecoder] if the superclass implements NSCoding
@@ -41,7 +45,6 @@
     [encoder encodeObject:_description forKey:@"description"];
     [encoder encodeObject:_artworkName forKey:@"artworkName"];
     [encoder encodeObject:_category forKey:@"category"];
-
 }
 
 

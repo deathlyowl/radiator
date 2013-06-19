@@ -34,8 +34,7 @@
     _stations = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"]];
     _favouriteStations = [[NSArray alloc] init];
     for (Station *station in _stations) {
-        NSString *identifier = [NSString stringWithFormat:@"%@:%@", station.name, station.description];
-        if ([Favourites isFavourite:identifier]) {
+        if ([Favourites isFavourite:station.identifier]) {
             _favouriteStations = [_favouriteStations arrayByAddingObject:station];
         }
     }
