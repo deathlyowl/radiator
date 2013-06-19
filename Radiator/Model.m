@@ -59,19 +59,21 @@
 
 - (void) importStationsFromServer {
     NSError *error;
-    NSString *csvString = [NSString stringWithContentsOfURL:[NSURL URLWithString:DB_URL]
-                                                   encoding:NSUTF8StringEncoding
-                                                      error:&error];
-    if (!error)
-    {
-        NSArray *lines = [[csvString componentsSeparatedByString:@"\n"]
-                          filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"not SELF BEGINSWITH '#'"]],
-                *stations = [[NSArray alloc] init];
-        
-        for (NSString *line in lines) stations = [stations arrayByAddingObject:[Station stationWithLine:line]];
-        
-        if (stations.count) [NSKeyedArchiver archiveRootObject:stations
-                                                        toFile:DB_FILE];
+    
+    NSData *JSONData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[API_URL stringByAppendingString:@"/stations.json"]]];
+
+    if (JSONData) {
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:JSONData
+                                                             options:kNilOptions
+                                                               error:&error];
+        if (!error)
+        {
+            NSArray *stations = [[NSArray alloc] init];
+            for (NSDictionary *dictionary in json)
+                stations = [stations arrayByAddingObject:[Station stationWithDictionary:dictionary]];
+            if (stations.count) [NSKeyedArchiver archiveRootObject:stations
+                                                            toFile:DB_FILE];
+        }
     }
 }
 

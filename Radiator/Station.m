@@ -21,6 +21,17 @@
     return station;
 }
 
++ (Station *)stationWithDictionary:(NSDictionary *)dictionary{
+    Station *station = [[Station alloc] init];
+    station.name = [dictionary objectForKey:@"name"];
+    station.URL = [NSURL URLWithString:[dictionary objectForKey:@"url"]];
+    station.description = [dictionary objectForKey:@"description"];
+    station.artworkName = [dictionary objectForKey:@"shortcut"];
+    station.category = [dictionary objectForKey:@"genre"];
+    NSLog(@"URL: %@", station.URL);
+    return station;
+}
+
 - (NSString *) comparableName{
     if (_name.length > 11 && [[_name substringToIndex:11] isEqualToString:@"Radio Plus "]) return [_name substringFromIndex:11];
     if (_name.length > 6 && [[_name substringToIndex:6] isEqualToString:@"Radio "]) return [_name substringFromIndex:6];

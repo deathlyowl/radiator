@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString *artworkName;
 
 + (Station *)stationWithLine:(NSString *)line;
++ (Station *)stationWithDictionary:(NSDictionary *)dictionary;
 - (NSString *) identifier;
 - (BOOL) compare:(Station *)theOtherOne;
 - (NSString *) comparableName;
