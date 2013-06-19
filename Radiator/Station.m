@@ -25,6 +25,7 @@
     if (_name.length > 11 && [[_name substringToIndex:11] isEqualToString:@"Radio Plus "]) return [_name substringFromIndex:11];
     if (_name.length > 6 && [[_name substringToIndex:6] isEqualToString:@"Radio "]) return [_name substringFromIndex:6];
     if (_name.length > 14 && [[_name substringToIndex:14] isEqualToString:@"Polskie Radio "]) return [_name substringFromIndex:14];
+    if (_name.length > 17 && [[_name substringToIndex:17] isEqualToString:@"Katolickie Radio "]) return [_name substringFromIndex:17];
 
     return _name;
 }
