@@ -31,7 +31,13 @@
 }
 
 - (void) loadData{
-    _stations = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"]];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:DB_FILE])
+        [NSKeyedArchiver archiveRootObject:[NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"stations"
+                                                                                                                      ofType:@"plist"]]
+                                    toFile:DB_FILE];
+    
+    _stations = [NSKeyedUnarchiver unarchiveObjectWithFile:DB_FILE];
+    
     _favouriteStations = [[NSArray alloc] init];
     for (Station *station in _stations) {
         if ([Favourites isFavourite:station.identifier]) {
@@ -46,16 +52,10 @@
     _filteredFavouriteStations = [_favouriteStations filteredArrayUsingPredicate:predicate];    
 }
 
-- (void) importStationsFromServer {    
-    NSString *databasePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"];
-    NSString *defaultDatabasePath = [[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"];
-    
-    // Copy default database
-    if (![[NSFileManager defaultManager] fileExistsAtPath:databasePath]) [[NSArray arrayWithContentsOfFile:defaultDatabasePath] writeToFile:databasePath atomically:YES];
-    
+- (void) importStationsFromServer {
     NSMutableArray *database = [[NSMutableArray alloc] init];
     
-    NSString *csvString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://ksienie.com/radiator/stacje.csv"] encoding:NSUTF8StringEncoding error:nil];
+    NSString *csvString = [NSString stringWithContentsOfURL:[NSURL URLWithString:DB_URL] encoding:NSUTF8StringEncoding error:nil];
     if (csvString) {
         NSArray *lines = [csvString componentsSeparatedByString:@"\n"];
         NSMutableArray *stations = [[NSMutableArray alloc] init];
@@ -69,10 +69,15 @@
             [database addObject:station];
         }
         
-        if (database.count){
-            [NSKeyedArchiver archiveRootObject:database toFile:databasePath];
-        }
+        if (database.count) [NSKeyedArchiver archiveRootObject:database
+                                                        toFile:DB_FILE];
     }
+}
+
+- (void)setCurrentStation:(Station *)currentStation{
+    _currentStation = currentStation;
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] setPlayer:[[AVPlayer alloc] initWithURL:currentStation.URL]];
+
 }
 
 @end

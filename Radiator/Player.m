@@ -7,15 +7,20 @@
 //
 
 #import "Player.h"
+#import "AppDelegate.h"
 
 @implementation Player
 
++ (AVPlayer *) player{
+    return [(AppDelegate *)[[UIApplication sharedApplication] delegate] player];
+}
+
 + (void) play {
-    [delegate.player play];
+    [[Player player] play];
 }
 
 + (void) pause {
-    [delegate.player pause];
+    [[Player player] pause];
 }
 
 + (void) setStation:(Station *) station{
@@ -23,7 +28,6 @@
     
     [[Model sharedModel] setCurrentStation:station];
     
-    delegate.player = [[AVPlayer alloc] initWithURL:station.URL];
     /*
     UIImage *image = [UIImage imageNamed:[station objectForKey:@"artworkName"]];
     if (image) {
@@ -37,7 +41,7 @@
 }
 
 + (BOOL) isPlaying{
-    return delegate.player.rate != 0.;
+    return [Player player].rate != 0.;
 }
 
 @end

@@ -12,8 +12,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    delegate = self;
-
     [Favourites loadFavourites];
     [[Model sharedModel] loadData];
     [[Model sharedModel] performSelectorInBackground:@selector(importStationsFromServer)
@@ -22,11 +20,11 @@
     _player = [[AVPlayer alloc] init];
     
     [[AVAudioSession sharedInstance] setDelegate: self];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback
+                                           error:nil];
     
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
-    
     return YES;
 }
 
