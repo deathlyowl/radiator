@@ -8,10 +8,15 @@
 
 #import "AppDelegate.h"
 #import "Favourites.h"
+#import "Reciever.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[Reciever sharedObject] setGain:6];
+    [[Reciever sharedObject] setCodec:FM];
+    
     [Favourites loadFavourites];
     
     _player = [[AVPlayer alloc] init];

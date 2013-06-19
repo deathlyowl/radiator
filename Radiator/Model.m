@@ -24,6 +24,13 @@
 
 - (id)init{
     if (self = [super init]) {
+        antennaDictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"antennaDictionary"
+                                                                                                       ofType:@"plist"]];
+        _nearbySet = [[NSSet alloc] init];
+        model = [[SignalRangeModel alloc] init];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(reloadTable)
+                                                     name:@"calculated" object:nil];
         // Load default database if there's no file in docs
         if (![[NSFileManager defaultManager] fileExistsAtPath:DB_FILE])
             [NSKeyedArchiver archiveRootObject:[NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"stations"
@@ -36,6 +43,29 @@
     return self;
 }
 
+- (void) reloadTable{
+    NSLog(@"CALCULATED! [%i]", model.receivableFreqChannels.count);
+    for (DOFreqChannel *freqChannel in model.receivableFreqChannels){
+        NSLog(@"\t| %@", freqChannel.media);
+        NSString *object = [antennaDictionary objectForKey:freqChannel.media];
+        if (object) {
+            _nearbySet = [_nearbySet setByAddingObject:object];
+
+        }
+    }
+    
+    // Build nearby
+    _nearbyStations = [[NSArray alloc] init];
+    NSLog(@"_nearbySet: %@", _nearbySet);
+    for (Station *station in _stations)
+        if ([_nearbySet containsObject:station.name])
+            _nearbyStations = [_nearbyStations arrayByAddingObject:station];
+    
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"nearbyReloaded"
+                                                        object:nil];
+}
+
 - (void) loadData{
     // Load stations
     _stations = [NSKeyedUnarchiver unarchiveObjectWithFile:DB_FILE];
@@ -45,17 +75,22 @@
         return [a compare:b];
     }];
     
+    NSLog(@"Stations in nearby [%i]", _nearbyStations.count);
+    for (Station *station in _nearbyStations) NSLog(@"\t| %@", station.name);
+    
     // Build favourites
     _favouriteStations = [[NSArray alloc] init];
     for (Station *station in _stations)
         if ([Favourites isFavourite:station.identifier])
             _favouriteStations = [_favouriteStations arrayByAddingObject:station];
+    
 }
 
 - (void) filterWithString:(NSString *)string{
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains[c] %@ OR description contains[c] %@", string, string];
     _filteredStations = [_stations filteredArrayUsingPredicate:predicate];
-    _filteredFavouriteStations = [_favouriteStations filteredArrayUsingPredicate:predicate];    
+    _filteredFavouriteStations = [_favouriteStations filteredArrayUsingPredicate:predicate];
+    _filteredNearbyStations = [_nearbyStations filteredArrayUsingPredicate:predicate];
 }
 
 - (void) importStationsFromServer {

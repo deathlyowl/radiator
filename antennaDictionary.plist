@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Koszalin</key>
+	<string>Polskie Radio Koszalin</string>
+	<key>RMF FM</key>
+	<string>RMF FM</string>
+	<key>Szczecin</key>
+	<string>Polskie Radio Szczecin</string>
+	<key>Zachod</key>
+	<string>Radio Zachód</string>
+	<key>Zlote Przeboje 105,6 FM</key>
+	<string>Radio Złote Przeboje</string>
+	<key>Zlote Przeboje 90,4 FM</key>
+	<string>Radio Złote Przeboje</string>
+	<key>ZET</key>
+	<string>Radio ZET</string>
+	<key>Wroclaw</key>
+	<string>Polskie Radio Wrocław</string>
+	<key>Rodzina</key>
+	<string>Katolickie Radio Rodzina</string>
+	<key>WAWA Wroclaw</key>
+	<string>Radio WAWA</string>
+	<key>Eska Wroclaw</key>
+	<string>Radio Eska</string>
+	<key>Eska Rock</key>
+	<string>Eska ROCK</string>
+	<key>Roxy Wroclaw</key>
+	<string>Roxy FM</string>
+	<key>RAM</key>
+	<string>Radio RAM</string>
+	<key>Traffic FM</key>
+	<string>Radio Traffic FM</string>
+	<key>PiN</key>
+	<string>Radio PiN</string>
+	<key>RMF Classic</key>
+	<string>RMF Classic</string>
+	<key>Opole</key>
+	<string>Polskie Radio Opole</string>
+	<key>Chilli ZET</key>
+	<string>Chilli ZET</string>
+	<key>Luz</key>
+	<string>Radio Luz</string>
+</dict>
+</plist>

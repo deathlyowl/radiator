@@ -7,13 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SignalRangeModel.h"
 
-@interface Model : NSObject
+@interface Model : NSObject{
+    SignalRangeModel *model;
+    NSDictionary *antennaDictionary;
+}
 
 @property (nonatomic, retain) NSArray *stations;
 @property (nonatomic, retain) NSArray *filteredStations;
 @property (nonatomic, retain) NSArray *favouriteStations;
+@property (nonatomic, retain) NSArray *nearbyStations;
+@property (nonatomic, retain) NSArray *filteredNearbyStations;
 @property (nonatomic, retain) NSArray *filteredFavouriteStations;
+
+@property (nonatomic, retain) NSSet *nearbySet;
 
 @property (nonatomic, retain) Station *currentStation;
 

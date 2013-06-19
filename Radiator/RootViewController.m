@@ -20,6 +20,15 @@
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
                               atScrollPosition:UITableViewScrollPositionTop
                                       animated:NO];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadTable)
+                                                 name:@"nearbyReloaded" object:nil];
+}
+
+- (void) reloadTable{
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1]
+                  withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,12 +72,12 @@
 {
     if (isSearching) switch (section) {
         case 0: return [Model sharedModel].filteredFavouriteStations.count;
-        case 1: return 0;
+        case 1: return [Model sharedModel].filteredNearbyStations.count;
         case 2: return [Model sharedModel].filteredStations.count;
     }
     else switch (section) {
         case 0: return [Model sharedModel].favouriteStations.count;
-        case 1: return 0;
+        case 1: return [Model sharedModel].nearbyStations.count;
         case 2: return [Model sharedModel].stations.count;
     }
     return 0;
@@ -79,14 +88,14 @@
     if (isSearching) {
         switch (indexPath.section) {
             case 0: return [[Model sharedModel].filteredFavouriteStations objectAtIndex:indexPath.row];
-            case 1: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
+            case 1: return [[Model sharedModel].filteredNearbyStations objectAtIndex:indexPath.row];
             case 2: return [[Model sharedModel].filteredStations objectAtIndex:indexPath.row];
         }
     }
     else{
         switch (indexPath.section) {
             case 0: return [[Model sharedModel].favouriteStations objectAtIndex:indexPath.row];
-            case 1: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
+            case 1: return [[Model sharedModel].nearbyStations objectAtIndex:indexPath.row];
             case 2: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
         }
     }
@@ -94,11 +103,28 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (![Model sharedModel].favouriteStations.count) return nil;
-    switch (section) {
-        case 0: return @"Ulubione";
-        case 1: if(0 == 0) return nil; else return @"W okolicy";
-        case 2: return @"Wszystkie";
+    if (isSearching) {
+        switch (section) {
+            case 0:
+                if([Model sharedModel].filteredFavouriteStations.count)
+                    return [NSString stringWithFormat:@"Ulubione (%i)", [Model sharedModel].filteredFavouriteStations.count];
+                else
+                    return nil;
+            case 1:
+                if([Model sharedModel].filteredNearbyStations.count)
+                    return [NSString stringWithFormat:@"W okolicy (%i)", [Model sharedModel].filteredNearbyStations.count];
+                else
+                    return nil;
+            case 2:
+                return [NSString stringWithFormat:@"Wszystkie (%i)", [Model sharedModel].filteredStations.count];
+        }
+    }
+    else{
+        switch (section) {
+            case 0: if([Model sharedModel].favouriteStations.count) return @"Ulubione"; else return nil;
+            case 1: if([Model sharedModel].nearbyStations.count) return @"W okolicy"; else return nil;
+            case 2: if([Model sharedModel].nearbyStations.count || [Model sharedModel].favouriteStations.count) return @"Wszystkie"; else return nil;
+        }
     }
     return nil;
 }
@@ -110,6 +136,7 @@
     NSString *identifier = station.category;
     
     if (indexPath.section == 0) identifier = @"lovely";
+    if (indexPath.section == 1) identifier = @"nearby";
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier
                                                             forIndexPath:indexPath];
