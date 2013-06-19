@@ -132,7 +132,8 @@
     
     self.navigationItem.leftBarButtonItem = self.heartButton;
     
-    [self.navigationItem setTitle:station.name];
+    [_titleButton setTitle:station.name
+                  forState:UIControlStateNormal];
     
     [tableView deselectRowAtIndexPath:indexPath
                              animated:YES];
@@ -177,5 +178,41 @@
     // Pass the selected object to the new view controller.
 }
  */
+
+- (IBAction)action:(id)sender {    
+    if ([Model sharedModel].currentStation){
+        UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                      initWithTitle:[Model sharedModel].currentStation.name
+                                      delegate:self
+                                      cancelButtonTitle:@"Anuluj"
+                                      destructiveButtonTitle:nil
+                                      otherButtonTitles:@"Zgłoś niedziałający stumień", @"Zaproponuj stację", nil];
+        [actionSheet showInView:self.view.superview];
+    }
+    else {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                      initWithTitle:nil
+                                      delegate:self
+                                      cancelButtonTitle:@"Anuluj"
+                                      destructiveButtonTitle:nil
+                                      otherButtonTitles:@"Zaproponuj stację", nil];
+        [actionSheet showInView:self.view.superview];
+    }
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Dziękuję!"
+                                                      message:@"Przepraszam, że nie możesz słuchać tego strumienia. Postaram się go naprawić w przeciągu 24 godzin."
+                                                     delegate:nil
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+    switch (buttonIndex + !(BOOL)[Model sharedModel].currentStation) {
+        case 0:
+            [message show];
+            break;
+        case 1:
+            break;
+    }
+}
 
 @end

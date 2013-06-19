@@ -4,15 +4,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3682.6"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller - Radiator-->
+        <!--Root View Controller-->
         <scene sceneID="TGj-cg-SuP">
             <objects>
                 <tableViewController id="yv3-xU-MCN" customClass="RootViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="oJM-dJ-RVZ">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="oJM-dJ-RVZ">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" red="0.81553792950000004" green="0.0" blue="0.18017816540000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Wyszukaj" id="fWo-mE-yLH">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -200,13 +200,30 @@
                         <sections/>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Radiator" id="U9a-yN-FX0">
+                    <navigationItem key="navigationItem" id="U9a-yN-FX0">
+                        <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="Lista" id="ki4-y5-2Il"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ccJ-nM-oSc">
+                            <rect key="frame" x="72" y="0.0" width="176" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <state key="normal" title="Radiator">
+                                <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="action:" destination="yv3-xU-MCN" eventType="touchUpInside" id="zP6-aD-fwV"/>
+                            </connections>
+                        </button>
                     </navigationItem>
                     <connections>
                         <outlet property="heartButton" destination="ElK-So-zT1" id="ADY-8t-x5x"/>
                         <outlet property="pauseButton" destination="feX-e5-EwZ" id="uic-4B-8hF"/>
                         <outlet property="playButton" destination="0ms-Cg-Epc" id="RYe-xz-7vX"/>
+                        <outlet property="titleButton" destination="ccJ-nM-oSc" id="9iB-Dn-Pe2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdh-8O-oog" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -237,7 +254,7 @@
                     </connections>
                 </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="625" y="221"/>
+            <point key="canvasLocation" x="505" y="221"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Elz-YR-q0B">
@@ -272,26 +289,6 @@
         <image name="University" width="33" height="33"/>
         <image name="lovely" width="33" height="33"/>
     </resources>
-    <classes>
-        <class className="RootViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="love:"/>
-                <relationship kind="action" name="pause:"/>
-                <relationship kind="action" name="play:"/>
-                <relationship kind="outlet" name="heartButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="playButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="StationCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StationCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailTextLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

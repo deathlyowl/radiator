@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Model.h"
 
-@interface RootViewController : UITableViewController <UISearchDisplayDelegate> {
+@interface RootViewController : UITableViewController <UISearchDisplayDelegate, UIActionSheetDelegate> {
     BOOL isSearching;
 }
 
@@ -19,5 +19,7 @@
 - (IBAction)pause:(id)sender;
 - (IBAction)play:(id)sender;
 - (IBAction)love:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *titleButton;
+- (IBAction)action:(id)sender;
 
 @end
