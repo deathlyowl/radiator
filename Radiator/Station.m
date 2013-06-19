@@ -10,17 +10,6 @@
 
 @implementation Station
 
-+ (Station *)stationWithLine:(NSString *)line{
-    Station *station = [[Station alloc] init];
-    NSArray *componnents = [line componentsSeparatedByString:@";"];
-    station.name = [componnents objectAtIndex:0];
-    station.URL = [NSURL URLWithString:[componnents objectAtIndex:1]];
-    station.description = [componnents objectAtIndex:2];
-    station.artworkName = [componnents objectAtIndex:3];
-    station.category = [componnents objectAtIndex:4];
-    return station;
-}
-
 + (Station *)stationWithDictionary:(NSDictionary *)dictionary{
     Station *station = [[Station alloc] init];
     station.name = [dictionary objectForKey:@"name"];
@@ -28,7 +17,6 @@
     station.description = [dictionary objectForKey:@"description"];
     station.artworkName = [dictionary objectForKey:@"shortcut"];
     station.category = [dictionary objectForKey:@"genre"];
-    NSLog(@"URL: %@", station.URL);
     return station;
 }
 

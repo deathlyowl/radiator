@@ -13,9 +13,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Favourites loadFavourites];
-    [[Model sharedModel] loadData];
-    [[Model sharedModel] performSelectorInBackground:@selector(importStationsFromServer)
-                                          withObject:nil];
     
     _player = [[AVPlayer alloc] init];
     

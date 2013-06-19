@@ -29,6 +29,7 @@
             [NSKeyedArchiver archiveRootObject:[NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"stations"
                                                                                                                           ofType:@"plist"]]
                                         toFile:DB_FILE];
+        [self importStationsFromServer];
         [self loadData];
         _currentStation = nil;
     }
