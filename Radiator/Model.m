@@ -24,34 +24,30 @@
 
 - (id)init{
     if (self = [super init]) {
-        _stations = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"]];
-        _favouriteStations = [[NSArray alloc] init];
-        NSLog(@"SC: %i", self.stations.count);
-
+        [self loadData];
+        _currentStation = nil;
     }
     return self;
 }
 
-- (void) fillSections{
+- (void) loadData{
+    _stations = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"]];
     _favouriteStations = [[NSArray alloc] init];
     for (Station *station in _stations) {
         NSString *identifier = [NSString stringWithFormat:@"%@:%@", station.name, station.description];
         if ([Favourites isFavourite:identifier]) {
             _favouriteStations = [_favouriteStations arrayByAddingObject:station];
         }
-    }    
+    }
 }
 
 - (void) filterWithString:(NSString *)string{
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", string];
-    
     _filteredStations = [_stations filteredArrayUsingPredicate:predicate];
     _filteredFavouriteStations = [_favouriteStations filteredArrayUsingPredicate:predicate];    
 }
 
-- (void) importStationsFromServer{
-    NSLog(@"Import started");
-    
+- (void) importStationsFromServer {    
     NSString *databasePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"];
     NSString *defaultDatabasePath = [[NSBundle mainBundle] pathForResource:@"stations" ofType:@"plist"];
     

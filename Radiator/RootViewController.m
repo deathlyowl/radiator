@@ -26,7 +26,6 @@
 
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
-    NSLog(@"SS[%i]: %@", isSearching, searchString);
     [[Model sharedModel] filterWithString:searchString];
     return YES;
 }
@@ -110,7 +109,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Station *station = [self stationForIndexPath:indexPath];
-    if (station != currentStation) {
+    if (station != [Model sharedModel].currentStation) {
         [Player setStation:station];
         [Player play];
         self.navigationItem.rightBarButtonItem = self.pauseButton;
@@ -136,7 +135,7 @@
 }
 
 - (IBAction)love:(id)sender {
-    NSString *identifier = [NSString stringWithFormat:@"%@:%@", currentStation.name, currentStation.description];
+    NSString *identifier = [NSString stringWithFormat:@"%@:%@", [Model sharedModel].currentStation.name, [Model sharedModel].currentStation.description];
     
     if (![Favourites isFavourite:identifier]) {
         [Favourites addToFavourites:identifier];
@@ -147,7 +146,8 @@
     
     [Favourites saveFavourites];
     
-    [[Model sharedModel] fillSections];
+    [[Model sharedModel] loadData];
+    
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
 }

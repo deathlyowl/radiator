@@ -21,7 +21,8 @@
 + (void) setStation:(Station *) station{
     if (self.isPlaying) [self pause];
     
-    currentStation = station;
+    [[Model sharedModel] setCurrentStation:station];
+    
     delegate.player = [[AVPlayer alloc] initWithURL:station.URL];
     /*
     UIImage *image = [UIImage imageNamed:[station objectForKey:@"artworkName"]];

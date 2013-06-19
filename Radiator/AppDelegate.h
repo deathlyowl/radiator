@@ -20,5 +20,4 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ListViewController *viewController;
 
-
 @end

@@ -13,7 +13,6 @@
     #import <Foundation/Foundation.h>
     #import "AppDelegate.h"
     #import "Station.h"
-    Station *currentStation;
     AppDelegate *delegate;
     NSSet *favouritesSet;
 #endif
