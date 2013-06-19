@@ -16,6 +16,10 @@
 {
     isSearching = NO;
     [super viewDidLoad];
+    if ([Model sharedModel].favouriteStations.count)
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                              atScrollPosition:UITableViewScrollPositionTop
+                                      animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,6 +32,16 @@
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
     [[Model sharedModel] filterWithString:searchString];
     return YES;
+}
+
+- (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                            withAnimation:UIStatusBarAnimationSlide];
+}
+
+- (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller{
+    [[UIApplication sharedApplication] setStatusBarHidden:NO
+                                            withAnimation:UIStatusBarAnimationSlide];
 }
 
 - (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller{
@@ -84,7 +98,7 @@
     switch (section) {
         case 0: return @"Ulubione";
         case 1: if(0 == 0) return nil; else return @"W okolicy";
-        case 2: return @"Wszystkie (Alfabetycznie)";
+        case 2: return @"Wszystkie";
     }
     return nil;
 }
@@ -136,17 +150,15 @@
 }
 
 - (IBAction)love:(id)sender {    
-    if (![Favourites isFavourite:[Model sharedModel].currentStation.identifier]) {
+    if (![Favourites isFavourite:[Model sharedModel].currentStation.identifier])
         [Favourites addToFavourites:[Model sharedModel].currentStation.identifier];
-    }
-    else{
+    else
         [Favourites removeFavourite:[Model sharedModel].currentStation.identifier];
-    }
     
     [Favourites saveFavourites];
     
     [[Model sharedModel] loadData];
-    
+        
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
 }

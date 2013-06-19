@@ -22,8 +22,9 @@
 }
 
 - (NSString *) comparableName{
-    if ([[_name substringToIndex:6] isEqualToString:@"Radio "]) return [_name substringFromIndex:6];
-    else return _name;
+    if (_name.length > 6 && [[_name substringToIndex:6] isEqualToString:@"Radio "]) return [_name substringFromIndex:6];
+    if (_name.length > 14 && [[_name substringToIndex:14] isEqualToString:@"Polskie Radio "]) return [_name substringFromIndex:14];
+    return _name;
 }
 
 - (BOOL) compare:(Station *)theOtherOne{
