@@ -26,6 +26,7 @@
 		FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */; };
 		FAEC1FFF17718EF7005A292D /* stations.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAEC1FFE17718EF7005A292D /* stations.plist */; };
 		FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */; };
+		FAF75795177255300064FFC1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF75794177255300064FFC1 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FAEC1FFE17718EF7005A292D /* stations.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = stations.plist; sourceTree = "<group>"; };
 		FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		FAF75794177255300064FFC1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF75795177255300064FFC1 /* CoreLocation.framework in Frameworks */,
 				FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */,
 				FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */,
 				FA72C15E15DE9F5F002247D3 /* Security.framework in Frameworks */,
@@ -98,6 +101,7 @@
 		FA72C13A15DE9C9D002247D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAF75794177255300064FFC1 /* CoreLocation.framework */,
 				FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */,
 				FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */,
 				FA72C15D15DE9F5F002247D3 /* Security.framework */,
