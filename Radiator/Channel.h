@@ -12,11 +12,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DOTransmitter.h"
+#import "GeoObject.h"
 
-@interface DOFreqChannel : NSObject
+@interface Channel : GeoObject
 
-@property (nonatomic, retain) DOTransmitter *transmitter;
 @property (nonatomic) short int codec;
 @property (nonatomic) float frequency;
 @property (nonatomic) float reception;

@@ -7,12 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DOFreqChannel.h"
+#import "Channel.h"
 
 @interface DOMath : NSObject
-
-+ (float) frequencyFromChannel:(float) channel
-                      forCodec:(short int)codec;
 
 + (float) percentageFromReception:(float)reception;
 
@@ -21,7 +18,7 @@
                 frequency:(float) frequency
                  andLimit:(float) limit;
 
-+ (float) receptionWithFreqChannel:(DOFreqChannel *)freqChannel
-                        atDistance:(int) distance;
++ (float) receptionWithChannel:(Channel *) channel
+                    atDistance:(int) distance;
 
 @end

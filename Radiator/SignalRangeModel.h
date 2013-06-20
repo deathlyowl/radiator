@@ -7,17 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DOTransmitter.h"
-#import "DOFreqChannel.h"
+#import "Channel.h"
 #import "DOMath.h"
 
-@interface SignalRangeModel : NSObject {
-    NSMutableSet *allMedia;
-    NSArray *transmitters;
-    NSMutableArray *freqChannels;
-}
+@interface SignalRangeModel : NSObject
 
-@property (nonatomic, retain) NSMutableArray *receivableFreqChannels;
+@property (nonatomic, retain) NSArray *channels;
+@property (nonatomic, retain) NSSet *receivableChannelsSet;
 
 - (void) calculate;
 

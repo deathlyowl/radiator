@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Deathly Owl. All rights reserved.
 //
 
-#import "DOFreqChannel.h"
+#import "Channel.h"
 
-@implementation DOFreqChannel
-@synthesize transmitter, codec, media, power, frequency, reception;
+@implementation Channel
+@synthesize codec, media, power, frequency, reception;
 
 - (void)encodeWithCoder:(NSCoder *)coder
 {
@@ -29,6 +29,10 @@
         media = [coder decodeObjectForKey:@"media"];
     }
     return self;
+}
+
+- (NSString *)description{
+    return media;
 }
 
 @end

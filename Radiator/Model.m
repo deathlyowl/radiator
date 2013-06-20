@@ -43,25 +43,15 @@
     return self;
 }
 
-- (void) reloadTable{
-    NSLog(@"CALCULATED! [%i]", model.receivableFreqChannels.count);
-    for (DOFreqChannel *freqChannel in model.receivableFreqChannels){
-        NSLog(@"\t| %@", freqChannel.media);
-        NSString *object = [antennaDictionary objectForKey:freqChannel.media];
-        if (object) {
-            _nearbySet = [_nearbySet setByAddingObject:object];
-
-        }
-    }
-    
+- (void) reloadTable{    
     // Build nearby
     _nearbyStations = [[NSArray alloc] init];
     NSLog(@"_nearbySet: %@", _nearbySet);
     for (Station *station in _stations)
-        if ([_nearbySet containsObject:station.name])
+        if ([model.receivableChannelsSet containsObject:station.name])
             _nearbyStations = [_nearbyStations arrayByAddingObject:station];
     
-    
+
     [[NSNotificationCenter defaultCenter] postNotificationName:@"nearbyReloaded"
                                                         object:nil];
 }

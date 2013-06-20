@@ -147,8 +147,6 @@
     return cell;
 }
 
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Station *station = [self stationForIndexPath:indexPath];
     if (station != [Model sharedModel].currentStation) {

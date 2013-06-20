@@ -30,8 +30,7 @@
 		FAF75799177255A10064FFC1 /* Reciever.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF75798177255A10064FFC1 /* Reciever.m */; };
 		FAF7579C177255B30064FFC1 /* GeoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF7579B177255B30064FFC1 /* GeoObject.m */; };
 		FAF7579F177256840064FFC1 /* SignalRangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF7579E177256840064FFC1 /* SignalRangeModel.m */; };
-		FAF757A4177256A30064FFC1 /* DOTransmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF757A1177256A30064FFC1 /* DOTransmitter.m */; };
-		FAF757A5177256A30064FFC1 /* DOFreqChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF757A3177256A30064FFC1 /* DOFreqChannel.m */; };
+		FAF757A5177256A30064FFC1 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF757A3177256A30064FFC1 /* Channel.m */; };
 		FAF757A8177256AA0064FFC1 /* DOMath.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF757A7177256AA0064FFC1 /* DOMath.m */; };
 		FAF757AC1772604C0064FFC1 /* database.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF757AB1772604C0064FFC1 /* database.plist */; };
 		FAF757AE177260990064FFC1 /* antennaDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF757AD177260990064FFC1 /* antennaDictionary.plist */; };
@@ -74,10 +73,8 @@
 		FAF7579B177255B30064FFC1 /* GeoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoObject.m; sourceTree = "<group>"; };
 		FAF7579D177256840064FFC1 /* SignalRangeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignalRangeModel.h; sourceTree = "<group>"; };
 		FAF7579E177256840064FFC1 /* SignalRangeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignalRangeModel.m; sourceTree = "<group>"; };
-		FAF757A0177256A30064FFC1 /* DOTransmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOTransmitter.h; sourceTree = "<group>"; };
-		FAF757A1177256A30064FFC1 /* DOTransmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOTransmitter.m; sourceTree = "<group>"; };
-		FAF757A2177256A30064FFC1 /* DOFreqChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOFreqChannel.h; sourceTree = "<group>"; };
-		FAF757A3177256A30064FFC1 /* DOFreqChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOFreqChannel.m; sourceTree = "<group>"; };
+		FAF757A2177256A30064FFC1 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		FAF757A3177256A30064FFC1 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
 		FAF757A6177256AA0064FFC1 /* DOMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOMath.h; sourceTree = "<group>"; };
 		FAF757A7177256AA0064FFC1 /* DOMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOMath.m; sourceTree = "<group>"; };
 		FAF757AB1772604C0064FFC1 /* database.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = database.plist; sourceTree = "<group>"; };
@@ -183,10 +180,8 @@
 				FAF7579B177255B30064FFC1 /* GeoObject.m */,
 				FAF75797177255A10064FFC1 /* Reciever.h */,
 				FAF75798177255A10064FFC1 /* Reciever.m */,
-				FAF757A0177256A30064FFC1 /* DOTransmitter.h */,
-				FAF757A1177256A30064FFC1 /* DOTransmitter.m */,
-				FAF757A2177256A30064FFC1 /* DOFreqChannel.h */,
-				FAF757A3177256A30064FFC1 /* DOFreqChannel.m */,
+				FAF757A2177256A30064FFC1 /* Channel.h */,
+				FAF757A3177256A30064FFC1 /* Channel.m */,
 				FAF757A6177256AA0064FFC1 /* DOMath.h */,
 				FAF757A7177256AA0064FFC1 /* DOMath.m */,
 			);
@@ -274,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA72C14815DE9C9E002247D3 /* main.m in Sources */,
-				FAF757A5177256A30064FFC1 /* DOFreqChannel.m in Sources */,
+				FAF757A5177256A30064FFC1 /* Channel.m in Sources */,
 				FA8E2F7A1770AF7A004AB962 /* RootViewController.m in Sources */,
 				FAF7579C177255B30064FFC1 /* GeoObject.m in Sources */,
 				FAF7579F177256840064FFC1 /* SignalRangeModel.m in Sources */,
@@ -285,7 +280,6 @@
 				FA72C14C15DE9C9E002247D3 /* AppDelegate.m in Sources */,
 				FA72C15A15DE9D3A002247D3 /* Player.m in Sources */,
 				FA8AB37E1771017000A32353 /* Station.m in Sources */,
-				FAF757A4177256A30064FFC1 /* DOTransmitter.m in Sources */,
 				FA6B32C415DF9A2D007A0405 /* Favourites.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
