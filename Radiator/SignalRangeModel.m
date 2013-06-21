@@ -58,13 +58,14 @@
                                                           atDistance:[Reciever.sharedObject.coordinates
                                                                       distanceFromLocation:channel.coordinates]]];
     
-    NSArray *receiveableChannels = [_channels filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"reception > %f", -30.]];
+    
+    NSArray *receiveableChannels = [_channels filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"reception > %f", (float)-RECEPTION_LIMIT]];
     _receivableChannelsSet = [[NSSet alloc] init];
 
-    for (Channel *channel in receiveableChannels) {
-        _receivableChannelsSet = [_receivableChannelsSet setByAddingObject:channel.media];
-    }
+    //NSLog(@"CIN: %@", _channels);
     
+    for (Channel *channel in receiveableChannels)
+        if (channel.media) _receivableChannelsSet = [_receivableChannelsSet setByAddingObject:channel.media];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"calculated"
                                                         object:nil];

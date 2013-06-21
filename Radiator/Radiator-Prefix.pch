@@ -20,7 +20,7 @@
 
 #define DB_FILE [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"stations.plist"]
 #define DB_URL @"http://ksienie.com/radiator/stacje.csv"
-#define API_URL @"http://quiet-badlands-4719.herokuapp.com"
+#define API_URL @"http://radiator.deathlyowl.com"
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
