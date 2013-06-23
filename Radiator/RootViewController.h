@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 #import "Model.h"
 
-@interface RootViewController : UITableViewController <UISearchDisplayDelegate, UIActionSheetDelegate> {
+@interface RootViewController : UITableViewController <UISearchDisplayDelegate, UIActionSheetDelegate, ADBannerViewDelegate> {
     BOOL isSearching;
 }
 
@@ -21,5 +22,6 @@
 - (IBAction)love:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *titleButton;
 - (IBAction)action:(id)sender;
+@property (strong, nonatomic) IBOutlet ADBannerView *banner;
 
 @end

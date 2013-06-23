@@ -24,11 +24,23 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadTable)
                                                  name:@"nearbyReloaded" object:nil];
+    
+    [_banner setDelegate:self];
+    [_banner setFrame:CGRectMake(0, self.navigationController.view.frame.size.height-50, 320, 50)];
 }
 
 - (void) reloadTable{
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1]
                   withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    [self.navigationController.view addSubview:_banner];
+    NSLog(@"DLA");
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    NSLog(@"FTLA");
 }
 
 - (void)didReceiveMemoryWarning
@@ -236,6 +248,8 @@
             [message show];
             break;
         case 1:
+            [self performSegueWithIdentifier:@"propose"
+                                      sender:nil];
             break;
     }
 }
