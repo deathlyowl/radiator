@@ -255,6 +255,7 @@
                         <outlet property="pauseButton" destination="feX-e5-EwZ" id="uic-4B-8hF"/>
                         <outlet property="playButton" destination="0ms-Cg-Epc" id="RYe-xz-7vX"/>
                         <outlet property="titleButton" destination="ccJ-nM-oSc" id="9iB-Dn-Pe2"/>
+                        <outlet property="unHeartButton" destination="lNR-aF-YAI" id="F63-IO-Yxi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdh-8O-oog" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -278,10 +279,16 @@
                         <action selector="pause:" destination="yv3-xU-MCN" id="aaH-4E-UDy"/>
                     </connections>
                 </barButtonItem>
-                <barButtonItem image="Heart icon" style="plain" id="ElK-So-zT1" userLabel="Bar Button Item - Heart">
+                <barButtonItem image="heartEmpty" style="plain" id="ElK-So-zT1" userLabel="Bar Button Item - Heart">
                     <color key="tintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="love:" destination="yv3-xU-MCN" id="grL-hG-6x5"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem image="heartFull" style="plain" id="lNR-aF-YAI" userLabel="Bar Button Item - unHeart">
+                    <color key="tintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="love:" destination="yv3-xU-MCN" id="Xnf-0S-tOf"/>
                     </connections>
                 </barButtonItem>
                 <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3fF-xt-qm4">
@@ -386,12 +393,13 @@
     </scenes>
     <resources>
         <image name="Community" width="33" height="33"/>
-        <image name="Heart icon" width="24" height="21"/>
         <image name="Local" width="33" height="33"/>
         <image name="Music" width="33" height="33"/>
         <image name="Nearby" width="33" height="33"/>
         <image name="Talk" width="33" height="33"/>
         <image name="University" width="33" height="33"/>
+        <image name="heartEmpty" width="24" height="24"/>
+        <image name="heartFull" width="24" height="24"/>
         <image name="lovely" width="33" height="33"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>

@@ -159,6 +159,7 @@
 				FA8E2F791770AF7A004AB962 /* RootViewController.m */,
 				FAE48FFD17779CC00040F470 /* PropositionViewController.h */,
 				FAE48FFE17779CC00040F470 /* PropositionViewController.m */,
+				FA8E2F821770BAC7004AB962 /* Icons.xcassets */,
 				FAF75796177255960064FFC1 /* Antenna */,
 				FA72C14215DE9C9E002247D3 /* Supporting Files */,
 			);
@@ -171,7 +172,6 @@
 				FAF757AD177260990064FFC1 /* antennaDictionary.plist */,
 				FAF757AB1772604C0064FFC1 /* database.plist */,
 				FAEC1FFE17718EF7005A292D /* stations.plist */,
-				FA8E2F821770BAC7004AB962 /* Icons.xcassets */,
 				FA72C14315DE9C9E002247D3 /* Radiator-Info.plist */,
 				FA72C14415DE9C9E002247D3 /* InfoPlist.strings */,
 				FA72C14715DE9C9E002247D3 /* main.m */,

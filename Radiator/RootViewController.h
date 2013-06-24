@@ -23,5 +23,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *titleButton;
 - (IBAction)action:(id)sender;
 @property (strong, nonatomic) IBOutlet ADBannerView *banner;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *unHeartButton;
 
 @end

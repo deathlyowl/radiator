@@ -25,8 +25,11 @@
                                              selector:@selector(reloadTable)
                                                  name:@"nearbyReloaded" object:nil];
     
-    [_banner setDelegate:self];
     [_banner setFrame:CGRectMake(0, self.navigationController.view.frame.size.height-50, 320, 50)];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [_banner setDelegate:self];
 }
 
 - (void) reloadTable{
@@ -34,14 +37,6 @@
                   withRowAnimation:UITableViewRowAnimationFade];
 }
 
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
-    [self.navigationController.view addSubview:_banner];
-    NSLog(@"DLA");
-}
-
--(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
-    NSLog(@"FTLA");
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -49,6 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Search
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
     [[Model sharedModel] filterWithString:searchString];
@@ -73,7 +69,20 @@
     isSearching = YES;
 }
 
-#pragma mark - Table view data source
+#pragma mark - iAD
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
+    [UIView animateWithDuration:5
+                     animations:^{[self.navigationController.view addSubview:_banner];}
+                     completion:nil];
+    NSLog(@"DLA");
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+    NSLog(@"FTLA");
+}
+
+#pragma mark - Table view
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -167,7 +176,7 @@
         self.navigationItem.rightBarButtonItem = self.pauseButton;
     }
     
-    self.navigationItem.leftBarButtonItem = self.heartButton;
+    self.navigationItem.leftBarButtonItem = [self barButtonForStation:station];
     
     [_titleButton setTitle:station.name
                   forState:UIControlStateNormal];
@@ -177,6 +186,12 @@
 }
 
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 55;
+}
+
+#pragma mark - Actions
+
 - (IBAction)pause:(id)sender {
     self.navigationItem.rightBarButtonItem = self.playButton;
     [Player pause];
@@ -185,6 +200,13 @@
 - (IBAction)play:(id)sender {
     self.navigationItem.rightBarButtonItem = self.pauseButton;
     [Player play];
+}
+
+- (UIBarButtonItem *) barButtonForStation:(Station *)station{
+    if ([Favourites isFavourite:station.identifier])
+        return _unHeartButton;
+    else
+        return _heartButton;
 }
 
 - (IBAction)love:(id)sender {    
@@ -199,22 +221,9 @@
         
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    self.navigationItem.leftBarButtonItem = [self barButtonForStation:[Model sharedModel].currentStation];
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 55;
-}
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
- */
 
 - (IBAction)action:(id)sender {    
     if ([Model sharedModel].currentStation){
