@@ -21,6 +21,11 @@
                                 <outlet property="delegate" destination="yv3-xU-MCN" id="24p-Uf-Bwb"/>
                             </connections>
                         </searchBar>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Dp5-AA-np7">
+                            <rect key="frame" x="0.0" y="499" width="320" height="49"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="lovely" textLabel="cJN-sY-EqD" detailTextLabel="yEH-ZU-5VG" imageView="Hzw-SW-4gA" style="IBUITableViewCellStyleSubtitle" id="1i5-bO-uFK" customClass="StationCell">
                                 <rect key="frame" x="0.0" y="66" width="320" height="55"/>
@@ -370,7 +375,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Elz-YR-q0B">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8bG-ef-kGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="azW-cW-EVa" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PU1-Pb-ooK">
@@ -387,6 +391,7 @@
                         <segue destination="yv3-xU-MCN" kind="relationship" relationship="rootViewController" id="vsh-Hq-BLb"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bG-ef-kGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="79" y="221"/>
         </scene>
@@ -398,7 +403,7 @@
         <image name="Nearby" width="33" height="33"/>
         <image name="Talk" width="33" height="33"/>
         <image name="University" width="33" height="33"/>
-        <image name="heartEmpty" width="24" height="24"/>
+        <image name="heartEmpty" width="48" height="48"/>
         <image name="heartFull" width="24" height="24"/>
         <image name="lovely" width="33" height="33"/>
     </resources>

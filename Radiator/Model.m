@@ -12,16 +12,6 @@
 
 @implementation Model
 
-+ (Model *) sharedModel
-{
-    static dispatch_once_t once;
-    static Model *sharedModel;
-    dispatch_once(&once, ^{
-        sharedModel = [[self alloc] init];
-    });
-    return sharedModel;
-}
-
 - (id)init{
     if (self = [super init]) {
         antennaDictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"antennaDictionary"

@@ -17,9 +17,5 @@
 
 + (BOOL) isPlaying{ return [Player player].rate != 0.; }
 
-+ (void) setStation:(Station *) station{
-    if (self.isPlaying) [self pause];
-    [[Model sharedModel] setCurrentStation:station];
-}
 
 @end

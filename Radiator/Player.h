@@ -16,7 +16,6 @@
 
 + (void) play;
 + (void) pause;
-+ (void) setStation:(Station *) station;
 + (BOOL) isPlaying;
 
 @end

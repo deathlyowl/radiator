@@ -17,6 +17,7 @@
     station.description = [dictionary objectForKey:@"description"];
     station.artworkName = [dictionary objectForKey:@"shortcut"];
     station.category = [dictionary objectForKey:@"genre"];
+    station.idNumber = [dictionary objectForKey:@"id"];
     return station;
 }
 
@@ -47,6 +48,7 @@
         _description = [decoder decodeObjectForKey:@"description"];
         _artworkName = [decoder decodeObjectForKey:@"artworkName"];
         _category = [decoder decodeObjectForKey:@"category"];
+        _idNumber = [decoder decodeObjectForKey:@"idNumber"];
     }
     return self;
 }
@@ -58,6 +60,7 @@
     [encoder encodeObject:_description forKey:@"description"];
     [encoder encodeObject:_artworkName forKey:@"artworkName"];
     [encoder encodeObject:_category forKey:@"category"];
+    [encoder encodeObject:_idNumber forKey:@"idNumber"];
 }
 
 

@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) NSString *category;
 @property (nonatomic, retain) NSString *artworkName;
+@property (nonatomic, retain) NSString *idNumber;
 
 + (Station *)stationWithDictionary:(NSDictionary *)dictionary;
 - (NSString *) identifier;

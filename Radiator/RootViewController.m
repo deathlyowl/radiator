@@ -14,9 +14,10 @@
 
 - (void)viewDidLoad
 {
+    model = [[Model alloc] init];
     isSearching = NO;
     [super viewDidLoad];
-    if ([Model sharedModel].favouriteStations.count)
+    if (model.favouriteStations.count)
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
                               atScrollPosition:UITableViewScrollPositionTop
                                       animated:NO];
@@ -47,7 +48,7 @@
 #pragma mark - Search
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
-    [[Model sharedModel] filterWithString:searchString];
+    [model filterWithString:searchString];
     return YES;
 }
 
@@ -92,14 +93,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (isSearching) switch (section) {
-        case 0: return [Model sharedModel].filteredFavouriteStations.count;
-        case 1: return [Model sharedModel].filteredNearbyStations.count;
-        case 2: return [Model sharedModel].filteredStations.count;
+        case 0: return model.filteredFavouriteStations.count;
+        case 1: return model.filteredNearbyStations.count;
+        case 2: return model.filteredStations.count;
     }
     else switch (section) {
-        case 0: return [Model sharedModel].favouriteStations.count;
-        case 1: return [Model sharedModel].nearbyStations.count;
-        case 2: return [Model sharedModel].stations.count;
+        case 0: return model.favouriteStations.count;
+        case 1: return model.nearbyStations.count;
+        case 2: return model.stations.count;
     }
     return 0;
 }
@@ -108,16 +109,16 @@
 - (Station *) stationForIndexPath:(NSIndexPath *)indexPath{
     if (isSearching) {
         switch (indexPath.section) {
-            case 0: return [[Model sharedModel].filteredFavouriteStations objectAtIndex:indexPath.row];
-            case 1: return [[Model sharedModel].filteredNearbyStations objectAtIndex:indexPath.row];
-            case 2: return [[Model sharedModel].filteredStations objectAtIndex:indexPath.row];
+            case 0: return [model.filteredFavouriteStations objectAtIndex:indexPath.row];
+            case 1: return [model.filteredNearbyStations objectAtIndex:indexPath.row];
+            case 2: return [model.filteredStations objectAtIndex:indexPath.row];
         }
     }
     else{
         switch (indexPath.section) {
-            case 0: return [[Model sharedModel].favouriteStations objectAtIndex:indexPath.row];
-            case 1: return [[Model sharedModel].nearbyStations objectAtIndex:indexPath.row];
-            case 2: return [[Model sharedModel].stations objectAtIndex:indexPath.row];
+            case 0: return [model.favouriteStations objectAtIndex:indexPath.row];
+            case 1: return [model.nearbyStations objectAtIndex:indexPath.row];
+            case 2: return [model.stations objectAtIndex:indexPath.row];
         }
     }
     return nil;
@@ -127,24 +128,24 @@
     if (isSearching) {
         switch (section) {
             case 0:
-                if([Model sharedModel].filteredFavouriteStations.count)
-                    return [NSString stringWithFormat:@"Ulubione (%i)", [Model sharedModel].filteredFavouriteStations.count];
+                if(model.filteredFavouriteStations.count)
+                    return [NSString stringWithFormat:@"Ulubione (%i)", model.filteredFavouriteStations.count];
                 else
                     return nil;
             case 1:
-                if([Model sharedModel].filteredNearbyStations.count)
-                    return [NSString stringWithFormat:@"W okolicy (%i)", [Model sharedModel].filteredNearbyStations.count];
+                if(model.filteredNearbyStations.count)
+                    return [NSString stringWithFormat:@"W okolicy (%i)", model.filteredNearbyStations.count];
                 else
                     return nil;
             case 2:
-                return [NSString stringWithFormat:@"Wszystkie (%i)", [Model sharedModel].filteredStations.count];
+                return [NSString stringWithFormat:@"Wszystkie (%i)", model.filteredStations.count];
         }
     }
     else{
         switch (section) {
-            case 0: if([Model sharedModel].favouriteStations.count) return @"Ulubione"; else return nil;
-            case 1: if([Model sharedModel].nearbyStations.count) return @"W okolicy"; else return nil;
-            case 2: if([Model sharedModel].nearbyStations.count || [Model sharedModel].favouriteStations.count) return @"Wszystkie"; else return nil;
+            case 0: if(model.favouriteStations.count) return @"Ulubione"; else return nil;
+            case 1: if(model.nearbyStations.count) return @"W okolicy"; else return nil;
+            case 2: if(model.nearbyStations.count || model.favouriteStations.count) return @"Wszystkie"; else return nil;
         }
     }
     return nil;
@@ -170,8 +171,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Station *station = [self stationForIndexPath:indexPath];
-    if (station != [Model sharedModel].currentStation) {
-        [Player setStation:station];
+    if (station != model.currentStation) {
+        if (Player.isPlaying) [Player pause];
+        model.currentStation = station;
         [Player play];
         self.navigationItem.rightBarButtonItem = self.pauseButton;
     }
@@ -210,25 +212,25 @@
 }
 
 - (IBAction)love:(id)sender {    
-    if (![Favourites isFavourite:[Model sharedModel].currentStation.identifier])
-        [Favourites addToFavourites:[Model sharedModel].currentStation.identifier];
+    if (![Favourites isFavourite:model.currentStation.identifier])
+        [Favourites addToFavourites:model.currentStation.identifier];
     else
-        [Favourites removeFavourite:[Model sharedModel].currentStation.identifier];
+        [Favourites removeFavourite:model.currentStation.identifier];
     
     [Favourites saveFavourites];
     
-    [[Model sharedModel] loadData];
+    [model loadData];
         
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
     
-    self.navigationItem.leftBarButtonItem = [self barButtonForStation:[Model sharedModel].currentStation];
+    self.navigationItem.leftBarButtonItem = [self barButtonForStation:model.currentStation];
 }
 
 - (IBAction)action:(id)sender {    
-    if ([Model sharedModel].currentStation){
+    if (model.currentStation){
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
-                                      initWithTitle:[Model sharedModel].currentStation.name
+                                      initWithTitle:model.currentStation.name
                                       delegate:self
                                       cancelButtonTitle:@"Anuluj"
                                       destructiveButtonTitle:nil
@@ -252,7 +254,7 @@
                                                      delegate:nil
                                             cancelButtonTitle:@"OK"
                                             otherButtonTitles:nil];
-    switch (buttonIndex + !(BOOL)[Model sharedModel].currentStation) {
+    switch (buttonIndex + !(BOOL)model.currentStation) {
         case 0:
             [message show];
             break;

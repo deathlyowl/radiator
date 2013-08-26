@@ -25,7 +25,6 @@
 
 @property (nonatomic, retain) Station *currentStation;
 
-+ (Model *) sharedModel;
 - (void) importStationsFromServer;
 - (void) loadData;
 - (void) filterWithString:(NSString *)string;

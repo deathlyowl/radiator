@@ -23,10 +23,10 @@
 		FA8E2F7A1770AF7A004AB962 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E2F791770AF7A004AB962 /* RootViewController.m */; };
 		FA8E2F7D1770B31E004AB962 /* StationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E2F7C1770B31E004AB962 /* StationCell.m */; };
 		FA8E2F831770BAC7004AB962 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8E2F821770BAC7004AB962 /* Icons.xcassets */; };
+		FAA3551617CB4C3900B17AB7 /* stations.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAA3551517CB4C3900B17AB7 /* stations.plist */; };
 		FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */; };
 		FAE48FFC1777942E0040F470 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE48FFB1777942E0040F470 /* iAd.framework */; };
 		FAE48FFF17779CC00040F470 /* PropositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE48FFE17779CC00040F470 /* PropositionViewController.m */; };
-		FAEC1FFF17718EF7005A292D /* stations.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAEC1FFE17718EF7005A292D /* stations.plist */; };
 		FAEC70B415DED48500C8EA98 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */; };
 		FAF75795177255300064FFC1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF75794177255300064FFC1 /* CoreLocation.framework */; };
 		FAF75799177255A10064FFC1 /* Reciever.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF75798177255A10064FFC1 /* Reciever.m */; };
@@ -34,7 +34,6 @@
 		FAF7579F177256840064FFC1 /* SignalRangeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF7579E177256840064FFC1 /* SignalRangeModel.m */; };
 		FAF757A5177256A30064FFC1 /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF757A3177256A30064FFC1 /* Channel.m */; };
 		FAF757A8177256AA0064FFC1 /* DOMath.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF757A7177256AA0064FFC1 /* DOMath.m */; };
-		FAF757AC1772604C0064FFC1 /* database.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF757AB1772604C0064FFC1 /* database.plist */; };
 		FAF757AE177260990064FFC1 /* antennaDictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF757AD177260990064FFC1 /* antennaDictionary.plist */; };
 /* End PBXBuildFile section */
 
@@ -65,11 +64,11 @@
 		FA8E2F7B1770B31E004AB962 /* StationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationCell.h; sourceTree = "<group>"; };
 		FA8E2F7C1770B31E004AB962 /* StationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationCell.m; sourceTree = "<group>"; };
 		FA8E2F821770BAC7004AB962 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		FAA3551517CB4C3900B17AB7 /* stations.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = stations.plist; sourceTree = "<group>"; };
 		FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FAE48FFB1777942E0040F470 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		FAE48FFD17779CC00040F470 /* PropositionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropositionViewController.h; sourceTree = "<group>"; };
 		FAE48FFE17779CC00040F470 /* PropositionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropositionViewController.m; sourceTree = "<group>"; };
-		FAEC1FFE17718EF7005A292D /* stations.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = stations.plist; sourceTree = "<group>"; };
 		FAEC70B315DED48500C8EA98 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		FAF75794177255300064FFC1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FAF75797177255A10064FFC1 /* Reciever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reciever.h; sourceTree = "<group>"; };
@@ -82,7 +81,6 @@
 		FAF757A3177256A30064FFC1 /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Channel.m; sourceTree = "<group>"; };
 		FAF757A6177256AA0064FFC1 /* DOMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOMath.h; sourceTree = "<group>"; };
 		FAF757A7177256AA0064FFC1 /* DOMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOMath.m; sourceTree = "<group>"; };
-		FAF757AB1772604C0064FFC1 /* database.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = database.plist; sourceTree = "<group>"; };
 		FAF757AD177260990064FFC1 /* antennaDictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = antennaDictionary.plist; path = ../antennaDictionary.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,8 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF757AD177260990064FFC1 /* antennaDictionary.plist */,
-				FAF757AB1772604C0064FFC1 /* database.plist */,
-				FAEC1FFE17718EF7005A292D /* stations.plist */,
+				FAA3551517CB4C3900B17AB7 /* stations.plist */,
 				FA72C14315DE9C9E002247D3 /* Radiator-Info.plist */,
 				FA72C14415DE9C9E002247D3 /* InfoPlist.strings */,
 				FA72C14715DE9C9E002247D3 /* main.m */,
@@ -262,10 +259,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF757AE177260990064FFC1 /* antennaDictionary.plist in Resources */,
+				FAA3551617CB4C3900B17AB7 /* stations.plist in Resources */,
 				FA72C14615DE9C9E002247D3 /* InfoPlist.strings in Resources */,
-				FAEC1FFF17718EF7005A292D /* stations.plist in Resources */,
 				FA8E2F831770BAC7004AB962 /* Icons.xcassets in Resources */,
-				FAF757AC1772604C0064FFC1 /* database.plist in Resources */,
 				FA8E2F771770ADED004AB962 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

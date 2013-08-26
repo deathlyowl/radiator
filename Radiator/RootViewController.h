@@ -12,6 +12,7 @@
 
 @interface RootViewController : UITableViewController <UISearchDisplayDelegate, UIActionSheetDelegate, ADBannerViewDelegate> {
     BOOL isSearching;
+    Model *model;
 }
 
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *pauseButton;
