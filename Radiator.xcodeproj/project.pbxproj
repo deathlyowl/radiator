@@ -24,6 +24,7 @@
 		FA8E2F7D1770B31E004AB962 /* StationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E2F7C1770B31E004AB962 /* StationCell.m */; };
 		FA8E2F831770BAC7004AB962 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8E2F821770BAC7004AB962 /* Icons.xcassets */; };
 		FAA3551617CB4C3900B17AB7 /* stations.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAA3551517CB4C3900B17AB7 /* stations.plist */; };
+		FAB4120317CB688D0093198F /* StationsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB4120217CB688D0093198F /* StationsDataSource.m */; };
 		FAD7FCD315DEB46E0026CB56 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */; };
 		FAE48FFC1777942E0040F470 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE48FFB1777942E0040F470 /* iAd.framework */; };
 		FAE48FFF17779CC00040F470 /* PropositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE48FFE17779CC00040F470 /* PropositionViewController.m */; };
@@ -65,6 +66,8 @@
 		FA8E2F7C1770B31E004AB962 /* StationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationCell.m; sourceTree = "<group>"; };
 		FA8E2F821770BAC7004AB962 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		FAA3551517CB4C3900B17AB7 /* stations.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = stations.plist; sourceTree = "<group>"; };
+		FAB4120117CB688D0093198F /* StationsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StationsDataSource.h; sourceTree = "<group>"; };
+		FAB4120217CB688D0093198F /* StationsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StationsDataSource.m; sourceTree = "<group>"; };
 		FAD7FCD215DEB46E0026CB56 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FAE48FFB1777942E0040F470 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		FAE48FFD17779CC00040F470 /* PropositionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropositionViewController.h; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				FA8E2F761770ADED004AB962 /* Storyboard.storyboard */,
 				FA8E2F7B1770B31E004AB962 /* StationCell.h */,
 				FA8E2F7C1770B31E004AB962 /* StationCell.m */,
+				FAB4120117CB688D0093198F /* StationsDataSource.h */,
+				FAB4120217CB688D0093198F /* StationsDataSource.m */,
 				FA8E2F781770AF7A004AB962 /* RootViewController.h */,
 				FA8E2F791770AF7A004AB962 /* RootViewController.m */,
 				FAE48FFD17779CC00040F470 /* PropositionViewController.h */,
@@ -276,6 +281,7 @@
 				FA72C14815DE9C9E002247D3 /* main.m in Sources */,
 				FAF757A5177256A30064FFC1 /* Channel.m in Sources */,
 				FA8E2F7A1770AF7A004AB962 /* RootViewController.m in Sources */,
+				FAB4120317CB688D0093198F /* StationsDataSource.m in Sources */,
 				FAF7579C177255B30064FFC1 /* GeoObject.m in Sources */,
 				FAF7579F177256840064FFC1 /* SignalRangeModel.m in Sources */,
 				FA8E2F7D1770B31E004AB962 /* StationCell.m in Sources */,
@@ -375,14 +381,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Malgorzata Bogdanska (GVKUKVJ37F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Radiator/Radiator-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Radiator/Radiator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7AE1DB2D-538A-4F3D-BE22-7F9AF9BC68E5";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -394,14 +401,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Malgorzata Bogdanska (GVKUKVJ37F)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Radiator/Radiator-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Radiator/Radiator-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7AE1DB2D-538A-4F3D-BE22-7F9AF9BC68E5";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

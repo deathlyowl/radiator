@@ -9,11 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAd.h>
 #import "Model.h"
+#import "StationsDataSource.h"
 
-@interface RootViewController : UITableViewController <UISearchDisplayDelegate, UIActionSheetDelegate, ADBannerViewDelegate> {
-    BOOL isSearching;
-    Model *model;
-}
+@interface RootViewController : UITableViewController <UISearchDisplayDelegate, UIActionSheetDelegate, ADBannerViewDelegate>
 
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *pauseButton;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *playButton;

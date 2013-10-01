@@ -14,13 +14,9 @@
 
 - (void)viewDidLoad
 {
-    model = [[Model alloc] init];
-    isSearching = NO;
+    [self.tableView setDataSource:[[StationsDataSource alloc] init]];
+    
     [super viewDidLoad];
-    if (model.favouriteStations.count)
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                              atScrollPosition:UITableViewScrollPositionTop
-                                      animated:NO];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadTable)
@@ -48,7 +44,8 @@
 #pragma mark - Search
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
-    [model filterWithString:searchString];
+#warning search!
+//    [model filterWithString:searchString];
     return YES;
 }
 
@@ -63,11 +60,11 @@
 }
 
 - (void)searchDisplayControllerDidEndSearch:(UISearchDisplayController *)controller{
-    isSearching = NO;
+    [(StationsDataSource *)self.tableView.dataSource setIsSearching:NO];
 }
 
 - (void)searchDisplayControllerDidBeginSearch:(UISearchDisplayController *)controller{
-    isSearching = YES;
+    [(StationsDataSource *)self.tableView.dataSource setIsSearching:YES];
 }
 
 #pragma mark - iAD
@@ -83,100 +80,15 @@
     NSLog(@"FTLA");
 }
 
-#pragma mark - Table view
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 3;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    if (isSearching) switch (section) {
-        case 0: return model.filteredFavouriteStations.count;
-        case 1: return model.filteredNearbyStations.count;
-        case 2: return model.filteredStations.count;
-    }
-    else switch (section) {
-        case 0: return model.favouriteStations.count;
-        case 1: return model.nearbyStations.count;
-        case 2: return model.stations.count;
-    }
-    return 0;
-}
-
-
-- (Station *) stationForIndexPath:(NSIndexPath *)indexPath{
-    if (isSearching) {
-        switch (indexPath.section) {
-            case 0: return [model.filteredFavouriteStations objectAtIndex:indexPath.row];
-            case 1: return [model.filteredNearbyStations objectAtIndex:indexPath.row];
-            case 2: return [model.filteredStations objectAtIndex:indexPath.row];
-        }
-    }
-    else{
-        switch (indexPath.section) {
-            case 0: return [model.favouriteStations objectAtIndex:indexPath.row];
-            case 1: return [model.nearbyStations objectAtIndex:indexPath.row];
-            case 2: return [model.stations objectAtIndex:indexPath.row];
-        }
-    }
-    return nil;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (isSearching) {
-        switch (section) {
-            case 0:
-                if(model.filteredFavouriteStations.count)
-                    return [NSString stringWithFormat:@"Ulubione (%i)", model.filteredFavouriteStations.count];
-                else
-                    return nil;
-            case 1:
-                if(model.filteredNearbyStations.count)
-                    return [NSString stringWithFormat:@"W okolicy (%i)", model.filteredNearbyStations.count];
-                else
-                    return nil;
-            case 2:
-                return [NSString stringWithFormat:@"Wszystkie (%i)", model.filteredStations.count];
-        }
-    }
-    else{
-        switch (section) {
-            case 0: if(model.favouriteStations.count) return @"Ulubione"; else return nil;
-            case 1: if(model.nearbyStations.count) return @"W okolicy"; else return nil;
-            case 2: if(model.nearbyStations.count || model.favouriteStations.count) return @"Wszystkie"; else return nil;
-        }
-    }
-    return nil;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Station *station = [self stationForIndexPath:indexPath];
-    
-    NSString *identifier = station.category;
-    
-    if (indexPath.section == 0) identifier = @"lovely";
-    if (indexPath.section == 1) identifier = @"nearby";
-    
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier
-                                                            forIndexPath:indexPath];
-    
-    [cell.textLabel setText:station.name];
-    [cell.detailTextLabel setText:station.description];
-    
-    return cell;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    Station *station = [self stationForIndexPath:indexPath];
-    if (station != model.currentStation) {
+    Station *station = [(StationsDataSource *)self.tableView.dataSource stationForIndexPath:indexPath];
+#warning Playing!
+/*    if (station != model.currentStation) {
         if (Player.isPlaying) [Player pause];
         model.currentStation = station;
         [Player play];
         self.navigationItem.rightBarButtonItem = self.pauseButton;
-    }
+    }*/
     
     self.navigationItem.leftBarButtonItem = [self barButtonForStation:station];
     
@@ -211,23 +123,30 @@
         return _heartButton;
 }
 
-- (IBAction)love:(id)sender {    
+- (IBAction)love:(id)sender {
+#warning Favourites
+    /*
     if (![Favourites isFavourite:model.currentStation.identifier])
         [Favourites addToFavourites:model.currentStation.identifier];
     else
         [Favourites removeFavourite:model.currentStation.identifier];
     
     [Favourites saveFavourites];
+     */
     
-    [model loadData];
+#warning Reloading data
+//    [model loadData];
         
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
                   withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-    self.navigationItem.leftBarButtonItem = [self barButtonForStation:model.currentStation];
+   
+#warning A to to nie wiem
+//    self.navigationItem.leftBarButtonItem = [self barButtonForStation:model.currentStation];
 }
 
-- (IBAction)action:(id)sender {    
+- (IBAction)action:(id)sender {
+#warning To też nie wiem
+    /*
     if (model.currentStation){
         UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                       initWithTitle:model.currentStation.name
@@ -246,9 +165,12 @@
                                       otherButtonTitles:@"Zaproponuj stację", nil];
         [actionSheet showInView:self.view.superview];
     }
+     */
 }
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+#warning I to tak samo
+    /*
     UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Dziękuję!"
                                                       message:@"Przepraszam, że nie możesz słuchać tego strumienia. Postaram się go naprawić w przeciągu 24 godzin."
                                                      delegate:nil
@@ -263,6 +185,7 @@
                                       sender:nil];
             break;
     }
+     */
 }
 
 @end
